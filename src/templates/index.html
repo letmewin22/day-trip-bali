@@ -1,0 +1,131 @@
+---
+title: Main page
+---
+{% extends "layouts/_layout.html" %}
+{% block content %}
+<div class="nav">
+  <div class="nav__logo">
+  </div>
+  <nav class="nav__items">
+    <ul class='nav__items__wrapper'>
+      <li class="nav__item"><a href="#">about</a></li>
+      <li class="nav__item"><a href="#">tours</a></li>
+      <li class="nav__item"><a href="#">contacts</a></li>
+      <li class="nav__item"><a href="#">reviews</a></li>
+    </ul>
+  </nav>
+</div>
+<header class="header">
+  <div class="header__content">
+    <h1>DAY TRIP<br>BALI</h1>
+    <p class="header__content__description">We will create your best day on the island!</p>
+    <div class="info-block">
+      <span class="info-block__text">This is the beautiful text for day trip Bali</span>
+    </div>
+  </div>
+  <div class="header__video">
+    <video poster="img/main-poster.jpg" autoplay="" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%">
+      <source src="video/video.mp4" type="video/mp4"></video>
+  </div>
+</header>
+<main>
+  <section class="section">
+    <div class="section__container">
+      <div class="top-content">
+        <h2>Welcome<br>to Bali!</h2>
+        <p>We are a touristic agency Day Trip Bali, we create and organize authorial tours to Bali. Just in one or two days we will show you the best place on the island — book your place, we are waiting for you!</p>
+      </div>
+      <div class="bottom-content">
+        <img src="img/1-beach.jpg" alt="beach">
+        <img src="img/2-beach.jpg" alt="beach">
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section__container last">
+      <h2>Why do tourists<br>choose us?</h2>
+      <div class="choose-items">
+        <div class="choose-items__item">
+          {% include "partials/_choose-icon-1.html" %}
+          <h3>Create your best day</h3>
+          <p>All our comments are telling one thing — we are making people happier while creating the best day for them on the island. You can check it here — <span><a href="#">reviews</a></span></p>
+        </div>
+        <div class="choose-items__item">
+          {% include "partials/_choose-icon-2.html" %}
+          <h3>Positive team</h3>
+          <p>You won't feel any language problems. All teams including guides and captains of the boats can speak English, and it is rare for Bali.</p>
+        </div>
+        <div class="choose-items__item">
+          {% include "partials/_choose-icon-3.html" %}
+          <h3>Tours are full of adventures</h3>
+          <p>Just in one day, you will get maximum good emotions! We will show you maximum thanks to the well-organized logic of the tour. </p>
+        </div>
+        <div class="choose-items__item">
+          {% include "partials/_choose-icon-4.html" %}
+          <h3>Create your best day</h3>
+          <p>All our comments are telling one thing — we are making people happier while creating the best day for them on the island. You can check it here — <span><a href="#">reviews</a></span></p>
+        </div>
+        <div class="choose-items__item">
+          {% include "partials/_choose-icon-5.html" %}
+          <h3>Create your best day</h3>
+          <p>All our comments are telling one thing — we are making people happier while creating the best day for them on the island. You can check it here — <span><a href="#">reviews</a></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="section__container footer__container">
+    <div class="main-footer__content">
+      <div class="main-footer__content__left-content">
+        <h2>Contacts</h2>
+        <p>You can book a tour for any date with the possibility to cancel it for free.</p>
+        <div class="main-footer__content__left-content__contacts-items">
+          <a href="#">+62 821 4595 7604 (WhatsApp)</a>
+          <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
+          <div class="social-media">
+            <a href="#"></a>
+            <a href="#"></a>
+          </div>
+        </div>
+      </div>
+      <div class="main-footer__content__right-content">
+        <form class="form" name="form">
+          <!-- Hidden Required Fields -->
+          <input type="hidden" name="project_name" value="DayTripBali site">
+          <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
+          <input type="hidden" name="form_subject" value="Заявка с главной">
+          <!-- END Hidden Required Fields -->
+          <div class="input-wrapper first">
+            <input type="text" class="text-field" maxlength="256" name="name" id="name" autocomplete="off">
+            <label for="name" class="label">
+              <span class="label-content">Name</span>
+            </label>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" class="text-field" maxlength="256" name="e-mail" id="e-mail" autocomplete="off">
+            <label for="e-mail" class="label">
+              <span class="label-content">E-mail *</span>
+            </label>
+            <span class="form-validate-text"></span>
+          </div> 
+          <div class="input-wrapper">
+            <input type="text" class="text-field" maxlength="256" name="questions" id="questions" autocomplete="off">
+            <label for="questions" class="label">
+              <span class="label-content">Your questions</span>
+            </label>
+          </div>
+          <!--         <input class="input-checkbox" id="input-checkbox" type="checkbox" style="display: none;" checked="checked" />
+        <label class="checkbox" for="input-checkbox"><span>
+            <svg width="12px" height="10px" viewbox="0 0 12 10">
+              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+            </svg></span><span>Я даю згоду на обробку моїх персональних данних</span></label> -->
+          <div class="button">
+            <input type="submit" value="Send" class="form-button">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

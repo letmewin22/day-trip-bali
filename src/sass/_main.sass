@@ -1,0 +1,148 @@
+*
+  &::selection
+    background: $accent-color
+    color: white
+
+
+body
+	+main
+	font-size: 20px
+	width: 100%
+	color: $main-color
+	line-height: 1.7em
+
+h1
+	+h1
+	font-size: 136px
+	line-height: 1.1em
+	color: $dark-color
+
+.header
+	width: 100%
+	position: relative
+	&__content
+		height: 68vh
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding-left: $hor-dist
+		padding-right: $hor-dist
+		position: relative
+		&__description
+			font-size: 24px
+			margin-top: 45px
+	&__video
+		width: 100%
+		video
+			width: 100%
+.nav
+	display: flex
+	justify-content: space-between
+	position: absolute
+	z-index: 100
+	top: 4%
+	width: 100%
+	padding-left: $hor-dist
+	padding-right: $hor-dist
+	&__items
+		display: flex
+		&__wrapper
+			display: flex
+			justify-content: space-between
+			align-self: flex-end
+	&__item
+		margin-left: 60px
+		a
+			color: $dark-color
+			+medium
+
+.button
+	padding: 15px 40px
+	border: solid 1px white			
+
+.info-block
+	background: $dark-color
+	position: absolute
+	bottom: 0
+	right: 0
+	color: white
+	padding: 54px 110px
+	&__text
+		font-size: 18px
+
+.section
+	position: relative
+	width: 100%
+	&__container
+		padding-left: $hor-dist
+		padding-right: $hor-dist
+		padding-top: $vert-dist
+		width: 100%
+		&.last
+			padding-bottom: $vert-dist
+
+h2
+	+h2
+	font-size: 60px
+	line-height: 1.1em
+	color: $dark-color
+
+.top-content
+	width: 31%
+	p
+		margin-top: 25px
+
+.bottom-content
+	width: 100%
+	position: relative
+	margin-top: 80px
+	img
+		position: relative
+		&:nth-child(2)
+			position: absolute
+			right: 0
+			top: -80%
+
+h3
+	+h3
+
+.choose-items
+	width: 100%
+	display: flex
+	justify-content: flex-start
+	align-items: flex-start
+	flex-basis: 30%
+	flex-wrap: wrap
+	&__item
+		flex-basis: 30%
+		margin-top: 45px
+		margin-right: 45px
+		p, h3
+			margin-top: 10px
+
+.footer
+	background: $dark-color
+	h2
+		color: white
+	p
+		color: white
+		margin-top: 20px
+	&__container
+		padding-top: 100px
+		padding-bottom: 100px
+
+.main-footer
+	&__content
+		width: 100%
+		display: flex
+		justify-content: space-between
+		&__left-content
+			width: 44%
+			&__contacts-items
+				margin-top: 45px
+				a
+					display: block
+					color: white
+					margin-top: 25px
+		&__right-content
+			width: 40%
