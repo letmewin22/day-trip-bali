@@ -54,7 +54,23 @@ h1
 		margin-left: 60px
 		a
 			color: $dark-color
+			transition: color .5s ease
 			+medium
+			&::after
+				content: ''
+				display: block
+				width: 0px
+				height: 2px
+				background: $dark-color
+				position: relative
+				transition: width .5s ease, background .5s ease
+				top: -2px
+				align-self: flex-start
+			&:hover
+				color: $accent-color
+				&:after
+					width: 50%
+					background: $accent-color	
 
 .button
 	padding: 15px 40px
@@ -78,6 +94,7 @@ h1
 		padding-right: $hor-dist
 		padding-top: $vert-dist
 		width: 100%
+		overflow: hidden
 		&.last
 			padding-bottom: $vert-dist
 
@@ -102,6 +119,8 @@ h2
 			position: absolute
 			right: 0
 			top: -80%
+	&.bottom-content__marign
+		margin-top: 40px
 
 h3
 	+h3
@@ -116,7 +135,7 @@ h3
 	&__item
 		flex-basis: 30%
 		margin-top: 45px
-		margin-right: 45px
+		margin-right: 2.34vw
 		p, h3
 			margin-top: 10px
 

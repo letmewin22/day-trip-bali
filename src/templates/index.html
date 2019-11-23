@@ -33,11 +33,21 @@ title: Main page
     <div class="section__container">
       <div class="top-content">
         <h2>Welcome<br>to Bali!</h2>
-        <p>We are a touristic agency Day Trip Bali, we create and organize authorial tours to Bali. Just in one or two days we will show you the best place on the island — book your place, we are waiting for you!</p>
+        <p>We are a travel agency, organizing incredible tours in Bali. In just a day or two, we will show you the best spots on the island. Book your location…we’re waiting for you!</p>
       </div>
       <div class="bottom-content">
         <img src="img/1-beach.jpg" alt="beach">
         <img src="img/2-beach.jpg" alt="beach">
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section__container">
+      <div class="top-content">
+        <h2>Choose your<br>tour</h2>
+      </div>
+      <div class="bottom-content bottom-content__marign">
+      	{% include "partials/_slider.html" %}
       </div>
     </div>
   </section>
@@ -108,7 +118,7 @@ title: Main page
               <span class="label-content">E-mail *</span>
             </label>
             <span class="form-validate-text"></span>
-          </div> 
+          </div>
           <div class="input-wrapper">
             <input type="text" class="text-field" maxlength="256" name="questions" id="questions" autocomplete="off">
             <label for="questions" class="label">
