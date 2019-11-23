@@ -1,0 +1,38 @@
+.waves-wrapper {
+    width: 100vw;
+    position: absolute;
+    bottom: -20vh;
+    z-index: -1;
+    left: -267px;
+
+    svg {
+        width: 100%;
+    }
+}
+
+
+
+.wave {
+    animation: wave 3s linear;
+    animation-iteration-count: infinite;
+    fill: none;
+    stroke: #19A8D5;
+    stroke-width: 0.15px;
+}
+
+#wave2 {
+    animation-duration: 5s;
+    animation-direction: reverse;
+    opacity: .6
+}
+
+#wave3 {
+    animation-duration: 7s;
+    opacity: .3;
+}
+
+@keyframes wave {
+    to {
+        transform: translateX(-100%);
+    }
+}
