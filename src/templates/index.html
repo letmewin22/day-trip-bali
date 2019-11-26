@@ -3,6 +3,15 @@ title: Main page
 ---
 {% extends "layouts/_layout.html" %}
 {% block content %}
+<!-- loader -->
+<div class="loader">
+  <div class="line-loader">
+    <div class="loader-back-line">
+      <div class="loader-front-line"></div>
+    </div>
+  </div>
+</div>
+<!-- loader -->
 <div class="nav">
   <div class="nav__logo">
   </div>
@@ -20,15 +29,13 @@ title: Main page
 </div>
 <header class="header">
   <div class="header__content">
-    <h1>DAY TRIP<br>BALI</h1>
+    <h1><span class="splitter">DAY&nbsp;TRIP</span><br><span class="splitter">BALI</span></h1>
     <p class="header__content__description">We will create your best day on the island!</p>
     <div class="info-block">
       <span class="info-block__text">This is the beautiful text for day trip Bali</span>
     </div>
   </div>
   <div class="header__video">
-    <video poster="img/main-poster.jpg" autoplay="" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%">
-      <source src="video/video.mp4" type="video/mp4"></video>
   </div>
 </header>
 <main>
@@ -95,7 +102,7 @@ title: Main page
     <div class="main-footer__content">
       <div class="main-footer__content__left-content">
         <h2>Contacts</h2>
-        <p>You can book a tour for any date with the possibility to cancel it for free.</p>
+        <p>You can book a tour for any date, with free cancellation.</p>
         <div class="main-footer__content__left-content__contacts-items">
           <a href="#">+62 821 4595 7604 (WhatsApp)</a>
           <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
@@ -138,6 +145,7 @@ title: Main page
             </svg></span><span>Я даю згоду на обробку моїх персональних данних</span></label> -->
           <div class="button">
             <input type="submit" value="Send" class="form-button">
+            <div class="button__bg"></div>
           </div>
         </form>
       </div>

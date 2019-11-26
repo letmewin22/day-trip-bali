@@ -69,6 +69,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "github:glidejs/glide",
+    "charming": "^3.0.1",
     "draggabilly": "^2.2.0",
     "gsap": "^2.1.3"
   }
