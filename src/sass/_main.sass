@@ -17,12 +17,12 @@ h1
 	font-size: 136px
 	line-height: 1.1em
 	color: $dark-color
-	.splitter
+.splitter
+	display: inline-block
+	span
+		opacity: 0
+		transform: translateX(40px)
 		display: inline-block
-		span
-			opacity: 0
-			transform: translateX(40px)
-			display: inline-block
 
 a 
 	color: $accent-color
@@ -45,10 +45,22 @@ a
 			transform: translateX(40px)
 	&__video
 		width: 100%
+		position: relative
 		// transform: translateY(100%)
 		opacity: 0
 		video, img
 			width: 100%
+			position: relative
+
+.video-btn
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	pointer-events: none
+	img
+		width: 45px
+
 .nav
 	display: flex
 	justify-content: space-between
@@ -148,8 +160,8 @@ h2
 	font-size: 60px
 	line-height: 1.1em
 	color: $dark-color
-	opacity: 0
-	transform: translateX(40px)
+	// opacity: 0
+	// transform: translateX(40px)
 
 .top-content
 	width: 31%

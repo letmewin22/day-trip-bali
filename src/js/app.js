@@ -1,3 +1,4 @@
+
 import sayHello from './lib/sayHello.js';
 import FormInputs from './form.js';
 import Slider from './slider.js';
@@ -6,14 +7,14 @@ import './preloader.js';
 import { TimelineMax } from 'gsap';
 import './scroll.js';
 const charming = require('charming');
-
-
+import Splitting from 'splitting';
 
 FormInputs();
 
 Slider();
 
 let h1Splitter = [...document.querySelectorAll('h1 .splitter')];
+let h2Splitter = [...document.querySelectorAll('h2 .splitter')];
 let h1 = document.querySelector('h1');
 let h1Desc = document.querySelector('.header__content__description');
 let video = document.querySelector('.header__video');
@@ -22,6 +23,11 @@ let infoBlock = document.querySelector('.info-block');
 for (let i = 0; i < h1Splitter.length; i++) {
   charming(h1Splitter[i]);
 }
+
+for (let i = 0; i < h2Splitter.length; i++) {
+  charming(h2Splitter[i]);
+}
+
 window.addEventListener('load', () => {
   setTimeout(() => {
     for (let i = 0; i < h1Splitter.length; i++) {
