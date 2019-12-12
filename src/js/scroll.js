@@ -34,6 +34,7 @@ function footer() {
         .to(elements[i].querySelectorAll('form'), 0.7, { y: 0, opacity: 1, ease: Power1.easeOut }, 0.1)
         .staggerTo(elements[i].querySelectorAll('p'), 0.8, { x: 0, opacity: 1, ease: Power1.easeOut }, 0.08, 0.1)
         .staggerTo(elements[i].querySelectorAll('a'), 0.8, { x: 0, opacity: 1, ease: Power1.easeOut }, 0.08, 0.1)
+        .staggerTo(elements[i].querySelectorAll('img'), 0.8, { y: 0, opacity: 1, ease: Power1.easeOut }, 0.15, 0.1)
 
       for (let j = 0; j < elements[i].querySelectorAll('h2 .splitter').length; j++) {
         let splitterSpan = elements[i].querySelectorAll('h2 .splitter')[j].querySelectorAll('span');

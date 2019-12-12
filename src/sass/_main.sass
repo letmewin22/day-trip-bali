@@ -78,8 +78,9 @@ a
 			align-self: flex-end
 	&__item
 		margin-left: 60px
+		color: $dark-color
 		a
-			color: $dark-color
+			color: inherit
 			transition: color .5s ease
 			+medium
 			&::after
@@ -96,14 +97,24 @@ a
 				color: $accent-color
 				&:after
 					width: 50%
-					background: $accent-color	
+					background: $accent-color
+		&.inverse
+			color: white
+			a
+				&::after
+					background: white
+				&:hover
+					color: $accent-color
+					&:after
+						width: 50%
+						background: $accent-color
 
 .button
-	padding: 15px 40px
 	border: solid 1px white
 	position: relative
 	overflow: hidden
 	transition: color .4s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+	width: fit-content
 	&__bg
 		width: 100%
 		height: 100%
@@ -136,12 +147,17 @@ a
 .burger
 	display: none
 
+.container
+	padding-left: $hor-dist
+	padding-right: $hor-dist
+	height: 100% 
+	&.last
+		padding-bottom: $vert-dist
+
 .section
 	position: relative
 	width: 100%
 	&__container
-		padding-left: $hor-dist
-		padding-right: $hor-dist
 		padding-top: $vert-dist
 		width: 100%
 		overflow: hidden
@@ -152,8 +168,6 @@ a
 		img
 			opacity: 0
 			transform: translateY(40px)	
-		&.last
-			padding-bottom: $vert-dist
 
 h2
 	+h2
@@ -204,6 +218,7 @@ h3
 
 .footer
 	background: $dark-color
+	color: white
 	h2
 		color: white
 	p
@@ -211,9 +226,18 @@ h3
 		margin-top: 20px
 	a
 		opacity: 0
+		width: fit-content
 	&__container
 		padding-top: 100px
 		padding-bottom: 100px
+	&.tour-footer
+		padding-bottom: 100px
+
+.social-media
+	display: flex
+	align-items: center
+	a
+		margin-left: 20px
 
 .main-footer
 	&__content
@@ -223,13 +247,21 @@ h3
 		&__left-content
 			width: 44%
 			&__contacts-items
-				margin-top: 45px
+				&.with-margin
+					margin-top: 45px
+				&.float-right
+					display: flex
+					flex-direction: column
+					align-items: flex-end
 				a
 					display: block
 					color: white
 					margin-top: 25px
 		&__right-content
 			width: 40%
+
+.footer-btn
+	margin-top: 60px
 
 .loader
   position: fixed
@@ -242,7 +274,7 @@ h3
   align-items: center 
   background: $dark-color
   color: white
-  z-index: 10000
+  z-index: 10010 
   opacity: 1 
   transition: opacity 1s ease
 

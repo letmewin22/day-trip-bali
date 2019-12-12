@@ -1,0 +1,95 @@
+---
+title: Tour page
+route: tour
+---
+{% extends "layouts/_layout.html" %}
+{% block content %}
+<!-- loader -->
+<div class="loader">
+  <div class="line-loader">
+    <div class="loader-back-line">
+      <div class="loader-front-line"></div>
+    </div>
+  </div>
+</div>
+<!-- loader -->
+{% include "partials/_navbar.html" %}
+<header class="header tour-header" style="background-image: url(img/tours-bg/1st-tour-bg.jpg);">
+  <div class="container header__container">
+    <div class="tour-header__tour-content">
+      <h1 class="tour-h1">Unique day trip to Nusa Penida by boat</h1>
+      <p>Perfectly organized and balanced itinerary including swimming with oceanic Manta Rays, snorkeling and visiting iconic places</p>
+      <div class="button">
+        <span class="form-button">Book now</span>
+        <div class="button__bg"></div>
+      </div>
+    </div>
+  </div>
+  <div class="white-block">
+    <div class="white-block__item first">
+      <img src="img/tour-icons/days.svg" alt="calendar">
+      <span>DAY TRIP</span>
+    </div>
+    <div class="white-block__item">
+      <img src="img/tour-icons/time.svg" alt="clock">
+      <span>6.30 AM — 5.00 PM</span>
+    </div>
+    <div class="white-block__item">
+      <img src="img/tour-icons/price.svg" alt="money-bag">
+      <span>99 USD PER PERSON</span>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="section">
+    <div class="container last">
+      <div class="tabs">
+        <div class="tabs__nav tabs-nav">
+          <div class="tabs-nav__item is-active" data-tab-name="tab-1">About tour</div>
+          <div class="tabs-nav__item" data-tab-name="tab-2">Programm</div>
+          <div class="tabs-nav__item" data-tab-name="tab-3">Price</div>
+          <div class="tabs-nav__item" data-tab-name="tab-4">Photos</div>
+        </div>
+        <div class="tabs__content">
+          <div class="tab is-active tab-1">
+            {% include "partials/_tab-1.html" %}
+          </div>
+          <div class="tab tab-2">
+            {% include "partials/_tab-2.html" %}
+          </div>
+          <div class="tab tab-3">
+            {% include "partials/_tab-3.html" %}
+          </div>
+          <div class="tab tab-4">
+            {% include "partials/_tab-4.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer tour-footer">
+  <div class="container section__container footer__container">
+    <div class="main-footer__content">
+      <div class="main-footer__content__left-content">
+        <h2><span class="splitter">Choose a day for your</span><br><span class="splitter">trip right now!</span></h2>
+        <p>Full refund if the weather condition is not suitable.</p>
+      </div>
+      <div class="main-footer__content__right-content">
+        <div class="main-footer__content__left-content__contacts-items float-right">
+          <a href="#">+62 821 4595 7604 (WhatsApp)</a>
+          <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
+          <div class="social-media">
+            <a href="#"><img src="img/insta.svg" alt=""></a>
+            <a href="#"><img src="img/fb.svg" alt=""></a>
+          </div>
+          <div class="button footer-btn">
+            <span class="form-button">Book now</span>
+            <div class="button__bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

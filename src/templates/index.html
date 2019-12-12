@@ -1,5 +1,6 @@
 ---
 title: Main page
+route: main
 ---
 {% extends "layouts/_layout.html" %}
 {% block content %}
@@ -12,21 +13,7 @@ title: Main page
   </div>
 </div>
 <!-- loader -->
-<div class="nav">
-  <div class="nav__logo">
-  </div>
-  <nav class="nav__items">
-    <ul class='nav__items__wrapper'>
-      <li class="nav__item"><a href="#">about</a></li>
-      <li class="nav__item"><a href="#">tours</a></li>
-      <li class="nav__item"><a href="#">contacts</a></li>
-      <li class="nav__item"><a href="#">reviews</a></li>
-    </ul>
-  </nav>
-  <div class="burger">
-    <span></span>
-  </div>
-</div>
+{% include "partials/_navbar.html" %}
 <header class="header">
   <div class="header__content">
     <h1><span class="splitter">DAY&nbsp;TRIP</span><br><span class="splitter">BALI</span></h1>
@@ -40,7 +27,7 @@ title: Main page
 </header>
 <main>
   <section class="section">
-    <div class="section__container">
+    <div class="container section__container">
       <div class="top-content">
         <h2><span class="splitter">Welcome</span><br> <span class="splitter">to&nbsp;Bali!</span></h2>
         <p>We are a travel agency, organizing incredible tours in Bali. In just a day or two, we will show you the best spots on the island. Book your location…we’re waiting for you!</p>
@@ -55,7 +42,7 @@ title: Main page
     </div>
   </section>
   <section class="section">
-    <div class="section__container choose">
+    <div class="container section__container choose">
       <div class="top-content__choose">
         <h2><span class="splitter">Choose&nbsp;your</span><br><span class="splitter">tour</span></h2>
       </div>
@@ -65,7 +52,7 @@ title: Main page
     </div>
   </section>
   <section class="section">
-    <div class="section__container last">
+    <div class="container section__container last">
       <h2><span class="splitter">Why&nbsp;do&nbsp;tourists</span><br><span class="splitter">choose&nbsp;us?</span></h2>
       <div class="choose-items">
         <div class="choose-items__item">
@@ -98,17 +85,17 @@ title: Main page
   </section>
 </main>
 <footer class="footer">
-  <div class="section__container footer__container">
+  <div class="container section__container footer__container">
     <div class="main-footer__content">
       <div class="main-footer__content__left-content">
         <h2><span class="splitter">Contacts</span></h2>
         <p>You can book a tour for any date, with free cancellation.</p>
-        <div class="main-footer__content__left-content__contacts-items">
+        <div class="main-footer__content__left-content__contacts-items with-margin">
           <a href="#">+62 821 4595 7604 (WhatsApp)</a>
           <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
-          <div class="social-media">
-            <a href="#"></a>
-            <a href="#"></a>
+           <div class="social-media">
+            <a href="#"><img src="img/insta.svg" alt=""></a>
+            <a href="#"><img src="img/fb.svg" alt=""></a>
           </div>
         </div>
       </div>

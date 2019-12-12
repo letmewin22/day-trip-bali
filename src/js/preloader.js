@@ -1,50 +1,80 @@
-let video = `<video poster="img/main-poster.jpg" autoplay="" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%">
+import { TimelineMax } from 'gsap';
+const charming = require('charming');
+const MainLoader = () => {
+
+  let video = `<video poster="img/main-poster-pc.jpg" autoplay="" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%">
       <source src="video/video.mp4" type="video/mp4"></video>`;
-let videoMob = `<video poster="img/main-poster.jpg" preload="metadata" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%" webkit-playsinline playsinline>
+  let videoMob = `<video poster="img/main-poster.jpg" preload="metadata" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%" webkit-playsinline playsinline>
       <source src="video/video.mp4" type="video/mp4"></video> <div class="video-btn"><img src="video/video-button.svg" alt="play button"></div>`;
 
-let videoWrap = document.querySelector('.header__video');
-screen.width > 960 ? videoWrap.innerHTML = video : videoWrap.innerHTML = videoMob;
+  let videoWrap = document.querySelector('.header__video');
+  screen.width > 960 ? videoWrap.innerHTML = video : videoWrap.innerHTML = videoMob;
 
-let videoHTML, videoBtn;
+  let videoHTML, videoBtn;
 
 
 
-window.onload = (e) => {
+  window.onload = (e) => {
 
-  let load = () => {
-    document.querySelector('.loader').style.opacity = 0;
-    document.querySelector('.loader').style.pointerEvents = 'none';
-
-  };
-  load();
-
-  videoHTML = videoWrap.querySelector('video');
-  videoBtn = document.querySelector('.video-btn');
-  if (videoBtn) {
-    videoHTML.onclick = () => {
-      if (videoHTML.paused === true) {
-        videoHTML.play();
-        videoBtn.style.opacity = 0;
-      } else {
-        videoHTML.pause();
-        videoBtn.style.opacity = 10;
-      }
-
+    let load = () => {
+      document.querySelector('.loader').style.opacity = 0;
+      document.querySelector('.loader').style.pointerEvents = 'none';
 
     };
-  }
+    load();
+
+    videoHTML = videoWrap.querySelector('video');
+    videoBtn = document.querySelector('.video-btn');
+    if (videoBtn) {
+      videoHTML.onclick = () => {
+        if (videoHTML.paused === true) {
+          videoHTML.play();
+          videoBtn.style.opacity = 0;
+        } else {
+          videoHTML.pause();
+          videoBtn.style.opacity = 10;
+        }
+
+
+      };
+    }
+
+  };
+
+  const loading = () => {
+    let h1Splitter = [...document.querySelectorAll('h1 .splitter')];
+    let h2Splitter = [...document.querySelectorAll('h2 .splitter')];
+    let h1 = document.querySelector('h1');
+    let h1Desc = document.querySelector('.header__content__description');
+    let video = document.querySelector('.header__video');
+    let infoBlock = document.querySelector('.info-block');
+
+    for (let i = 0; i < h1Splitter.length; i++) {
+      charming(h1Splitter[i]);
+    }
+
+    for (let i = 0; i < h2Splitter.length; i++) {
+      charming(h2Splitter[i]);
+    }
+
+    setTimeout(() => {
+      for (let i = 0; i < h1Splitter.length; i++) {
+        h1.style.opacity = '1';
+        let splitterSpan = h1Splitter[i].querySelectorAll('span');
+        let tl = new TimelineMax;
+        tl
+          .staggerTo(splitterSpan, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07);
+      }
+      let tl2 = new TimelineMax();
+      tl2
+        .to(h1Desc, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0)
+        .to(video, 1.2, { opacity: 1, ease: Power2.easeOut }, 0.2)
+        .to(infoBlock, 1.2, { opacity: 1, y: 0, ease: Power2.easeOut }, 0.7);
+    }, 500);
+
+  };
+  loading();
 
 };
 
-//     // показать прелоадер
-
-// var img = new Image();
-
-// img.src = 'image source';
-
-// img.onload = function () {
-
-//   // убрать прелоадер
-
-// };
+export default MainLoader;

@@ -22,12 +22,15 @@
     <meta property="og:description" content="Template">
     <meta property="og:site_name" content="emotiON">
     <link rel="stylesheet" media="all" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
-  <body>
 
-    <!-- BEGIN content -->
+<body>
+  <div class="site-wrapper" data-router-wrapper>
+    <div data-router-view="main">
+      <!-- BEGIN content -->
       
 <!-- loader -->
 <div class="loader">
@@ -39,14 +42,25 @@
 </div>
 <!-- loader -->
 <div class="nav">
-  <div class="nav__logo">
-  </div>
+  <a href="/" class="nav__logo">
+    <img src="img/logo.svg" alt="">
+  </a>
   <nav class="nav__items">
     <ul class='nav__items__wrapper'>
       <li class="nav__item"><a href="#">about</a></li>
-      <li class="nav__item"><a href="#">tours</a></li>
+      <!-- <li class="nav__item"><a href="#">tours</a></li> -->
+      <li class="nav__item dropdown">
+        <div class="dropbtn">tours
+          <i class="fa fa-caret-down"></i>
+        </div>
+        <div class="dropdown-content">
+          <a href="day-trip-nusa-penida.html">Nusa Penida</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </li>
       <li class="nav__item"><a href="#">contacts</a></li>
-      <li class="nav__item"><a href="#">reviews</a></li>
+      <li class="nav__item"><a href="reviews.html">reviews</a></li>
     </ul>
   </nav>
   <div class="burger">
@@ -66,7 +80,7 @@
 </header>
 <main>
   <section class="section">
-    <div class="section__container">
+    <div class="container section__container">
       <div class="top-content">
         <h2><span class="splitter">Welcome</span><br> <span class="splitter">to&nbsp;Bali!</span></h2>
         <p>We are a travel agency, organizing incredible tours in Bali. In just a day or two, we will show you the best spots on the island. Book your location…we’re waiting for you!</p>
@@ -88,7 +102,7 @@
     </div>
   </section>
   <section class="section">
-    <div class="section__container choose">
+    <div class="container section__container choose">
       <div class="top-content__choose">
         <h2><span class="splitter">Choose&nbsp;your</span><br><span class="splitter">tour</span></h2>
       </div>
@@ -167,7 +181,7 @@
     </div>
   </section>
   <section class="section">
-    <div class="section__container last">
+    <div class="container section__container last">
       <h2><span class="splitter">Why&nbsp;do&nbsp;tourists</span><br><span class="splitter">choose&nbsp;us?</span></h2>
       <div class="choose-items">
         <div class="choose-items__item">
@@ -249,17 +263,17 @@
   </section>
 </main>
 <footer class="footer">
-  <div class="section__container footer__container">
+  <div class="container section__container footer__container">
     <div class="main-footer__content">
       <div class="main-footer__content__left-content">
         <h2><span class="splitter">Contacts</span></h2>
         <p>You can book a tour for any date, with free cancellation.</p>
-        <div class="main-footer__content__left-content__contacts-items">
+        <div class="main-footer__content__left-content__contacts-items with-margin">
           <a href="#">+62 821 4595 7604 (WhatsApp)</a>
           <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
-          <div class="social-media">
-            <a href="#"></a>
-            <a href="#"></a>
+           <div class="social-media">
+            <a href="#"><img src="img/insta.svg" alt=""></a>
+            <a href="#"><img src="img/fb.svg" alt=""></a>
           </div>
         </div>
       </div>
@@ -304,11 +318,12 @@
   </div>
 </footer>
 
-    <!-- END content -->
+      <!-- END content -->
+    </div>
+  </div>
+  <!-- BEGIN scripts -->
+  <script src="js/app.js"></script>
+  <!-- END scripts -->
+</body>
 
-    <!-- BEGIN scripts -->
-    <script src="js/app.js"></script>
-    <!-- END scripts -->
-
-  </body>
 </html>
