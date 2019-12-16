@@ -13,6 +13,10 @@
 	.nav
 			padding-left: 10vw
 			padding-right: 10vw
+	.tour-h1
+		font-size: 60px
+	.white-block
+		padding: 50px 70px
 
 @media (max-width: 1460px)
 	.header
@@ -32,6 +36,12 @@
 		   width: 494px
 	h1
 		font-size: 120px
+	.tour-header__tour-content
+		width: 70%
+	.tabs__content
+		padding-top: 30px
+	.tabs-nav__item
+		font-size: 20px
 
 @media (max-width: 1305px)
 	.header
@@ -53,6 +63,32 @@
 	    width: 40px
 	    // padding-right: 10vw
 	    margin-top: 20px
+	.tab__wrapper
+		flex-direction: column
+	.wrapper__right
+		width: 100%
+		margin-top: 50px
+		img
+			width: 100%
+	.tour-header
+		height: 100vh
+	.footer
+		&.tour-footer
+			padding-bottom: 0px
+	.tabs__scroll-wrap
+		padding-top: 20px
+		padding-bottom: 20px
+		padding-right: 30px
+	.tabs
+		margin-top: -20px
+	.gallery__wrapper h2
+		margin-bottom: 20px
+	.tour-header__tour-content p
+		margin-top: 15px
+	.tour-header__tour-content .button
+		margin-top: 25px
+	.wrapper__left
+		margin-right: 0px
 
 @media (max-width: 1095px)
 	body
@@ -75,6 +111,19 @@
 				max-width: 75%
 				&:nth-child(2)
 					max-width: 50%
+	.tour-h1
+		font-size: 48px
+	.white-block
+		width: 100%
+		background: rgba(white, 0.7)
+	.container
+		padding-top: 60px
+		&.last
+			padding-bottom: 60px
+	.tour-header__tour-content
+		margin-top: -60px
+	.price__item
+		flex-basis: 50%
 
 @media (max-width: 850px)
 	.choose-items__item
@@ -96,11 +145,6 @@
 				width: 100%
 			&__right-content
 				margin-top: 30px
-	.section
-		&__container
-			padding-top: 60px
-			&.last
-				padding-bottom: 60px
 	.bottom-content
 		margin-top: 40px
 	.img-outer 
@@ -175,10 +219,35 @@
 	.dropbtn 
 		color: white
 	.dropdown-content
-		background: $dark-color
+		background: transparent
 		margin-top: 10px 
-		display: block
 		position: relative
+		display: none
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		text-align: center
+	.main-footer__content__left-content__contacts-items.float-right
+		align-items: flex-start
+	.social-media 
+		a
+			margin-left: 0px
+			margin-right: 20px
+	.white-block
+		flex-direction: column
+		padding: 18px 70px
+		&__item
+			margin-left: 0px
+			margin-top: 24px
+			line-height: 1em
+			&.first
+				margin-top: 0px
+	.tour-header__tour-content
+		width: 100%
+	.tour-h1
+		font-size: 36px !important
+	.price__item
+		flex-basis: 100%
 
 @media (max-width: 460px)
 	.header
@@ -215,9 +284,46 @@
     	margin-top: 30px
 	.wave
     	stroke-width: 0.5px
+	h2
+    	font-size: 36px
+	.tour-header__tour-content p
+    	font-size: 16px
+	.slideshow
+    	height: 40vh
+	.boxnav
+		padding-left: 10px
+		padding-right: 10px
+		&__item
+	    	width: 30px
+	    	height: 30px
+	    	svg
+	    		width: 10px
+	    		height: 10px
+	.tabs__scroll-wrap
+		overflow-x: scroll
+		width: auto
+	.form-button
+		font-size: 16px
+	.tabs-nav__item
+		font-size: 18px
+		margin-left: 34px
+	.tabs
+		margin-top: -50px
+	.wrapper__left p
+		margin-top: 20px
+	.programm-item
+		margin-top: 40px
+		overflow: hidden
+		// max-height: 30px
+	.wrapper__right
+		margin-top: 25px
 
 @media (max-width: 350px)
 	.header h1
 		font-size: 50px
+	.white-block
+		display: none
+	.tour-header__tour-content
+		margin-top: 0px
 	h2
-		font-size: 40px
+		font-size: 30px

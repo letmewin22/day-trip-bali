@@ -25,6 +25,10 @@ class CustomRendererMain extends Highway.Renderer {
       };
       load();
     };
+    let navI = document.querySelectorAll('.nav__item');
+    for (let i = 0; i < navI.length; i++) {
+      navI[i].classList.remove('inverse');
+    }
   }
 }
 // Don`t forget to export your renderer

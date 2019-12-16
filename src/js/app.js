@@ -22,7 +22,3 @@ const H = new Highway.Core({
 
 
 FormInputs();
-
-
-
-

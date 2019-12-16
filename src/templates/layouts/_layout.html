@@ -1,6 +1,16 @@
 {% include "../partials/_media-tags.html" %}
 
 <body>
+  <!-- loader -->
+  <div class="loader">
+    <div class="line-loader">
+      <div class="loader-back-line">
+        <div class="loader-front-line"></div>
+      </div>
+    </div>
+  </div>
+  <!-- loader -->
+  {% include "partials/_navbar.html" %}
   <div class="site-wrapper" data-router-wrapper>
     <div data-router-view="{% if route %}{{ route }}{% else %}Template{% endif %}">
       <!-- BEGIN content -->

@@ -4,16 +4,7 @@ route: tour
 ---
 {% extends "layouts/_layout.html" %}
 {% block content %}
-<!-- loader -->
-<div class="loader">
-  <div class="line-loader">
-    <div class="loader-back-line">
-      <div class="loader-front-line"></div>
-    </div>
-  </div>
-</div>
-<!-- loader -->
-{% include "partials/_navbar.html" %}
+
 <header class="header tour-header" style="background-image: url(img/tours-bg/1st-tour-bg.jpg);">
   <div class="container header__container">
     <div class="tour-header__tour-content">
@@ -44,11 +35,13 @@ route: tour
   <section class="section">
     <div class="container last">
       <div class="tabs">
-        <div class="tabs__nav tabs-nav">
-          <div class="tabs-nav__item is-active" data-tab-name="tab-1">About tour</div>
-          <div class="tabs-nav__item" data-tab-name="tab-2">Programm</div>
-          <div class="tabs-nav__item" data-tab-name="tab-3">Price</div>
-          <div class="tabs-nav__item" data-tab-name="tab-4">Photos</div>
+        <div class="tabs__scroll-wrap">
+          <div class="tabs__nav tabs-nav">
+            <div class="tabs-nav__item is-active" data-tab-name="tab-1">About</div>
+            <div class="tabs-nav__item" data-tab-name="tab-2">Programm</div>
+            <div class="tabs-nav__item" data-tab-name="tab-3">Price</div>
+            <div class="tabs-nav__item" data-tab-name="tab-4">Photos</div>
+          </div>
         </div>
         <div class="tabs__content">
           <div class="tab is-active tab-1">
@@ -72,7 +65,7 @@ route: tour
   <div class="container section__container footer__container">
     <div class="main-footer__content">
       <div class="main-footer__content__left-content">
-        <h2><span class="splitter">Choose a day for your</span><br><span class="splitter">trip right now!</span></h2>
+        <h2><span class="splitter">Choose&nbsp;a&nbsp;day&nbsp;for&nbsp;your</span><br><span class="splitter">trip&nbsp;right&nbsp;now!</span></h2>
         <p>Full refund if the weather condition is not suitable.</p>
       </div>
       <div class="main-footer__content__right-content">

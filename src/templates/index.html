@@ -4,22 +4,13 @@ route: main
 ---
 {% extends "layouts/_layout.html" %}
 {% block content %}
-<!-- loader -->
-<div class="loader">
-  <div class="line-loader">
-    <div class="loader-back-line">
-      <div class="loader-front-line"></div>
-    </div>
-  </div>
-</div>
-<!-- loader -->
-{% include "partials/_navbar.html" %}
+
 <header class="header">
   <div class="header__content">
-    <h1><span class="splitter">DAY&nbsp;TRIP</span><br><span class="splitter">BALI</span></h1>
+    <h1>DAY TRIP<br>BALI</h1>
     <p class="header__content__description">We will create your best day on the island!</p>
     <div class="info-block">
-      <span class="info-block__text">This is the beautiful text for day trip Bali</span>
+      <span class="info-block__text">Perfectly organized and balanced tours</span>
     </div>
   </div>
   <div class="header__video">
@@ -29,8 +20,8 @@ route: main
   <section class="section">
     <div class="container section__container">
       <div class="top-content">
-        <h2><span class="splitter">Welcome</span><br> <span class="splitter">to&nbsp;Bali!</span></h2>
-        <p>We are a travel agency, organizing incredible tours in Bali. In just a day or two, we will show you the best spots on the island. Book your location…we’re waiting for you!</p>
+        <h2>Facts<br> about us</h2>
+        <p>We are №1 in Airbnb Bali Experience list, partner of TripAdvisor, Airbnb, Peek Pro. For 2&nbsp;years in business we have 5000 satisfied customers with 1 000+ reviews. Our core is team of certified guides.</p>
       </div>
       <div class="bottom-content welcome">
         <img src="img/1-beach.jpg" alt="beach">
@@ -44,7 +35,7 @@ route: main
   <section class="section">
     <div class="container section__container choose">
       <div class="top-content__choose">
-        <h2><span class="splitter">Choose&nbsp;your</span><br><span class="splitter">tour</span></h2>
+        <h2>Choose your <br>tour</h2>
       </div>
       <div class="bottom-content bottom-content__marign">
         {% include "partials/_slider.html" %}
@@ -53,7 +44,7 @@ route: main
   </section>
   <section class="section">
     <div class="container section__container last">
-      <h2><span class="splitter">Why&nbsp;do&nbsp;tourists</span><br><span class="splitter">choose&nbsp;us?</span></h2>
+      <h2>Why do tourists<br>choose&nbsp;us?</h2>
       <div class="choose-items">
         <div class="choose-items__item">
           {% include "partials/_choose-icon-1.html" %}
@@ -88,12 +79,12 @@ route: main
   <div class="container section__container footer__container">
     <div class="main-footer__content">
       <div class="main-footer__content__left-content">
-        <h2><span class="splitter">Contacts</span></h2>
+        <h2>Contacts</h2>
         <p>You can book a tour for any date, with free cancellation.</p>
         <div class="main-footer__content__left-content__contacts-items with-margin">
           <a href="#">+62 821 4595 7604 (WhatsApp)</a>
           <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
-           <div class="social-media">
+          <div class="social-media">
             <a href="#"><img src="img/insta.svg" alt=""></a>
             <a href="#"><img src="img/fb.svg" alt=""></a>
           </div>

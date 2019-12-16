@@ -17,13 +17,15 @@ h1
 	font-size: 136px
 	line-height: 1.1em
 	color: $dark-color
-.splitter
-	display: inline-block
 	span
-		opacity: 0
-		transform: translateX(40px)
 		display: inline-block
+		span
+			opacity: 0
+			transform: translateX(40px)
+			display: inline-block
 
+.whitespace
+	width: 0.25em
 a 
 	color: $accent-color
 
@@ -176,7 +178,12 @@ h2
 	color: $dark-color
 	// opacity: 0
 	// transform: translateX(40px)
-
+	span
+		display: inline-block
+		span
+			opacity: 0
+			transform: translateX(40px)
+			display: inline-block
 .top-content
 	width: 31%
 	p

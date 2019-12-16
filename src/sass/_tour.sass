@@ -3,6 +3,7 @@
 	position: relative
 	background-size: cover
 	background-repeat: no-repeat
+	background-color: rgba(black, 0.2)
 	&__tour-content
 		height: 100%
 		color: white
@@ -12,12 +13,18 @@
 		width: 58%
 		p
 			margin-top: 30px
+			opacity: 0
+			transform: translateY(40px)
 		.button
 			margin-top: 60px
+			opacity: 0
+			transform: translateY(40px)
 
 .tour-h1
 	font-size: 72px
 	color: white
+	opacity: 0
+	transform: translateY(40px)
 
 .white-block
 	position: absolute
@@ -28,6 +35,8 @@
 	display: flex
 	justify-content: space-between
 	align-items: center
+	opacity: 0
+	transform: translateY(100px)
 	&__item
 		margin-left: 50px
 		display: flex
@@ -38,10 +47,7 @@
 		&.first
 			margin-left: 0px
 
-
-.tabs-nav 
-	display: flex 
-	justify-content: flex-start 
+.tabs__scroll-wrap
 	position: sticky
 	top: 0px
 	left: auto
@@ -50,6 +56,12 @@
 	padding-bottom: 52px
 	padding-right: 40px
 	background: white
+	overflow: hidden
+	width: fit-content
+.tabs-nav 
+	display: flex 
+	justify-content: flex-start 
+
 	width: fit-content
 .tabs-nav__item 
 	border-bottom: 3px solid transparent 
@@ -58,7 +70,8 @@
 	font-size: 24px
 	opacity: 0.5 
 	user-select: none
-	margin-left: 50px 
+	margin-left: 50px
+	white-space: nowrap
 	&:nth-child(1) 
 		margin-left: 0px 
 	&.is-active 
@@ -86,6 +99,7 @@
 
 .tabs
 	position: relative
+	overflow: hidden
 	&__content
 		padding-top: 100px 
 		position: relative
@@ -97,7 +111,7 @@
 			margin-top: 25px
 
 .programm-item
-	margin-bottom: 60px
+	margin-top: 60px
 
 .h2-num
 	font-family: 'Cinzel', serif 

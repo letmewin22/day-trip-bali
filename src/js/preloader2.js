@@ -17,51 +17,74 @@ const MainLoader = () => {
   let videoHTML, videoBtn;
 
 
-  videoHTML = videoWrap.querySelector('video');
-  videoBtn = document.querySelector('.video-btn');
-  if (videoBtn) {
-    videoHTML.onclick = () => {
-      if (videoHTML.paused === true) {
-        videoHTML.play();
-        videoBtn.style.opacity = 0;
-      } else {
-        videoHTML.pause();
-        videoBtn.style.opacity = 10;
-      }
 
+  window.onload = (e) => {
+
+    let load = () => {
+      document.querySelector('.loader').style.opacity = 0;
+      document.querySelector('.loader').style.pointerEvents = 'none';
 
     };
-  }
+    load();
 
+    videoHTML = videoWrap.querySelector('video');
+    videoBtn = document.querySelector('.video-btn');
+    if (videoBtn) {
+      videoHTML.onclick = () => {
+        if (videoHTML.paused === true) {
+          videoHTML.play();
+          videoBtn.style.opacity = 0;
+        } else {
+          videoHTML.pause();
+          videoBtn.style.opacity = 10;
+        }
+
+
+      };
+    }
+
+  };
 
   const loading = () => {
 
     const target = document.querySelector('h1');
-    const results = Splitting({ target: target, by: 'words' });
+    const results = Splitting({ target: target, by: 'lines' });
     const target2 = document.querySelectorAll('h2');
     const results2 = Splitting({ target: target2, by: 'words' });
 
-    let h1Splitter = [...document.querySelectorAll('h1 span')];
+    let h1Splitter = [...document.querySelectorAll('h1 .word')];
     let h2Splitter = [...document.querySelectorAll('h2 span')];
     let h1 = document.querySelector('h1');
     let h1Desc = document.querySelector('.header__content__description');
     let video = document.querySelector('.header__video');
     let infoBlock = document.querySelector('.info-block');
-    for (let i = 0; i < h1Splitter.length; i++) {
-      charming(h1Splitter[i]);
+    for (let i = 0; i < results.length; i++) {
+      for (let j = 0; j < results[i].lines.length; j++) {
+        for (let k = 0; k < results[i].lines[j].length; k++) {
+          charming(results[i].lines[j][k]);
+        }
+      }
     }
+    // let arr = [...results[0].lines[1]];
+    // console.log(arr);
+    // for (let i = 0; i < arr.length; i++) {
+    //   charming(h1Splitter[i]);
+    // }
 
     for (let i = 0; i < h2Splitter.length; i++) {
       charming(h2Splitter[i]);
     }
 
     setTimeout(() => {
-      for (let i = 0; i < h1Splitter.length; i++) {
-        h1.style.opacity = '1';
-        let splitterSpan = h1Splitter[i].querySelectorAll('span');
-        let tl = new TimelineMax;
-        tl
-          .staggerTo(splitterSpan, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07);
+      for (let i = 0; i < results.length; i++) {
+
+        for (let i = 0; i < results[i].lines.length; i++) {
+          h1.style.opacity = '1';
+          let splitterSpan = h1Splitter[i].querySelectorAll('span');
+          let tl = new TimelineMax;
+          tl
+            .staggerTo(splitterSpan, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07);
+        }
       }
       let tl2 = new TimelineMax();
       tl2
