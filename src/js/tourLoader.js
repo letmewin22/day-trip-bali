@@ -1,26 +1,42 @@
-import { TimelineMax } from 'gsap';
-import imagesLoaded from 'imagesloaded';
+import { TimelineMax } from 'gsap'
+import imagesLoaded from 'imagesloaded'
+const charming = require('charming')
+import Splitting from 'splitting'
 
 const TourLoader = () => {
-  const h1 = document.querySelector('h1');
-  const p = document.querySelector('.tour-header__tour-content p');
-  const button = document.querySelector('.tour-header__tour-content .button');
-  const whiteBlock = document.querySelector('.white-block');
-  const img = document.querySelector('.tour-header');
+  const h1 = document.querySelector('h1')
+  const results = Splitting({ target: h1, by: 'words' })
+
+  let h1Splitter = [...document.querySelectorAll('h1 span')]
+  // const p = document.querySelector('.tour-header__tour-content p');
+  const button = document.querySelector('.tour-header__tour-content .button')
+  const whiteBlock = document.querySelector('.white-block')
+  const img = document.querySelector('.tour-header')
+  console.log(h1Splitter)
+  for (let i = 0; i < h1Splitter.length; i++) {
+    charming(h1Splitter[i])
+  }
 
   const loader = () => {
-    let tl = new TimelineMax();
-    tl
-      .to(h1, 1, { y: 0, opacity: 1, ease: Power2.easeInOut })
-      .to(p, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.2)
-      .to(button, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.4)
-      .to(whiteBlock, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.6);
-  };
+    for (let i = 0; i < h1Splitter.length; i++) {
+      h1.style.opacity = '1'
+      let splitterSpan = h1Splitter[i].querySelectorAll('span')
+      let tl = new TimelineMax
+      tl
+        .staggerTo(splitterSpan, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07)
+    }
+    let tl2 = new TimelineMax()
+    tl2
+      // .to(h1, 1, { y: 0, opacity: 1, ease: Power2.easeInOut })
+      // .to(p, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.2)
+      .to(button, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.2)
+      .to(whiteBlock, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.4)
+  }
   imagesLoaded(img, { background: true }, function() {
-    loader();
-  });
+    loader()
+  })
 
 
-};
+}
 
-export default TourLoader;
+export default TourLoader

@@ -9,7 +9,7 @@
 $sass-burger-add-vendor-prefixes: true !default;
 
 // Burger
-@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+@mixin burger($width: 10px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
     $burger-height: $height !global;
     $burger-gutter: $gutter !global;
 
@@ -184,11 +184,11 @@ $gray: gray;
     z-index: 10011;
 
     span {
-        @include burger(30px, 3px, 6px, $dark-color); // gray
+        @include burger(24px, 2px, 4px, $dark-color); // gray
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-left: -15px;
+        margin-left: -12px;
         margin-top: -1.5px;
     }
 
@@ -196,10 +196,6 @@ $gray: gray;
         span {
             @include burger-to-cross;
 
-            &:before,
-            &:after {
-                background-color: white;
-            }
         }
     }
 

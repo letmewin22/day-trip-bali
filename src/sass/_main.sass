@@ -17,6 +17,7 @@ h1
 	font-size: 136px
 	line-height: 1.1em
 	color: $dark-color
+	opacity: 0
 	span
 		display: inline-block
 		span
@@ -67,7 +68,7 @@ a
 	display: flex
 	justify-content: space-between
 	position: absolute
-	z-index: 100
+	z-index: 1001
 	top: 4%
 	width: 100%
 	padding-left: $hor-dist
@@ -245,6 +246,9 @@ h3
 	align-items: center
 	a
 		margin-left: 20px
+	.dif-soc
+		margin-left: 0px
+		margin-right: 20px
 
 .main-footer
 	&__content
@@ -269,6 +273,8 @@ h3
 
 .footer-btn
 	margin-top: 60px
+
+
 
 .loader
   position: fixed
