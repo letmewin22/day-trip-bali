@@ -5,13 +5,17 @@ const charming = require('charming')
 import Splitting from 'splitting'
 
 const MainLoader = () => {
-
-  let video = `<video poster="img/main-poster-pc.jpg" autoplay="" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%">
-      <source src="video/video.mp4" type="video/mp4"></video>`
-  let videoMob = `<video poster="img/main-poster.jpg" preload="metadata" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%" webkit-playsinline playsinline>
-      <source src="video/video.mp4" type="video/mp4"></video> <div class="video-btn"><img src="video/video-button.svg" alt="play button"></div>`
-
   let videoWrap = document.querySelector('.header__video')
+  const videoSrc = videoWrap.getAttribute('data-video-src')
+  const posterPC = videoWrap.getAttribute('data-poster-pc')
+  const posterMob = videoWrap.getAttribute('data-poster-mob')
+  const mobBtn = videoWrap.getAttribute('data-mob-btn')
+  let video = `<video poster="${posterPC}" autoplay="" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%">
+      <source src="${videoSrc}" type="video/mp4"></video>`
+  let videoMob = `<video poster="${posterMob}" preload="metadata" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%" webkit-playsinline playsinline>
+      <source src="${videoSrc}" type="video/mp4"></video> <div class="video-btn"><img src="${mobBtn}" alt="play button"></div>`
+
+
   screen.width > 960 ? videoWrap.innerHTML = video : videoWrap.innerHTML = videoMob
 
   let videoHTML, videoBtn

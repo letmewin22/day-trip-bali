@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <title>contacts page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -23,82 +22,76 @@
     <meta property="og:site_name" content="emotiON">
     <link rel="stylesheet" media="all" href="css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-
-
-<body>
-  <!-- loader -->
-  <div class="loader">
-    <div class="line-loader">
-      <div class="loader-back-line">
-        <div class="loader-front-line"></div>
-      </div>
-    </div>
-  </div>
-  <!-- loader -->
-  <div class="nav">
-  <a href="index.html" class="nav__logo">
-    <img src="img/logo.svg" alt="">
-  </a>
-  <nav class="nav__items">
-    <ul class='nav__items__wrapper'>
-      <li class="nav__item"><a href="#">about</a></li>
-      <!-- <li class="nav__item"><a href="#">tours</a></li> -->
-      <li class="nav__item dropdown">
-        <div class="dropbtn">tours
-          <i class="fa fa-caret-down"></i>
-        </div>
-        <div class="dropdown-content">
-          <a href="day-trip-nusa-penida.html">Nusa Penida</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </li>
-      <li class="nav__item"><a href="contacts.html">contacts</a></li>
-      <li class="nav__item"><a href="reviews.html">reviews</a></li>
-    </ul>
-  </nav>
-  <div class="burger">
-    <span></span>
-  </div>
-</div>
-  <div class="site-wrapper" data-router-wrapper>
-    <div data-router-view="contacts">
-      <!-- BEGIN content -->
-      
-<div class="page-contacts">
-  <div class="page-contacts-wrapper page-contacts__wrapper">
-    <div class="page-contacts-wrapper__left">
-      <img src="img/contacts.jpg" alt="contacts">
-    </div>
-    <div class="page-contacts-wrapper__right">
-      <div class="page-contacts-wrapper__text">
-      <h2>Contacts</h2>
-      <p>You can book a tour for any date with the possibility of free cancellation.</p>
-      </div>
-      <div class="main-footer__content__left-content__contacts-items with-margin">
-        <a href="#">+62 821 4595 7604 (WhatsApp)</a>
-        <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
-        <div class="social-media">
-          <a class="dif-soc" href="#"><img src="img/insta.svg" alt=""></a>
-          <a class="dif-soc" href="#"><img src="img/fb.svg" alt=""></a>
+  </head>
+  <body>
+    <!-- loader -->
+    <div class="loader">
+      <div class="line-loader">
+        <div class="loader-back-line">
+          <div class="loader-front-line"></div>
         </div>
       </div>
-      <div class="button">
-        <span class="form-button">Book tour</span>
-        <div class="button__bg"></div>
+    </div>
+    <!-- loader -->
+    <div class="nav">
+      <a href="index.html" class="nav__logo">
+        <img src="img/logo.svg" alt="">
+      </a>
+      <nav class="nav__items">
+        <ul class='nav__items__wrapper'>
+          <li class="nav__item only-mobile is-current"><a href="index.html">home</a></li>
+          <li class="nav__item"><a href="about.html">about</a></li>
+          <!-- <li class="nav__item"><a href="#">tours</a></li> -->
+          <li class="nav__item dropdown">
+            <div class="dropbtn">tours <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="dropdown-content">
+              <a href="day-trip-nusa-penida.html">Nusa Penida</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </li>
+          <li class="nav__item"><a href="contacts.html">contacts</a></li>
+          <li class="nav__item"><a href="reviews.html" data-router-disabled>reviews</a></li>
+        </ul>
+      </nav>
+      <div class="burger">
+        <span></span>
       </div>
     </div>
-  </div>
-</div>
-
-      <!-- END content -->
+    <div class="site-wrapper" data-router-wrapper>
+      <div data-router-view="contacts">
+        <!-- BEGIN content -->
+        <div class="page-contacts">
+          <div class="page-contacts-wrapper page-contacts__wrapper">
+            <div class="page-contacts-wrapper__left">
+              <img src="img/contacts.jpg" alt="contacts">
+            </div>
+            <div class="page-contacts-wrapper__right">
+              <div class="page-contacts-wrapper__text">
+                <h2>Contacts</h2>
+                <p>You can book a tour for any date with the possibility of free cancellation.</p>
+              </div>
+              <div class="main-footer__content__left-content__contacts-items with-margin">
+                <a href="#">+62 821 4595 7604 (WhatsApp)</a>
+                <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
+                <div class="social-media">
+                  <a class="dif-soc" href="#"><img src="img/insta.svg" alt=""></a>
+                  <a class="dif-soc" href="#"><img src="img/fb.svg" alt=""></a>
+                </div>
+              </div>
+              <div class="button">
+                <span class="form-button">Book tour</span>
+                <div class="button__bg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END content -->
+      </div>
     </div>
-  </div>
-  <!-- BEGIN scripts -->
-  <script src="js/app.js"></script>
-  <!-- END scripts -->
-</body>
-
+    <!-- BEGIN scripts -->
+    <script src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
 </html>

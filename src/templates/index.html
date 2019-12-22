@@ -13,7 +13,7 @@ route: main
       <span class="info-block__text">Perfectly organized and balanced tours</span>
     </div>
   </div>
-  <div class="header__video" style="min-height: 60vh">
+  <div data-video-src="video/video.mp4" data-poster-pc="img/main-poster-pc.jpg" data-poster-mob="img/main-poster.jpg" data-mob-btn="video/video-button.svg" class="header__video" style="min-height: 60vh">
   </div>
 </header>
 <main>
@@ -49,7 +49,7 @@ route: main
         <div class="choose-items__item">
           {% include "partials/_choose-icon-1.html" %}
           <h3>Create your best day</h3>
-          <p>All our comments are telling one thing — we are making people happier while creating the best day for them on the island. You can check it here — <span><a href="#">reviews</a></span></p>
+          <p>All our comments are telling one thing — we are making people happier while creating the best day for them on the island. You can check it here — <span><a href="reviews.html" data-router-disabled>reviews</a></span></p>
         </div>
         <div class="choose-items__item">
           {% include "partials/_choose-icon-2.html" %}

@@ -12,7 +12,6 @@ const TourLoader = () => {
   const button = document.querySelector('.tour-header__tour-content .button')
   const whiteBlock = document.querySelector('.white-block')
   const img = document.querySelector('.tour-header')
-  console.log(h1Splitter)
   for (let i = 0; i < h1Splitter.length; i++) {
     charming(h1Splitter[i])
   }
@@ -27,8 +26,6 @@ const TourLoader = () => {
     }
     let tl2 = new TimelineMax()
     tl2
-      // .to(h1, 1, { y: 0, opacity: 1, ease: Power2.easeInOut })
-      // .to(p, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.2)
       .to(button, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.2)
       .to(whiteBlock, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.4)
   }

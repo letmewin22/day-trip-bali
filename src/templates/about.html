@@ -1,0 +1,113 @@
+---
+title: about page
+route: about
+---
+{% extends "layouts/_layout.html" %}
+{% block content %}
+<header class="header">
+  <div class="header__content">
+    <h1>ABOUT</h1>
+    <p class="header__content__description">We create the unique adventures in Bali</p>
+    <div class="info-block">
+      <span class="info-block__text">We create a positive emotions!</span>
+    </div>
+  </div>
+  <div class="header__video" style="min-height: 60vh">
+    <div class="header__photo" style="background-image: url(img/about-bg.jpg);"></div>
+  </div>
+</header>
+<main>
+  <section class="section">
+    <div class="container section__container">
+      <div class="top-content bigger">
+        <h2>We offer not<br>just a tours </h2>
+        <p>We offer you new emotions, new friends, one in the life time experiences and best memories from your Bali vacation!
+          <br><br>
+          We made huge job to perfectly organize and balance our itineraries including visit to most interesting destinations around Bali and Nusa Penida islands. Sit back, relax and enjoy your adventure, our crew will take care of the rest.</p>
+      </div>
+      <div class="bottom-content welcome">
+        <img src="img/about-1.jpg" alt="beach">
+        <img src="img/about-2.jpg" alt="beach">
+      </div>
+      <div class="waves-wrapper">
+        {% include "partials/_waves.html" %}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container section__container">
+      <div class="history-wrapper">
+        <div class="history-wrapper__left">
+          <img src="img/about-3.jpg" alt="underwater">
+        </div>
+        <div class="history-wrapper__right">
+          <h2>The beginning<br>of Day Trip Bali</h2>
+          <p>We have been started our firsts tours in 2014, in that time not many people know about Nusa Penida island. It was amazing wild place, full of green tropical jungles, white send beaches without any people, no restaurants, no hotels, no traffic jams there.
+            <br><br>
+            The waters around was full of fish and corals, and it was the rare place where we can see the giant Oceanic Manta Rays in wild habitat.
+            <br><br>
+            For last years Nusa Penida become more popular for visitors form all over the world, but still has the amazing atmosphere of wild adventure there. And we share this atmosphere with you!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container section__container last">
+      <div class="price__wrapper">
+        <h2 class="custom-width">Touch the nature and authentic traditions of Indonesia</h2>
+        <div class="price__items">
+          <div class="price__item">
+            <img src="img/about-icons/1.svg" alt="">
+            <p>Ride a private boat around Bali and Nusa Penida</p>
+          </div>
+          <div class="price__item">
+            <img src="img/about-icons/2.svg" alt="">
+            <p>Free photo and video report</p>
+          </div>
+          <div class="price__item">
+            <img src="img/about-icons/3.svg" alt="">
+            <p>Swim with giant oceanic Manta Rays</p>
+          </div>
+          <div class="price__item">
+            <img src="img/about-icons/4.svg" alt="">
+            <p>Snorkeling in 3 different spots</p>
+          </div>
+          <div class="price__item">
+            <img src="img/about-icons/5.svg" alt="">
+            <p>Lunch in nice restaurant with infinity pool and volcano view</p>
+          </div>
+          <div class="price__item">
+            <img src="img/about-icons/6.svg" alt="">
+            <p>Visit Kelingking cliff during car tour</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer tour-footer">
+  <div class="container section__container footer__container">
+    <div class="main-footer__content">
+      <div class="main-footer__content__left-content">
+        <h2>Contacts</h2>
+        <p>Our customers say that the day with us was the best in all there Bali vacation</p>
+        <p>Choose how you want to spend your best day with us!</p>
+      </div>
+      <div class="main-footer__content__right-content">
+        <div class="main-footer__content__left-content__contacts-items float-right">
+          <a href="#">+62 821 4595 7604 (WhatsApp)</a>
+          <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
+          <div class="social-media">
+            <a href="#"><img src="img/insta.svg" alt=""></a>
+            <a href="#"><img src="img/fb.svg" alt=""></a>
+          </div>
+          <div class="button footer-btn">
+            <span class="form-button">Book now</span>
+            <div class="button__bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

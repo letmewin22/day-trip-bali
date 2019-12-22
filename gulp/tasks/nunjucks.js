@@ -25,13 +25,13 @@ function renderHtml(onlyChanged) {
             PRODUCTION: config.production,
             path: [config.src.templates]
         }))
-        // .pipe(prettify({
-        //     indent_size: 2,
-        //     wrap_attributes: 'auto', // 'force'
-        //     preserve_newlines: false,
-        //     // unformatted: [],
-        //     end_with_newline: true
-        // }))
+        .pipe(prettify({
+            indent_size: 2,
+            wrap_attributes: 'auto', // 'force'
+            preserve_newlines: false,
+            // unformatted: [],
+            end_with_newline: true
+        }))
         .pipe(gulp.dest(config.dest.html));
 }
 

@@ -9,19 +9,44 @@ import CustomRendererMain from './CustomRenderMain'
 import CustomRendererReviews from './CustomRenderReviews'
 import CustomRendererTours from './CustomRenderTours'
 import CustomRendererContacts from './CustomRenderContacts'
+import CustomRendererAbout from './CustomRenderAbout'
+
+const adminBar = document.querySelector('#wpadminbar')
+const links = document.querySelectorAll('.nav__item a')
+
+if (!adminBar) {
+
+  const H = new Highway.Core({
+    renderers: {
+      main: CustomRendererMain,
+      reviews: CustomRendererReviews,
+      tour: CustomRendererTours,
+      contacts: CustomRendererContacts,
+      about: CustomRendererAbout
+    },
+    transitions: {
+      default: Fade
+    }
+  })
+
+  H.on('NAVIGATE_IN', ({ to, location }) => {
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i]
+
+      link.classList.remove('is-current')
+
+      if (link.href === location.href) {
+        link.classList.add('is-current')
+      }
+    }
+  })
+
+  H.on('NAVIGATE_END', ({ from, to, location }) => {
+    FormInputs()
+  })
+}
 
 
-const H = new Highway.Core({
-  renderers: {
-    main: CustomRendererMain,
-    reviews: CustomRendererReviews,
-    tour: CustomRendererTours,
-    contacts: CustomRendererContacts
-  },
-  transitions: {
-    default: Fade
-  }
+window.addEventListener('load', (e) => {
+  FormInputs()
 })
-
-
-FormInputs()

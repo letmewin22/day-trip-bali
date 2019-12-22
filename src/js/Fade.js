@@ -23,6 +23,7 @@ export default class Fade extends Highway.Transition {
 
   in({ from, to, trigger, done }) {
     from.remove()
+    document.body.classList.remove('fixed')
     window.scrollTo(0, 0)
     let tl = new TimelineMax({ onComplete: done })
     tl

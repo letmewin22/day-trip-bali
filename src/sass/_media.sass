@@ -1,5 +1,5 @@
 @media (max-width: 1730px)
-	.header
+	.header, .review-header
 		&__content
 			padding-left: 10vw
 			padding-right: 10vw
@@ -17,6 +17,12 @@
 		font-size: 60px
 	.white-block
 		padding: 50px 70px
+	.history-wrapper
+		&__left
+			width: 50%
+			height: 48vw
+	.custom-width
+		width: 80%
 
 @media (max-width: 1460px)
 	.header
@@ -46,9 +52,11 @@
 		&__right
 			padding-top: 15vh
 			padding-bottom: 15vh
+	.custom-width
+		width: 90%
 
 @media (max-width: 1305px)
-	.header
+	.header, .review-header
 		&__content
 			padding-left: 5vw
 			padding-right: 5vw
@@ -61,14 +69,16 @@
 		padding-left: 5vw
 		padding-right: 5vw
 
-	.strip-nav 
-	    position: static
-	    transform: none
-	    width: 40px
-	    // padding-right: 10vw
-	    margin-top: 20px
+	.strip-nav  
+	    left: 88%
+	    top: -50px
+	.img-outer
+		height: 380px
 	.tab__wrapper
 		flex-direction: column
+	.wrapper
+		&__left
+			width: 100%
 	.wrapper__right
 		width: 100%
 		margin-top: 50px
@@ -84,7 +94,10 @@
 		padding-bottom: 20px
 		padding-right: 30px
 	.tabs
-		margin-top: -20px
+		margin-top: 0px
+	.tab-2
+		h2
+			width: 100%
 	.gallery__wrapper h2
 		margin-bottom: 20px
 	.tour-header__tour-content p
@@ -93,6 +106,10 @@
 		margin-top: 25px
 	.wrapper__left
 		margin-right: 0px
+	.history-wrapper
+		&__left
+			width: 50%
+			height: 68vw
 
 @media (max-width: 1095px)
 	body
@@ -195,6 +212,15 @@
 			pointer-events: auto
 			opacity: 1
 			transform: translateX(0px)
+	.nav
+		position: fixed
+		top: 3%
+		&__logo
+			z-index: 10011
+			&.invisible
+				opacity: 0
+				pointer-events: 0
+
 	.nav__item
 		margin-left: 0px
 		transform: translateX(100%)
@@ -277,10 +303,42 @@
 			.main-footer__content__left-content__contacts-items 
 				&.with-margin
 					margin-top: 40px
+	.history-wrapper
+		flex-direction: column
+		&__left
+			width: 100%
+			height: 50vh
+		&__right
+			width: 100%
+			margin-left: 0px
+			margin-top: 30px
+	.reviews-content-wrapper
+		flex-direction: column-reverse
+		&__left
+			width: 100%
+			margin-top: 30px
+			font-size: 18px
+			margin-bottom: 50px
+			.review-header__content__description
+				font-size: 18px
+				margin-top: 0px
+			.TA_cdswritereviewnew
+				margin-top: 36px
+			.sec-p
+				margin-top: 36px
+			.TA_cdsratingsonlynarrow
+				margin-top: 36px
+		&__right
+			width: 100%
+			margin-top: 36px
+	.reviews-item
+		margin-bottom: 25px
+	.only-mobile
+		display: block
 
 
 @media (max-width: 460px)
-	.header
+	.header, .review-header
 		&__content
 			height: auto
 			padding-top: 100px
@@ -296,6 +354,9 @@
 		.header__content__description
 			font-size: 18px
 			margin-top: 10px
+	.header__photo
+		height: 100%
+		object-fit: cover
 	.img-outer 
 		height: 246px
 		width: 290px
@@ -320,6 +381,8 @@
     	font-size: 16px
 	.slideshow
     	height: 40vh
+    	.slide
+    		height: 40vh
 	.boxnav
 		padding-left: 10px
 		padding-right: 10px
@@ -346,6 +409,19 @@
 		overflow: hidden
 		// max-height: 30px
 	.wrapper__right
+		margin-top: 25px
+	.history-wrapper
+		&__left
+			height: 35vh
+		&__right
+			p
+				margin-top: 20px
+	.custom-width
+		width: 104%
+	.reviews-rate
+		svg
+			width: 10px 
+	.reviews-review
 		margin-top: 25px
 
 @media (max-width: 350px)
