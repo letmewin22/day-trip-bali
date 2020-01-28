@@ -38,22 +38,24 @@
         <img src="img/logo.svg" alt="">
       </a>
       <nav class="nav__items">
-        <ul class='nav__items__wrapper'>
-          <li class="nav__item only-mobile is-current"><a href="index.html">home</a></li>
-          <li class="nav__item"><a href="about.html">about</a></li>
-          <!-- <li class="nav__item"><a href="#">tours</a></li> -->
-          <li class="nav__item dropdown">
-            <div class="dropbtn">tours <i class="fa fa-caret-down"></i>
-            </div>
-            <div class="dropdown-content">
-              <a href="day-trip-nusa-penida.html">Nusa Penida</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </li>
-          <li class="nav__item"><a href="contacts.html">contacts</a></li>
-          <li class="nav__item"><a href="reviews.html" data-router-disabled>reviews</a></li>
-        </ul>
+        <div class="nav__items__wrap--wrapper">
+          <ul class='nav__items__wrapper'>
+            <li class="nav__item only-mobile is-current"><a href="index.html">home</a></li>
+            <li class="nav__item"><a href="about.html">about</a></li>
+            <!-- <li class="nav__item"><a href="#">tours</a></li> -->
+            <li class="nav__item dropdown">
+              <div class="dropbtn">tours <span>&#9662;</span>
+              </div>
+              <div class="dropdown-content">
+                <a href="day-trip-nusa-penida.html">Nusa Penida</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li class="nav__item"><a href="contacts.html">contacts</a></li>
+            <li class="nav__item"><a href="reviews.html" data-router-disabled>reviews</a></li>
+          </ul>
+        </div>
       </nav>
       <div class="burger">
         <span></span>
@@ -81,8 +83,8 @@
                 <p>We are №1 in Airbnb Bali Experience list, partner of TripAdvisor, Airbnb, Peek Pro. For 2&nbsp;years in business we have 5000 satisfied customers with 1 000+ reviews. Our core is team of certified guides.</p>
               </div>
               <div class="bottom-content welcome">
-                <img src="img/1-beach.jpg" alt="beach">
-                <img src="img/2-beach.jpg" alt="beach">
+                <img src="img/thumbnails/hor.jpg" data-lazy="img/1-beach.jpg" alt="beach">
+                <img src="img/thumbnails/ver.jpg" data-lazy="img/2-beach.jpg" alt="beach">
               </div>
               <div class="waves-wrapper">
                 <svg viewBox="0 0 120 28">
@@ -109,7 +111,7 @@
                       <div class="strip__item">
                         <div class="item__wrapper">
                           <div class="img-outer img-outer">
-                            <div class="img-inner-2" style="background-image: url(img/tours-slider/slide-1.jpg)"></div>
+                            <div data-bglazy="img/tours-slider/slide-1.jpg" class="img-inner-2"></div>
                           </div>
                         </div>
                         <div class="strip-after">
@@ -262,7 +264,7 @@
                 </div>
               </div>
               <div class="main-footer__content__right-content">
-                <form class="form" name="form">
+                <form data-mail="mail.php" class="form" name="form">
                   <!-- Hidden Required Fields -->
                   <input type="hidden" name="project_name" value="DayTripBali site">
                   <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
@@ -287,11 +289,6 @@
                       <span class="label-content">Your questions</span>
                     </label>
                   </div>
-                  <!--         <input class="input-checkbox" id="input-checkbox" type="checkbox" style="display: none;" checked="checked" />
-        <label class="checkbox" for="input-checkbox"><span>
-            <svg width="12px" height="10px" viewbox="0 0 12 10">
-              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-            </svg></span><span>Я даю згоду на обробку моїх персональних данних</span></label> -->
                   <div class="button">
                     <input type="submit" value="Send" class="form-button">
                     <div class="button__bg"></div>

@@ -28,44 +28,67 @@
 		.sec-p
 			margin-top: 60px
 		.TA_cdsratingsonlynarrow
-			margin-top: 40px
+			margin-top: 110px
 		position: sticky
 		top: 0px
 	&__right
 		width: 40%
 
 .reviews-item
-	border-radius: 5px
-	box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.05)
-	padding: 30px 20px
-	margin-bottom: 50px
+	padding-top: 40px
+	padding-bottom: 60px
+	border-bottom: 1px rgba(black, 0.1) solid
 
 .reviews-interface
 	width: 100%
 	display: flex
 	justify-content: space-between
-	align-items: center
+	align-items: flex-start
 	line-height: 1em
 
 .reviews-name
 	+medium
 	font-size: 18px
-	color: black
+	color: rgba(black, 0.7)
 
 .reviews-date
 	font-size: 14px
-	color: #54555C
+	color: rbga(#54555C, 0.7)
 
 .reviews-rate
 	display: flex
-	margin-top: 8px
+	margin-top: 12px
 	width: fit-content
+	&.assessment
+		margin-top: 0px
+		margin-left: 65px
+		svg
+			display: block
+			margin-right: 8px
+			width: 18px
+			height: 18px
+			fill: #54555C
 	svg
 		display: block
 		margin-right: 8px
 		width: 12px
 		fill: #54555C
+		transition: fill .2s ease
 		&.active
 			fill: $accent-color
+		&.disabled
+			pointer-events: none
 .reviews-review
-	margin-top: 40px
+	margin-top: 20px
+.reviews-rating
+	display: flex
+	align-items: center
+	margin-top: 60px
+	+h3
+	font-size: 16px
+	span
+		opacity: 0.7
+		line-height: 1em
+.reviews-items
+	display: flex
+	flex-direction: column-reverse 

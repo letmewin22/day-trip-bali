@@ -15,10 +15,17 @@ class CustomRendererTours extends Highway.Renderer {
 
     Gallery()
 
+    // const days = document.querySelector('.white-block__item.first span')
+    // if (days.innerHTML !== '2 day') {
+    //   days.style.display = 'none'
+    // }
+
     if (loader.classList.contains('loaded') === true) {
       let navI = document.querySelectorAll('.nav__item')
-      for (let i = 0; i < navI.length; i++) {
-        navI[i].classList.add('inverse')
+      if (screen.width > 850) { 
+        for (let i = 0; i < navI.length; i++) {
+          navI[i].classList.add('inverse')
+        }
       }
       TourLoader()
     } else {
@@ -33,8 +40,10 @@ class CustomRendererTours extends Highway.Renderer {
 
         })
         let navI = document.querySelectorAll('.nav__item')
-        for (let i = 0; i < navI.length; i++) {
-          navI[i].classList.add('inverse')
+        if (screen.width > 850) { 
+          for (let i = 0; i < navI.length; i++) {
+            navI[i].classList.add('inverse')
+          }
         }
       }
     }

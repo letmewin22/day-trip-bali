@@ -24,8 +24,8 @@ route: main
         <p>We are №1 in Airbnb Bali Experience list, partner of TripAdvisor, Airbnb, Peek Pro. For 2&nbsp;years in business we have 5000 satisfied customers with 1 000+ reviews. Our core is team of certified guides.</p>
       </div>
       <div class="bottom-content welcome">
-        <img src="img/1-beach.jpg" alt="beach">
-        <img src="img/2-beach.jpg" alt="beach">
+        <img src="img/thumbnails/hor.jpg" data-lazy="img/1-beach.jpg" alt="beach">
+        <img src="img/thumbnails/ver.jpg" data-lazy="img/2-beach.jpg" alt="beach">
       </div>
       <div class="waves-wrapper">
         {% include "partials/_waves.html" %}
@@ -91,7 +91,7 @@ route: main
         </div>
       </div>
       <div class="main-footer__content__right-content">
-        <form class="form" name="form">
+        <form data-mail="mail.php" class="form" name="form">
           <!-- Hidden Required Fields -->
           <input type="hidden" name="project_name" value="DayTripBali site">
           <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
@@ -116,11 +116,6 @@ route: main
               <span class="label-content">Your questions</span>
             </label>
           </div>
-          <!--         <input class="input-checkbox" id="input-checkbox" type="checkbox" style="display: none;" checked="checked" />
-        <label class="checkbox" for="input-checkbox"><span>
-            <svg width="12px" height="10px" viewbox="0 0 12 10">
-              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-            </svg></span><span>Я даю згоду на обробку моїх персональних данних</span></label> -->
           <div class="button">
             <input type="submit" value="Send" class="form-button">
             <div class="button__bg"></div>

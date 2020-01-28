@@ -22,10 +22,11 @@ const TourLoader = () => {
       let splitterSpan = h1Splitter[i].querySelectorAll('span')
       let tl = new TimelineMax
       tl
-        .staggerTo(splitterSpan, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07)
+        .staggerTo(splitterSpan, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07, 0)
     }
     let tl2 = new TimelineMax()
     tl2
+      .to(img, 0.5, { opacity: 1, ease: Power2.easeInOut }, 0)
       .to(button, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.2)
       .to(whiteBlock, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.4)
   }

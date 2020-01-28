@@ -38,22 +38,24 @@
         <img src="img/logo.svg" alt="">
       </a>
       <nav class="nav__items">
-        <ul class='nav__items__wrapper'>
-          <li class="nav__item only-mobile is-current"><a href="index.html">home</a></li>
-          <li class="nav__item"><a href="about.html">about</a></li>
-          <!-- <li class="nav__item"><a href="#">tours</a></li> -->
-          <li class="nav__item dropdown">
-            <div class="dropbtn">tours <i class="fa fa-caret-down"></i>
-            </div>
-            <div class="dropdown-content">
-              <a href="day-trip-nusa-penida.html">Nusa Penida</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </li>
-          <li class="nav__item"><a href="contacts.html">contacts</a></li>
-          <li class="nav__item"><a href="reviews.html" data-router-disabled>reviews</a></li>
-        </ul>
+        <div class="nav__items__wrap--wrapper">
+          <ul class='nav__items__wrapper'>
+            <li class="nav__item only-mobile is-current"><a href="index.html">home</a></li>
+            <li class="nav__item"><a href="about.html">about</a></li>
+            <!-- <li class="nav__item"><a href="#">tours</a></li> -->
+            <li class="nav__item dropdown">
+              <div class="dropbtn">tours <span>&#9662;</span>
+              </div>
+              <div class="dropdown-content">
+                <a href="day-trip-nusa-penida.html">Nusa Penida</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li class="nav__item"><a href="contacts.html">contacts</a></li>
+            <li class="nav__item"><a href="reviews.html" data-router-disabled>reviews</a></li>
+          </ul>
+        </div>
       </nav>
       <div class="burger">
         <span></span>
@@ -82,8 +84,8 @@
                 <p>We offer you new emotions, new friends, one in the life time experiences and best memories from your Bali vacation! <br><br> We made huge job to perfectly organize and balance our itineraries including visit to most interesting destinations around Bali and Nusa Penida islands. Sit back, relax and enjoy your adventure, our crew will take care of the rest.</p>
               </div>
               <div class="bottom-content welcome">
-                <img src="img/about-1.jpg" alt="beach">
-                <img src="img/about-2.jpg" alt="beach">
+                <img src="img/thumbnails/hor.jpg" data-lazy="img/about-1.jpg" alt="beach">
+                <img src="img/thumbnails/ver.jpg" data-lazy="img/about-2.jpg" alt="beach">
               </div>
               <div class="waves-wrapper">
                 <svg viewBox="0 0 120 28">
@@ -100,7 +102,7 @@
             <div class="container section__container">
               <div class="history-wrapper">
                 <div class="history-wrapper__left">
-                  <img src="img/about-3.jpg" alt="underwater">
+                  <img src="img/thumbnails/about-3.jpg" data-lazy="img/about-3.jpg" alt="underwater">
                 </div>
                 <div class="history-wrapper__right">
                   <h2>The beginning<br>of Day Trip Bali</h2>

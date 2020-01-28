@@ -1,10 +1,10 @@
 import Highway from '@dogstudio/highway'
 import Fade from './Fade'
-import sayHello from './lib/sayHello.js'
-import FormInputs from './form.js'
+// import sayHello from './lib/sayHello.js'
 import './menu.js'
 import './scroll.js'
 import './loader.js'
+import lazyLoader from './lazyload.js'
 import CustomRendererMain from './CustomRenderMain'
 import CustomRendererReviews from './CustomRenderReviews'
 import CustomRendererTours from './CustomRenderTours'
@@ -29,6 +29,8 @@ if (!adminBar) {
     }
   })
 
+
+
   H.on('NAVIGATE_IN', ({ to, location }) => {
     for (let i = 0; i < links.length; i++) {
       const link = links[i]
@@ -41,12 +43,25 @@ if (!adminBar) {
     }
   })
 
-  H.on('NAVIGATE_END', ({ from, to, location }) => {
-    FormInputs()
+  window.addEventListener('load', (e) => {
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i]
+
+      link.classList.remove('is-current')
+
+      if (link.href === location.href) {
+        link.classList.add('is-current')
+      }
+    }
   })
+
+  H.on('NAVIGATE_END', ({ from, to, location }) => {
+    lazyLoader()
+  })
+
+
 }
 
-
-window.addEventListener('load', (e) => {
-  FormInputs()
-})
+window.addEventListener('DOMContentLoaded', (e) => {
+  lazyLoader()
+}, false)
