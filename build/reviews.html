@@ -71,7 +71,7 @@
               <div class="reviews-content-wrapper__left">
                 <p class="review-header__content__description">We are looking forward to your feedback.</p>
                 <div class="reviews-rating">
-                  <span class="review-label">Your assessment</span>
+                  <span class="review-label">Your assessment:</span>
                   <div data-rate="0" class="reviews-rate assessment">
                     <svg width="12px" height="12px" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.28359 0.466934L7.81 4.07968L11.7178 4.4154C11.9888 4.4388 12.0991 4.77698 11.8934 4.955L8.92924 7.52304L9.81749 11.3434C9.87909 11.6089 9.59143 11.8177 9.35859 11.6766L6.00024 9.65127L2.64189 11.6766C2.40843 11.8171 2.12138 11.6083 2.18298 11.3434L3.07123 7.52304L0.106495 4.95438C-0.0992442 4.77636 0.0104011 4.43819 0.28205 4.41478L4.18986 4.07907L5.71627 0.466934C5.82222 0.215612 6.17764 0.215612 6.28359 0.466934V0.466934Z" />
@@ -89,6 +89,7 @@
                       <path d="M6.28359 0.466934L7.81 4.07968L11.7178 4.4154C11.9888 4.4388 12.0991 4.77698 11.8934 4.955L8.92924 7.52304L9.81749 11.3434C9.87909 11.6089 9.59143 11.8177 9.35859 11.6766L6.00024 9.65127L2.64189 11.6766C2.40843 11.8171 2.12138 11.6083 2.18298 11.3434L3.07123 7.52304L0.106495 4.95438C-0.0992442 4.77636 0.0104011 4.43819 0.28205 4.41478L4.18986 4.07907L5.71627 0.466934C5.82222 0.215612 6.17764 0.215612 6.28359 0.466934V0.466934Z" />
                     </svg>
                   </div>
+                  <span class="form-validate-text rate">rating must be at least one</span>
                 </div>
                 <form class="form" name="form">
                   <div class="input-wrapper">
@@ -96,13 +97,14 @@
                     <label for="name" class="label">
                       <span class="label-content">Your name</span>
                     </label>
+                    <span class="form-validate-text name">name must be at least 3 characters</span>
                   </div>
                   <div class="input-wrapper">
-                    <input type="text" class="text-field" maxlength="256" name="Review" id="review" autocomplete="off">
+                    <textarea type="text" class="text-field" maxlength="1000" name="Review" id="review" autocomplete="off"></textarea>
                     <label for="review" class="label">
-                      <span class="label-content">Write your review</span>
+                      <span class="label-content dada">Write your review</span>
                     </label>
-                    <span class="form-validate-text">Wrong!</span>
+                    <span class="form-validate-text review">review must be at least 12 characters</span>
                   </div>
                   <div class="button">
                     <input type="submit" value="Send" class="form-button">

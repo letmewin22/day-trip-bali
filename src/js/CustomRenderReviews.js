@@ -1,17 +1,20 @@
 import Highway from '@dogstudio/highway'
 import ReviewsLoader from './preloaderReviews.js'
-import Rate from './rate.js'
 import FormInputs from './form/FormInputs'
-import Review from'./review.js'
-import './star.js'
+import Review from'./reviews/Review.js'
+import Star from './reviews/Star.js'
+import Validation from './reviews/Validation.js'
 
 class CustomRendererReviews extends Highway.Renderer {
   onEnterCompleted() {
     new FormInputs()
     ReviewsLoader()
+    new Star()
     new Review()
-    // loaditems.loadComments()
-    Rate()
+    const valid = new Validation()
+    valid.validator()
+
+    
     const links = document.querySelectorAll('.nav__item a')
     let navI = document.querySelectorAll('.nav__item')
     for (let i = 0; i < navI.length; i++) {

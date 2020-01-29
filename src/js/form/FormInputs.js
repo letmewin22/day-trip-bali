@@ -4,10 +4,10 @@ export default class FormInputs {
 
   constructor() {
 
-    this.input = document.querySelectorAll('.input-wrapper input'),
+    this.input = document.querySelectorAll('.input-wrapper .text-field'),
     this.form = document.querySelector('form'),
     this.review = document.getElementById('review'),
-    this.validateText = document.querySelector('.form-validate-text'),
+    this.validateText = document.querySelectorAll('.form-validate-text'),
     this.formButton = document.querySelector('.form .button'),
     this.label = document.querySelectorAll('.label'),
     this.thislabel = document.querySelectorAll('.label')[1]
@@ -70,8 +70,11 @@ export default class FormInputs {
 
   reset() {
 
-    document.body.onclick = () => {
-      this.validateText.style.opacity = '0'
+    document.body.onmousedown = () => {
+      for (let text of this.validateText) {
+        text.style.opacity = '0'
+      }
+      
       this.thislabel.classList = 'label'
     }
     

@@ -11,7 +11,7 @@ route: reviews
       <div class="reviews-content-wrapper__left">
         <p class="review-header__content__description">We are looking forward to your feedback.</p>
         <div class="reviews-rating">
-          <span class="review-label">Your assessment</span>
+          <span class="review-label">Your assessment:</span>
           <div data-rate="0" class="reviews-rate assessment">
                   {% include "partials/_star.html" %}
                   {% include "partials/_star.html" %}
@@ -19,6 +19,7 @@ route: reviews
                   {% include "partials/_star.html" %}
                   {% include "partials/_star.html" %}
                 </div>
+                <span class="form-validate-text rate">rating must be at least one</span>
         </div>
         <form class="form" name="form">
           <div class="input-wrapper">
@@ -26,13 +27,14 @@ route: reviews
             <label for="name" class="label">
               <span class="label-content">Your name</span>
             </label>
+            <span class="form-validate-text name">name must be at least 3 characters</span>
           </div>
           <div class="input-wrapper">
-            <input type="text" class="text-field" maxlength="256" name="Review" id="review" autocomplete="off">
+            <textarea type="text" class="text-field" maxlength="1000" name="Review" id="review" autocomplete="off"></textarea>
             <label for="review" class="label">
-              <span class="label-content">Write your review</span>
+              <span class="label-content dada">Write your review</span>
             </label>
-            <span class="form-validate-text">Wrong!</span>
+            <span class="form-validate-text review">review must be at least 12 characters</span>
           </div>
           <div class="button">
             <input type="submit" value="Send" class="form-button">
