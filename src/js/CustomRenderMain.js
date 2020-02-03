@@ -1,7 +1,5 @@
 import Highway from '@dogstudio/highway'
 import MainLoader from './preloader.js'
-import Slider from './slider.js'
-// import FormInputs from './form.js'
 
 class CustomRendererMain extends Highway.Renderer {
   onEnterCompleted() {
@@ -11,7 +9,6 @@ class CustomRendererMain extends Highway.Renderer {
     if (loader.classList.contains('loaded') === true) {
       MainLoader()
     }
-    Slider()
     // FormInputs()
     const links = document.querySelectorAll('.nav__item a')
 

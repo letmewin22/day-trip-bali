@@ -1,6 +1,6 @@
 import Highway from '@dogstudio/highway'
 import Fade from './Fade'
-// import sayHello from './lib/sayHello.js'
+import sayHello from './lib/sayHello.js'
 import './menu.js'
 import './scroll.js'
 import './loader.js'
@@ -53,6 +53,12 @@ if (!adminBar) {
         link.classList.add('is-current')
       }
     }
+
+  })
+
+  window.addEventListener('DOMContentLoaded', (e) => {
+    document.body.scrollTop = 0 // For Safari
+    document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
   })
 
   H.on('NAVIGATE_END', ({ from, to, location }) => {

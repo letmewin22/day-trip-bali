@@ -36,6 +36,8 @@ export class BD {
         const wrapper = document.querySelector('.reviews-items')
         wrapper.innerHTML = reviewsItem
         Rate()
+        document.body.scrollTop = 0 // For Safari
+        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
       })
   }
 
@@ -47,8 +49,7 @@ export class BD {
         return response ?
           Object.keys(response).map(key => {
             arr.push(response[key])
-          }) :
-          []
+          }) : []
       })
   }
 }
