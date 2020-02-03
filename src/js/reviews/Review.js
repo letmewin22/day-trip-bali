@@ -1,4 +1,3 @@
-import svgStar from './svgStar'
 import Rate from './rate'
 import {BD} from './BD'
 import timeConverter from './timeConverter'

@@ -1,6 +1,8 @@
 import Rate from './rate'
 import { HTML } from './HTML'
+import ReviewsLoader from '../preloaderReviews'
 
+let isLoad = false
 
 export class BD {
 
@@ -23,7 +25,6 @@ export class BD {
 
 
   static renderList() {
-
     const reviewsArr = []
 
     BD.fetchReviews(reviewsArr)
@@ -36,8 +37,15 @@ export class BD {
         const wrapper = document.querySelector('.reviews-items')
         wrapper.innerHTML = reviewsItem
         Rate()
+        
         document.body.scrollTop = 0 // For Safari
         document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+        
+        if (!isLoad) {
+          ReviewsLoader()
+          isLoad = true
+        }
+
       })
   }
 

@@ -4,6 +4,7 @@ const charming = require('charming')
 // import 'splitting/dist/splitting-cells.css';
 import Splitting from 'splitting'
 
+
 const ReviewsLoader = () => {
 
   const loading = () => {
@@ -32,6 +33,7 @@ const ReviewsLoader = () => {
         .to(h1Desc, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0)
         .to(reviewsContent, 1.2, { opacity: 1, ease: Power2.easeOut }, 0.2)
     }, 500)
+       
 
   }
   loading()

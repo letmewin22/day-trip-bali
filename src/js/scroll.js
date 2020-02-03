@@ -63,5 +63,5 @@ function footer() {
 
 
 
-window.requestAnimationFrame(sectionInView)
-window.requestAnimationFrame(footer)
+sectionInView()
+footer()
