@@ -6,22 +6,27 @@ route: reviews
 {% block content %}
 <header class="review-header">
   <div class="review-header__content">
-    <h2>Reviews</h2>
+    <h2 style="opacity: 0">Reviews</h2>
+    <p class="review-header-desc">We are looking forward to your feedback.</p>
+    <a href="#anchor" class="button dark review mob">
+      <span class="form-button">Write a review</span>
+      <div class="button__bg"></div>
+    </a>
     <div class="reviews-content-wrapper">
-      <div class="reviews-content-wrapper__left">
-        <p class="review-header__content__description">We are looking forward to your feedback.</p>
+      <div class="reviews-content-wrapper__left" id="anchor">
+        <h2 class="mob">Write your review</h2>
         <div class="reviews-rating">
           <span class="review-label">Your assessment:</span>
           <div data-rate="0" class="reviews-rate assessment">
-                  {% include "partials/_star.html" %}
-                  {% include "partials/_star.html" %}
-                  {% include "partials/_star.html" %}
-                  {% include "partials/_star.html" %}
-                  {% include "partials/_star.html" %}
-                </div>
-                <span class="form-validate-text rate">rating must be at least one</span>
+            {% include "partials/_star.html" %}
+            {% include "partials/_star.html" %}
+            {% include "partials/_star.html" %}
+            {% include "partials/_star.html" %}
+            {% include "partials/_star.html" %}
+          </div>
+          <span class="form-validate-text rate">rating must be at least one</span>
         </div>
-        <form class="form" name="form">
+        <form class="form" name="form" id="form">
           <div class="input-wrapper">
             <input type="text" class="text-field" maxlength="256" name="Name" id="name" autocomplete="off">
             <label for="name" class="label">
@@ -30,7 +35,7 @@ route: reviews
             <span class="form-validate-text name">name must be at least 3 characters</span>
           </div>
           <div class="input-wrapper">
-            <textarea type="text" class="text-field" maxlength="1000" name="Review" id="review" autocomplete="off"></textarea>
+            <textarea type="text" class="text-field" maxlength="3000" name="Review" id="review" autocomplete="off"></textarea>
             <label for="review" class="label">
               <span class="label-content dada">Write your review</span>
             </label>

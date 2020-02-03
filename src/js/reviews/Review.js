@@ -5,11 +5,11 @@ import timeConverter from './timeConverter'
 export default class Review {
 
   constructor() {
-
+    this.koefReview = 12
+    this.koefName = 3
     this.validateTextRate = document.querySelector('.form-validate-text.rate')
     this.validateTextReview = document.querySelector('.form-validate-text.review')
     this.validateTextName = document.querySelector('.form-validate-text.name')
-    this.comments = []
     this.formButton = document.querySelector('.form .button')
     this.review = document.getElementById('review')
     this.name = document.getElementById('name')
@@ -25,11 +25,11 @@ export default class Review {
 
     event.preventDefault()
     
-    if (this.review.value.length > 12 &&
-      this.name.value.length > 2 &&
+    if (this.review.value.length > this.koefReview - 1 &&
+      this.name.value.length > this.koefName - 1 &&
       this.starsWrapper.getAttribute('data-rate') > 0) {
 
-      this.comment = {
+      this.reviewObj = {
         name: this.name.value,
         review: this.review.value,
         time: timeConverter(Math.floor(Date.now() / 1000)),
@@ -39,7 +39,7 @@ export default class Review {
       this.name.value = ''
       this.review.value = ''
       
-      BD.create(this.comment)
+      BD.create(this.reviewObj)
       Rate()
       
       this.reset()

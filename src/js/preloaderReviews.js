@@ -7,12 +7,11 @@ import Splitting from 'splitting'
 const ReviewsLoader = () => {
 
   const loading = () => {
-
     const target = document.querySelector('h2')
     const results = Splitting({ target: target, by: 'words' })
 
     let h1Splitter = [...document.querySelectorAll('h2 span')]
-    let h1Desc = document.querySelector('.review-header__content__description')
+    let h1Desc = document.querySelector('.review-header-desc')
     let reviewsContent = document.querySelector('.reviews-content-wrapper')
 
     for (let i = 0; i < h1Splitter.length; i++) {

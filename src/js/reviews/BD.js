@@ -1,5 +1,6 @@
 import Rate from './rate'
-import {HTML} from './HTML'
+import { HTML } from './HTML'
+
 
 export class BD {
 
@@ -23,35 +24,31 @@ export class BD {
 
   static renderList() {
 
-  	const reviewsArr = []
+    const reviewsArr = []
 
-  	BD.fetchReviews(reviewsArr)
-  	.then(() => {
-  	const reviews = reviewsArr
-  	const reviewsItem = reviews.length
-  	? reviews.map(HTML.addToHTML).join('')
-  	: '<span>No reviews yet</span>'
+    BD.fetchReviews(reviewsArr)
+      .then(() => {
+        const reviews = reviewsArr
+        const reviewsItem = reviews.length ?
+          reviews.map(HTML.addToHTML).join('') :
+          '<span>No reviews yet</span>'
 
-  	const wrapper = document.querySelector('.reviews-items')
-  	wrapper.innerHTML = reviewsItem
-  	
-  	Rate()
+        const wrapper = document.querySelector('.reviews-items')
+        wrapper.innerHTML = reviewsItem
+        Rate()
       })
   }
 
   static fetchReviews(arr) {
 
-  	return fetch('https://daytripbali-reviews.firebaseio.com/reviews.json')
-  	.then(response => response.json())
-  	.then(response => {
-  		return response 
-  		? Object.keys(response).map(key => {
-  			arr.push(response[key])
-  		}) 
-  		: []
-  	})
+    return fetch('https://daytripbali-reviews.firebaseio.com/reviews.json')
+      .then(response => response.json())
+      .then(response => {
+        return response ?
+          Object.keys(response).map(key => {
+            arr.push(response[key])
+          }) :
+          []
+      })
   }
 }
-
-
-

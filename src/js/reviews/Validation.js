@@ -20,12 +20,11 @@ export default class Validation extends Review {
   }
 
   reviewInput() {
-    let koef = 12
-    if (this.review.value.length < koef) {
+    if (this.review.value.length < this.koefReview) {
 
       this.thislabel1 = document.querySelectorAll('.label')[1]
       this.validateTextReview.style.opacity = '1'
-      this.validateTextReview.innerHTML = `review must be at least 12 characters. Left: ${koef - this.review.value.length}`
+      this.validateTextReview.innerHTML = `review must be at least ${this.koefReview} characters. Left: ${this.koefReview - this.review.value.length}`
       this.review.focus()
       this.thislabel1.pseudoStyle('after', 'border-color', '#F44336!important')
     } else {
@@ -35,11 +34,10 @@ export default class Validation extends Review {
   }
 
   nameInput() {
-    let koef = 3
-    if (this.name.value.length < koef) {
+    if (this.name.value.length < this.koefName) {
       this.thislabel0 = document.querySelectorAll('.label')[0]
       this.validateTextName.style.opacity = '1'
-      this.validateTextName.innerHTML = `name must be at least 3 characters. Left: ${koef - this.name.value.length}`
+      this.validateTextName.innerHTML = `name must be at least ${this.koefName} characters. Left: ${this.koefName - this.name.value.length}`
       this.name.focus()
       this.thislabel0.pseudoStyle('after', 'border-color', '#F44336!important')
     } else {

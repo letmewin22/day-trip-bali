@@ -2,7 +2,8 @@
   &::selection
     background: $accent-color
     color: white
-
+html
+	scroll-behavior: smooth
    
 body
 	+main
@@ -146,6 +147,8 @@ a
 		.button__bg
 			transform: translateY(0%)
 			opacity: 1
+	&.dark
+		border: solid 1px $dark-color
 
 .info-block
 	background: $dark-color
