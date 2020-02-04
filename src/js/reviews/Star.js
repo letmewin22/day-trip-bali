@@ -9,13 +9,16 @@ export default class Star {
     this.stars = this.starsWrapper.querySelectorAll('svg')
     this.rate = this.starsWrapper.getAttribute('data-rate')
 
-    this.starsWrapper.addEventListener('click', () => this.starActivate())
+    this.starsWrapper.addEventListener('click', this.starActivate.bind(this))
 
+    this.count = 0
 
-    for (let i = 0; i < this.stars.length; i++) {
-      this.stars[i].setAttribute('position', i + 1)
-      this.stars[i].addEventListener('mouseenter', () => this.starOver(this.stars[i]))
-      this.stars[i].addEventListener('mouseleave', () => this.starleave())
+    for (let star of this.stars) {
+      this.count++
+
+      star.setAttribute('position', this.count)
+      star.addEventListener('mouseenter', () => this.starOver(star))
+      star.addEventListener('mouseleave', this.starleave.bind(this))
     }
   }
 
@@ -37,6 +40,7 @@ export default class Star {
   }
 
   starActivate() {
+
     this.validateTextRate.style.opacity = 0
     this.starsWrapper.classList.toggle('stars-clicked')
     for (let star of this.stars) star.classList.toggle('disabled')

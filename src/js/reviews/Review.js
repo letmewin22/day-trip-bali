@@ -4,8 +4,10 @@ import timeConverter from './timeConverter'
 export default class Review {
 
   constructor() {
+
     this.koefReview = 12
     this.koefName = 3
+
     this.validateTextRate = document.querySelector('.form-validate-text.rate')
     this.validateTextReview = document.querySelector('.form-validate-text.review')
     this.validateTextName = document.querySelector('.form-validate-text.name')
@@ -15,13 +17,15 @@ export default class Review {
     this.starsWrapper = document.querySelector('.reviews-rate.assessment')
     this.items = document.querySelector('.reviews-items')
     this.stars = this.starsWrapper.querySelectorAll('svg')
-    this.formButton.addEventListener('click', (e) => this.click(e))
+
+    this.formButton.addEventListener('click', this.click.bind(this))
+
     window.addEventListener('load', BD.renderList)
 
   }
 
   click(event) {
-
+    
     event.preventDefault()
     
     if (this.review.value.length > this.koefReview - 1 &&

@@ -5,7 +5,7 @@ import ReviewsLoader from '../preloaderReviews'
 let isLoad = false
 
 export class BD {
-
+  
   static create(review) {
 
     return fetch('https://daytripbali-reviews.firebaseio.com/reviews.json', {
@@ -38,8 +38,8 @@ export class BD {
         wrapper.innerHTML = reviewsItem
         Rate()
         
-        document.body.scrollTop = 0 // For Safari
-        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+        document.body.scrollTop = 0 
+        document.documentElement.scrollTop = 0 
         
         if (!isLoad) {
           ReviewsLoader()
