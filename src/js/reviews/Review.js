@@ -1,5 +1,5 @@
 import Rate from './rate'
-import {BD} from './BD'
+import {Database} from './Database'
 import timeConverter from './timeConverter'
 export default class Review {
 
@@ -20,7 +20,7 @@ export default class Review {
 
     this.formButton.addEventListener('click', this.click.bind(this))
 
-    window.addEventListener('load', BD.renderList)
+    window.addEventListener('load', Database.renderList)
 
   }
 
@@ -42,7 +42,7 @@ export default class Review {
       this.name.value = ''
       this.review.value = ''
       
-      BD.create(this.reviewObj)
+      Database.create(this.reviewObj)
       Rate()
       
       this.reset()

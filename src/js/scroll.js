@@ -38,7 +38,7 @@ function footer() {
   let elements = document.querySelectorAll('footer')
   for (let i = 0; i !== elements.length; i++) {
 
-    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.5 && elements[i].getBoundingClientRect().top > 0) {
+    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.75 && elements[i].getBoundingClientRect().top > 0) {
       if (!elements[i].classList.contains('activated')) {
         elements[i].classList.add('activated')
         let tl = new TimelineMax()
@@ -61,7 +61,12 @@ function footer() {
 };
 
 
+window.addEventListener('load', (e) => {
+  setTimeout(() => {
+    sectionInView()
+    footer()
+  }, 500)
+
+})
 
 
-sectionInView()
-footer()
