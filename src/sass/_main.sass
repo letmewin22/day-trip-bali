@@ -7,8 +7,9 @@ html
    
 body
 	+main
-	font-size: 20px
+	+fontSize(18, 16)
 	width: 100%
+	background: $blue
 	color: $main-color
 	line-height: 1.7em
 	&.fixed
@@ -18,10 +19,10 @@ h1
 	+h1
 	font-size: 136px
 	line-height: 1.1em
-	color: $dark-color
+	color: $dark-blue
 	opacity: 0
 	text-transform: uppercase
-	span
+	.word
 		display: inline-block
 		span
 			opacity: 0
@@ -29,7 +30,7 @@ h1
 			display: inline-block
 
 .whitespace
-	width: 0.25em
+	display: inline
 a 
 	color: $accent-color
 
@@ -74,8 +75,8 @@ a
 	z-index: 1001
 	top: 4%
 	width: 100%
-	padding-left: $hor-dist
-	padding-right: $hor-dist
+	padding-left: size(100, 20)
+	padding-right: size(100, 20)
 	&__items
 		display: flex
 		&__wrapper
@@ -167,12 +168,6 @@ a
 .burger
 	display: none
 
-.container
-	padding-left: $hor-dist
-	padding-right: $hor-dist
-	height: 100% 
-	&.last
-		padding-bottom: $vert-dist
 
 .section
 	position: relative
@@ -191,12 +186,12 @@ a
 
 h2
 	+h2
-	font-size: 60px
+	+fontSize(60, 36)
 	line-height: 1.1em
-	color: $dark-color
+	color: $dark-blue
 	// opacity: 0
 	// transform: translateX(40px)
-	span
+	.word
 		display: inline-block
 		span
 			opacity: 0

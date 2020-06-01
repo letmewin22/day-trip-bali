@@ -1,6 +1,6 @@
 import Highway from '@dogstudio/highway'
 import Fade from './Fade'
-import sayHello from './lib/sayHello.js'
+// import sayHello from './lib/sayHello.js'
 import './menu.js'
 import './scroll.js'
 import './loader.js'
@@ -10,6 +10,7 @@ import CustomRendererReviews from './CustomRenderReviews'
 import CustomRendererTours from './CustomRenderTours'
 import CustomRendererContacts from './CustomRenderContacts'
 import CustomRendererAbout from './CustomRenderAbout'
+import './btn'
 
 const adminBar = document.querySelector('#wpadminbar')
 const links = document.querySelectorAll('.nav__item a')

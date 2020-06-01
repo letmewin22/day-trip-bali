@@ -1,6 +1,5 @@
 import Highway from '@dogstudio/highway'
 import AboutLoader from './preloaderAbout.js'
-import Slider from './slider.js'
 import imagesLoaded from 'imagesloaded'
 
 class CustomRendererAbout extends Highway.Renderer {

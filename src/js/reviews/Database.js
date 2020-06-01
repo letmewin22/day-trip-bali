@@ -10,12 +10,12 @@ export class Database {
   static create(review) {
 
     return fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(review),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+      method: 'POST',
+      body: JSON.stringify(review),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(response => response.json())
       .then(response => {
         review.id = response.name

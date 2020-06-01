@@ -61,7 +61,7 @@ function footer() {
 };
 
 
-window.addEventListener('load', (e) => {
+window.addEventListener('load', () => {
   setTimeout(() => {
     sectionInView()
     footer()

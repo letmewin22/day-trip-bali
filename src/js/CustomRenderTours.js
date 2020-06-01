@@ -1,24 +1,43 @@
 import Highway from '@dogstudio/highway'
-import tab from './tabs.js'
-import Gallery from './gallery.js'
 import imagesLoaded from 'imagesloaded'
 import TourLoader from './tourLoader.js'
-// import Accordeon from './accordeon.js';
+import Swiper from 'swiper'
+import ripplyScott from './btn.js'
 
 class CustomRendererTours extends Highway.Renderer {
   onEnterCompleted() {
-    let img = document.querySelector('.tour-header')
 
+    new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 66,
+      speed: 600,
+      grabCursor: true,
+      loop: true,
+      loopedSlides: 3,
+      freeMode: true,
+      navigation: {
+        nextEl: '.gallery-section__nav-item--right',
+        prevEl: '.gallery-section__nav-item--left'
+      },
+    })
+
+    ripplyScott().init('white-block__btn', 0.75)
+
+    const it = document.querySelector('.white-block')
+    const height = window.innerHeight - it.getBoundingClientRect().height
+
+    this.cb = () => {
+
+      if(it.getBoundingClientRect().y <= 0 && document.documentElement.scrollTop >= height)
+        it.classList.add('fixed')
+      else 
+        it.classList.remove('fixed')
+    }
+
+    document.addEventListener('scroll', this.cb)
+
+    let img = document.querySelector('.tour-header__img')
     let loader = document.querySelector('.loader')
-
-    tab()
-
-    Gallery()
-
-    // const days = document.querySelector('.white-block__item.first span')
-    // if (days.innerHTML !== '2 day') {
-    //   days.style.display = 'none'
-    // }
 
     if (loader.classList.contains('loaded') === true) {
       let navI = document.querySelectorAll('.nav__item')
@@ -29,7 +48,7 @@ class CustomRendererTours extends Highway.Renderer {
       }
       TourLoader()
     } else {
-      window.onload = (e) => {
+      window.onload = () => {
         imagesLoaded(img, { background: true }, function() {
           let loader = document.querySelector('.loader')
           loader.classList.add('loaded')
@@ -48,11 +67,12 @@ class CustomRendererTours extends Highway.Renderer {
       }
     }
 
+    document.querySelector('.burger').classList.add('tour')
 
-    let burger = document.querySelector('.burger')
+  }
 
-    burger.classList.add('tour')
-
+  onLeave() {
+    document.removeEventListener('scroll', this.cb)
   }
 
 }
