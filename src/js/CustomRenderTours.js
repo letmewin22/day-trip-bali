@@ -30,11 +30,15 @@ class CustomRendererTours extends Highway.Renderer {
 
       if(it.getBoundingClientRect().y <= 0 && document.documentElement.scrollTop >= height)
         it.classList.add('fixed')
+      else if(screen.width < 1140)
+        it.classList.add('fixed')
       else 
         it.classList.remove('fixed')
+
+      this.raf = requestAnimationFrame(this.cb)
     }
 
-    document.addEventListener('scroll', this.cb)
+    this.cb()
 
     let img = document.querySelector('.tour-header__img')
     let loader = document.querySelector('.loader')
@@ -72,7 +76,7 @@ class CustomRendererTours extends Highway.Renderer {
   }
 
   onLeave() {
-    document.removeEventListener('scroll', this.cb)
+    cancelAnimationFrame(this.raf)
   }
 
 }

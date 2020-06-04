@@ -1,13 +1,12 @@
----
-title: Main page
-route: main
----
+{% set title = 'Main page' %}
+{% set 'route' = 'main' %}
+
 {% extends "layouts/_layout.html" %}
 {% block content %}
   <header class="header">
     <div class="header__content">
       <h1>DAY TRIP<br>BALI</h1>
-      <p class="header__content__description">We will create your best day on the island!</p>
+      <p class="header__description">We will create your best day on the island!</p>
       <div class="info-block">
         <span class="info-block__text">Perfectly organized and balanced tours</span>
       </div>
@@ -81,7 +80,7 @@ route: main
         </div>
       </div>
     </section>
-        <section class="section">
+    <section class="section">
       <div class="container section__container choose last">
         <div class="top-content__choose">
           <h2>Boats</h2>
@@ -133,54 +132,5 @@ route: main
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="container section__container footer__container">
-      <div class="main-footer__content">
-        <div class="main-footer__content__left-content">
-          <h2>Contacts</h2>
-          <p>You can book a tour for any date, with free cancellation.</p>
-          <div class="main-footer__content__left-content__contacts-items with-margin">
-            <a href="#">+62 821 4595 7604 (WhatsApp)</a>
-            <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
-            <div class="social-media">
-              <a class="dif-soc" href="#"><img src="img/insta.svg" alt=""></a>
-              <a class="dif-soc" href="#"><img src="img/fb.svg" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="main-footer__content__right-content">
-          <form data-mail="mail.php" class="form" name="form">
-            <!-- Hidden Required Fields -->
-            <input type="hidden" name="project_name" value="DayTripBali site">
-            <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
-            <input type="hidden" name="form_subject" value="Заявка с главной">
-            <!-- END Hidden Required Fields -->
-            <div class="input-wrapper first">
-              <input type="text" class="text-field" maxlength="256" name="name" id="name" autocomplete="off">
-              <label for="name" class="label">
-                <span class="label-content">Name</span>
-              </label>
-            </div>
-            <div class="input-wrapper">
-              <input type="text" class="text-field" maxlength="256" name="e-mail" id="e-mail" autocomplete="off">
-              <label for="e-mail" class="label">
-                <span class="label-content">E-mail *</span>
-              </label>
-              <span class="form-validate-text"></span>
-            </div>
-            <div class="input-wrapper">
-              <input type="text" class="text-field" maxlength="256" name="questions" id="questions" autocomplete="off">
-              <label for="questions" class="label">
-                <span class="label-content">Your questions</span>
-              </label>
-            </div>
-            <div class="button">
-              <input type="submit" value="Send" class="form-button">
-              <div class="button__bg"></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </footer>
+{% include "partials/_footer.html" %}
 {% endblock %}

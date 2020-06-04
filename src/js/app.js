@@ -11,6 +11,7 @@ import CustomRendererTours from './CustomRenderTours'
 import CustomRendererContacts from './CustomRenderContacts'
 import CustomRendererAbout from './CustomRenderAbout'
 import './btn'
+import moveEl from './lib/moveEl'
 
 const adminBar = document.querySelector('#wpadminbar')
 const links = document.querySelectorAll('.nav__item a')
@@ -42,6 +43,7 @@ if (!adminBar) {
         link.classList.add('is-current')
       }
     }
+    moveEl()
   })
 
   window.addEventListener('load', (e) => {
@@ -54,15 +56,15 @@ if (!adminBar) {
         link.classList.add('is-current')
       }
     }
-
+    moveEl()
   })
 
-  window.addEventListener('DOMContentLoaded', (e) => {
+  window.addEventListener('DOMContentLoaded', () => {
     document.body.scrollTop = 0 // For Safari
     document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
   })
 
-  H.on('NAVIGATE_END', ({ from, to, location }) => {
+  H.on('NAVIGATE_END', () => {
     lazyLoader()
   })
 

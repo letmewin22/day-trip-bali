@@ -1,12 +1,11 @@
----
-title: Tour page
-route: tour
----
+{% set title = 'tour page' %}
+{% set 'route' = 'tour' %}
+
 {% extends "layouts/_layout.html" %}
 {% block content %}
   {% include "partials/_svg-sprite.html" %}
   <div class="white-block">
-    <div class="container white-block__container full-size">
+    <div data-move="tour-header__tour-content,1,1140" class="container white-block__container full-size">
       <div class="white-block__items">
         <div class="white-block__item first">
           <img src="img/tour-icons/days.svg" alt="calendar">
@@ -255,4 +254,5 @@ route: tour
       </div>
     </section>
   </main>
+  {% include "partials/_footer.html" %}
 {% endblock %}

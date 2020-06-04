@@ -1,0 +1,21 @@
+.container
+	padding-left: size(250, 20)
+	padding-right: size(250, 20)
+	height: 100% 
+	&.last
+		padding-bottom: size($vert-dist, 60)
+	&.full-size
+		padding-left: size(100, 20)
+		padding-right: size(100, 20)
+	@include media('<=1500px')
+		padding-left: size(100, 20)
+		padding-right: size(100, 20)
+		
+
+.section
+	position: relative
+	width: 100%
+	&__container
+		padding-top: size($vert-dist, 60)
+		width: 100%
+		overflow: hidden

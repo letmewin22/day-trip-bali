@@ -1,0 +1,64 @@
+.footer 
+  &__container 
+    padding-bottom: 65px 
+  &__cols-wrapper  
+    width: 100% 
+    display: flex 
+    justify-content: space-between 
+    h4 + a
+      margin-top: 35px
+    a
+      font-size: size(20, 16)
+      color: white
+      margin-top: 20px
+      display: block
+      line-height: 1em
+  &__col-1  
+    max-width: 372px 
+  &__r-cols 
+    display: flex  
+    justify-content: space-between  
+  &__col-2 
+    width: 78px 
+  &__col-3 
+    width: 91px 
+    margin-left: 20vw
+  &__bottom 
+    padding-top: 50px
+    padding-bottom: 36px
+    display: flex
+    justify-content: space-between
+    opacity: .7
+  &__c 
+    font-size: size(18, 14)
+  &__e 
+    span
+      display: inline-block
+      margin-left: 12px
+      font-size: size(16,14)
+      color: white
+  hr
+    height: 1px
+    opacity: .4
+
+.footer
+  &__cols-wrapper 
+    a
+      transition: color .5s ease
+      position: relative
+      width: fit-content
+      &::after
+        content: ''
+        display: block
+        width: 0px
+        height: 2px
+        background: $dark-color
+        position: relative
+        transition: width .5s ease, background .5s ease
+        bottom: -2px
+        align-self: flex-start
+      &:hover
+        color: $accent-color
+        &:after
+          width: 50%
+          background: $accent-color

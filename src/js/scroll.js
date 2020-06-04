@@ -1,11 +1,11 @@
-import { TimelineMax } from 'gsap'
+import { TimelineMax, Power1, Expo } from 'gsap'
 
 
 function sectionInView() {
 
   let elements = document.querySelectorAll('section')
   for (let i = 0; i !== elements.length; i++) {
-    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.75 && elements[i].getBoundingClientRect().top > 0) {
+    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.8 && elements[i].getBoundingClientRect().top > 0) {
 
       if (!elements[i].classList.contains('activated')) {
         elements[i].classList.add('activated')
@@ -38,7 +38,7 @@ function footer() {
   let elements = document.querySelectorAll('footer')
   for (let i = 0; i !== elements.length; i++) {
 
-    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.75 && elements[i].getBoundingClientRect().top > 0) {
+    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.8 && elements[i].getBoundingClientRect().top > 0) {
       if (!elements[i].classList.contains('activated')) {
         elements[i].classList.add('activated')
         let tl = new TimelineMax()
