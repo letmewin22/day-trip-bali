@@ -1,5 +1,9 @@
 @import "lib/swiper";
-	
+
+[data-router-view='tour']	
+	@include media('<=1140px')
+		padding-bottom: size(88, 50)
+
 .tour-h1
 	+fontSize(72, 30)
 	opacity: 0
@@ -146,6 +150,7 @@
 			flex-direction: column
 		&__left
 			width: 100%
+			padding-right: 0px
 		&__right
 			width: 100%
 			display: none

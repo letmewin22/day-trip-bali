@@ -3,12 +3,19 @@
 
 {% extends "layouts/_layout.html" %}
 {% block content %}
+{% include "partials/_svg-sprite.html" %}
   <header class="header">
     <div class="header__content">
       <h1>DAY TRIP<br>BALI</h1>
       <p class="header__description">We will create your best day on the island!</p>
-      <div class="info-block">
-        <span class="info-block__text">Perfectly organized and balanced tours</span>
+      <div class="header__info-block info-block">
+        <span class="info-block__text">Ready for adventure?</span>
+        <a href="#" class="info-block__btn">
+          <span>Check calendar</span>
+          <svg class="info-block__btn-riple">
+            <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+          </svg>
+        </a>
       </div>
     </div>
     <div data-video-src="video/video.mp4" data-poster-pc="img/main-poster-pc.jpg" data-poster-mob="img/main-poster.jpg" data-mob-btn="video/video-button.svg" class="header__video" style="min-height: 60vh"></div>
@@ -132,5 +139,5 @@
       </div>
     </section>
   </main>
-{% include "partials/_footer.html" %}
+  {% include "partials/_footer.html" %}
 {% endblock %}

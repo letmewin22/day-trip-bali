@@ -13,16 +13,30 @@
       margin-top: 20px
       display: block
       line-height: 1em
+    @include media('<=850px')
+      flex-direction: column
   &__col-1  
     max-width: 372px 
+    @include media('<=850px')
+      max-width: none
+      width: 100%
   &__r-cols 
     display: flex  
-    justify-content: space-between  
+    justify-content: space-between 
+    @include media('<=850px')
+      flex-direction: column 
   &__col-2 
     width: 78px 
+    @include media('<=850px')
+      width: 100% 
+      margin-top: 40px
   &__col-3 
     width: 91px 
     margin-left: 20vw
+    @include media('<=850px')
+      width: 100% 
+      margin-top: 40px
+      margin-left: 0
   &__bottom 
     padding-top: 50px
     padding-bottom: 36px

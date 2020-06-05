@@ -31,8 +31,6 @@ h1
 
 .whitespace
 	display: inline
-a 
-	color: $accent-color
 
 .header
 	width: 100%
@@ -68,63 +66,6 @@ a
 	img
 		width: 45px
 
-.nav
-	display: flex
-	justify-content: space-between
-	position: absolute
-	z-index: 1001
-	top: 4%
-	width: 100%
-	padding-left: size(100, 20)
-	padding-right: size(100, 20)
-	&__items
-		display: flex
-		&__wrapper
-			display: flex
-			justify-content: space-between
-			align-self: flex-end
-	&__item
-		margin-left: 60px
-		color: $dark-color
-		a
-			color: inherit
-			transition: color .5s ease
-			+medium
-			&::after
-				content: ''
-				display: block
-				width: 0px
-				height: 2px
-				background: $dark-color
-				position: relative
-				transition: width .5s ease, background .5s ease
-				top: -2px
-				align-self: flex-start
-			&:hover
-				color: $accent-color
-				&:after
-					width: 50%
-					background: $accent-color
-			&.is-current
-				color: $accent-color !important
-				pointer-events: none
-				&:after
-					width: 50%
-					background: $accent-color !important
-		&.inverse
-			color: white
-			a
-				&::after
-					background: white
-				&:hover
-					color: $accent-color
-					&:after
-						width: 50%
-						background: $accent-color
-
-.only-mobile
-	display: none
-
 .button
 	border: solid 1px white
 	position: relative
@@ -159,11 +100,53 @@ a
 	bottom: 0
 	right: 0
 	color: white
-	padding: 54px 110px
 	opacity: 0
 	transform: translateY(60px)
+	display: flex
+	font-size: 18px
+	width: 646px
+	height: 121px
 	&__text
-		font-size: 18px
+		font-size: 18px 
+		width: 73% 
+		padding: 54px 113px 
+		height: 100%
+		line-height: 1em
+		display: flex
+		justify-content: center
+		align-items: center 
+	&__btn
+		width: 27%
+		display: flex
+		justify-content: center
+		align-items: center
+		background: $accent-color
+		height: 100%
+		padding: 54px 0
+		position: relative
+		span
+			color: white
+			position: relative
+			line-height: 1em
+			&::after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 1px
+				background: white
+	&__btn-riple
+		height: 100% 
+		pointer-events: none 
+		position: absolute 
+		top: 0 
+		left: 0 
+		z-index: 0 
+		width: 100% 
+		fill: darken($accent-color, 25%) 
+		use
+			opacity: 0
 
 .burger
 	display: none

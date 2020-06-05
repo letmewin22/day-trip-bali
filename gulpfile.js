@@ -14,6 +14,7 @@ const video = require('./gulp/tasks/video').bind(null, browsersync)
 
 const svgSprites = require('./gulp/tasks/svgSprite')
 const otfConvert = require('./gulp/tasks/otfConvert')
+const fontsInclude = require('./gulp/tasks/fontsInclude')
 
 
 function wpBuild(done) {
@@ -60,6 +61,7 @@ exports.js = js
 exports.css = css
 exports.html = html
 exports.clean = clean
+exports.fi = fontsInclude
 exports.build = build
 exports.tophp = tophp
 exports.watch = watch

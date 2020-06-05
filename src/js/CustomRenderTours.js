@@ -26,7 +26,7 @@ class CustomRendererTours extends Highway.Renderer {
     const it = document.querySelector('.white-block')
     const height = window.innerHeight - it.getBoundingClientRect().height
 
-    this.cb = () => {
+    const cb = () => {
 
       if(it.getBoundingClientRect().y <= 0 && document.documentElement.scrollTop >= height)
         it.classList.add('fixed')
@@ -35,17 +35,17 @@ class CustomRendererTours extends Highway.Renderer {
       else 
         it.classList.remove('fixed')
 
-      this.raf = requestAnimationFrame(this.cb)
+      this.raf = requestAnimationFrame(cb)
     }
 
-    this.cb()
+    cb()
 
     let img = document.querySelector('.tour-header__img')
     let loader = document.querySelector('.loader')
 
     if (loader.classList.contains('loaded') === true) {
       let navI = document.querySelectorAll('.nav__item')
-      if (screen.width > 850) { 
+      if (screen.width > 970) { 
         for (let i = 0; i < navI.length; i++) {
           navI[i].classList.add('inverse')
         }
@@ -63,7 +63,7 @@ class CustomRendererTours extends Highway.Renderer {
 
         })
         let navI = document.querySelectorAll('.nav__item')
-        if (screen.width > 850) { 
+        if (screen.width > 970) { 
           for (let i = 0; i < navI.length; i++) {
             navI[i].classList.add('inverse')
           }
