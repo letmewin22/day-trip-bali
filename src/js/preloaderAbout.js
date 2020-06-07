@@ -1,7 +1,5 @@
 import { TimelineMax } from 'gsap'
 const charming = require('charming')
-// import 'splitting/dist/splitting.css';
-// import 'splitting/dist/splitting-cells.css';
 import Splitting from 'splitting'
 
 const AboutLoader = () => {

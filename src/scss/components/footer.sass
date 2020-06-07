@@ -1,6 +1,8 @@
 .footer 
   &__container 
     padding-bottom: 65px 
+    @include media('<=560px')
+      padding-top: 40px
   &__cols-wrapper  
     width: 100% 
     display: flex 
@@ -48,7 +50,7 @@
   &__e 
     span
       display: inline-block
-      margin-left: 12px
+      margin-left: 2px
       font-size: size(16,14)
       color: white
   hr

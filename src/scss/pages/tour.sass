@@ -41,7 +41,12 @@
 		padding: 35px 0px
 		@include media('<=1140px')
 			flex-wrap: wrap
-			padding: 15px, 0px
+			padding: 15px 0px
+		@include media('<=350px')
+			flex-wrap: nowrap
+			width: 100%
+			overflow-x: auto
+			padding: 10px 0
 	&__item
 		margin-left: 50px
 		display: flex
@@ -57,7 +62,11 @@
 				margin-left: 30px	
 		@include media('<=560px')	
 			&:nth-child(3)
-				margin-left: 0px		
+				margin-left: 0px	
+		@include media('<=350px')
+			white-space: nowrap	
+			&:nth-child(3)
+				margin-left: 30px
 		span
 			margin-left: 15px
 			display: inline-block
@@ -117,7 +126,11 @@
 			width: 100%
 			height: 40%
 			align-items: flex-start
-			padding-top: size(400, 138)
+			padding-top: size(400, 100)
+		@include media('<=560px')	
+			&__img
+				height: 45vh
+				max-height: 45vh
 	
 .about-tour-section
 	&__container
@@ -170,8 +183,12 @@
 		width: 35% 
 	&__item
 		margin-top: 11px
+		display: none
+		transition: all .5s ease
 		&:first-child
 			margin-top: 0
+		&.show
+			display: block
 	&__item-container
 		display: flex
 		justify-content: space-between
@@ -193,6 +210,13 @@
 		width: 100%
 		height: 100%
 		+cover
+	&__more-btn
+		color: $accent-color
+		text-decoration: underline
+		text-align: center
+		margin: 0 auto
+		margin-top: 30px
+		display: none
 	@include media('<=970px')
 		margin-bottom: 0px
 		&__right
@@ -206,6 +230,12 @@
 			margin-top: 30px
 		&__container
 			padding-bottom: 30px
+	@include media('<=970px')
+		&__more-btn
+			display: block
+	@include media('<=550px')
+		&__right
+			height: 361px
 
 
 .gallery-section
@@ -233,6 +263,19 @@
 			margin-left: 45px
 	&__gallery
 		width: 100%
+	@include media('<=550px')
+		&__left
+			flex-direction: column
+		&__view-more
+			margin-left: 0
+		&__top
+			align-items: flex-end 
+		&__nav-item
+			svg
+				width: 15px
+				height: 15px
+			&--right
+				margin-left: 30px
 
 
 .swiper-container 
@@ -249,6 +292,9 @@
 	justify-content: center 
 	align-items: center 
 	+cover
+	@include media('<=550px')
+		height: 187px
+		width: 280px
 
 
 .list-section
@@ -308,6 +354,9 @@
 			width: 100%
 		&__right
 			width: 100%
+	@include media('<=550px')
+		&__left-items
+			flex-direction: column
 
 .tour-list
 	&__img-wrapper
@@ -316,7 +365,9 @@
 		max-width: 506px
 	&--bg
 		background: white
-		margin-top: size(140, 80)
+		margin-top: size(140, 40)
+		padding-bottom: 40px
+		padding-top: 30px
 		.container
 			padding-top: size(120, 30)
 			padding-bottom: size(120, 30)

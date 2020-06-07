@@ -3,13 +3,18 @@ import imagesLoaded from 'imagesloaded'
 import TourLoader from './tourLoader.js'
 import Swiper from 'swiper'
 import ripplyScott from './btn.js'
+import ShowBtn from './ShowBtn'
 
 class CustomRendererTours extends Highway.Renderer {
   onEnterCompleted() {
 
+    const showBtn = new ShowBtn()
+
+    showBtn.init()
+
     new Swiper('.swiper-container', {
       slidesPerView: 'auto',
-      spaceBetween: 66,
+      spaceBetween: 28,
       speed: 600,
       grabCursor: true,
       loop: true,
@@ -19,7 +24,14 @@ class CustomRendererTours extends Highway.Renderer {
         nextEl: '.gallery-section__nav-item--right',
         prevEl: '.gallery-section__nav-item--left'
       },
+      breakpoints: {
+        550: {
+          spaceBetween: 66
+        }
+      }
     })
+
+    document.querySelector('.gallery-section__view-more span').innerHTML = document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length.toString()
 
     ripplyScott().init('white-block__btn', 0.75)
 

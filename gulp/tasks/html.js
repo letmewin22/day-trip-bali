@@ -3,6 +3,7 @@ const nunjucksRender = require('gulp-nunjucks-render')
 const prettify = require('gulp-prettify')
 const frontMatter = require('gulp-front-matter')
 const { src, dest } = require('gulp')
+const notify = require('gulp-notify')
 // const webphtml = require('gulp-webp-html')
 
 function html(bs) {
@@ -30,6 +31,8 @@ function html(bs) {
       // unformatted: [],
       endWithNewline: true
     }))
+    // @ts-ignore
+    .on('error', notify.onError('HTML Error: <%= error.message %>'))
     .pipe(dest(config.build.html))
     .pipe(bs.stream())
 }

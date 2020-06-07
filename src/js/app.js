@@ -71,6 +71,6 @@ if (!adminBar) {
 
 }
 
-window.addEventListener('DOMContentLoaded', (e) => {
+window.addEventListener('DOMContentLoaded', () => {
   lazyLoader()
 }, false)
