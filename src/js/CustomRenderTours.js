@@ -4,13 +4,16 @@ import TourLoader from './tourLoader.js'
 import Swiper from 'swiper'
 import ripplyScott from './btn.js'
 import ShowBtn from './ShowBtn'
+import popUp from './popup.js'
+
 
 class CustomRendererTours extends Highway.Renderer {
   onEnterCompleted() {
 
-    const showBtn = new ShowBtn()
+    const showBtn = new ShowBtn(document.querySelector('.details-section__more-btn'))
 
     showBtn.init()
+    popUp()
 
     new Swiper('.swiper-container', {
       slidesPerView: 'auto',
@@ -57,7 +60,7 @@ class CustomRendererTours extends Highway.Renderer {
 
     if (loader.classList.contains('loaded') === true) {
       let navI = document.querySelectorAll('.nav__item')
-      if (screen.width > 970) { 
+      if (screen.width > 1190) { 
         for (let i = 0; i < navI.length; i++) {
           navI[i].classList.add('inverse')
         }
@@ -75,7 +78,7 @@ class CustomRendererTours extends Highway.Renderer {
 
         })
         let navI = document.querySelectorAll('.nav__item')
-        if (screen.width > 970) { 
+        if (screen.width > 1190) { 
           for (let i = 0; i < navI.length; i++) {
             navI[i].classList.add('inverse')
           }

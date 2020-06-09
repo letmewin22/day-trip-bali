@@ -1,6 +1,6 @@
 .dropdown 
   // float: left 
-  overflow: hidden
+  // overflow: hidden
   cursor: pointer
   .dropbtn 
     border: none 
@@ -10,13 +10,12 @@
     margin: 0 
     transition: color .5s ease 
     +medium
-  &:hover 
-    .dropdown-content 
-      opacity: 1
-      pointer-events: auto
+    &.opened
+      color: $accent-color 
 
-.navbar a:hover, .dropdown:hover .dropbtn 
-  color: $accent-color
+@media screen and ( min-width: 860px )
+  .navbar a:hover, .dropdown:hover .dropbtn 
+    color: $accent-color
 
 .dropdown-content 
   display: flex 
@@ -27,7 +26,7 @@
   z-index: 10000
   flex-direction: column
   opacity: 0
-  pointer-events: none
+  visibility: hidden
   transition: all .3s ease
   a 
     float: none 
@@ -37,4 +36,7 @@
     display: block 
     text-align: left
     width: fit-content 
+  &.opened
+    opacity: 1
+    visibility: visible
 

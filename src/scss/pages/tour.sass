@@ -102,15 +102,27 @@
 		height: size(90, 50)
 	
 .tour-header
-	height: 100vh
+	min-height: 100vh
 	width: 100%
 	display: flex
 	justify-content: space-between
 	align-items: center
 	&__img
 		width: 50%
-		height: 100%
+		min-height: 100vh
+		display: flex
+		justify-content: center
+		align-items: center
 		+cover
+	&__video-btn
+		cursor: pointer 
+		transition: opacity .3s ease
+		img
+			width: 70px
+			height: 70px
+			display: block
+		&:hover
+			opacity: .8
 	&__container
 		width: 50%
 		height: 100%
@@ -122,6 +134,10 @@
 		&__img
 			width: 100%
 			height: 60%
+			min-height: auto
+			img
+				width: 45px
+				height: 45px
 		&__container
 			width: 100%
 			height: 40%
@@ -181,6 +197,8 @@
 		margin-top: 60px
 	&__left
 		width: 35% 
+	&__items
+		transition: height .3s ease
 	&__item
 		margin-top: 11px
 		display: none
@@ -371,3 +389,32 @@
 		.container
 			padding-top: size(120, 30)
 			padding-bottom: size(120, 30)
+
+
+.video-pop-up
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+	background: rgba(#000, .9)
+	height: 100vh
+	width: 100%
+	opacity: 0
+	visibility: hidden 
+	transition: opacity .7s ease, visibility .7s ease
+	&__content
+		height: 100%
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+	&__video
+		height: size(473, 173)
+		width: size(840, 335)
+		transform: translateY(60px)
+		transition: transform .5s ease
+	&.open
+		opacity: 1
+		visibility: visible
+		.video-pop-up__video
+			transform: translateY(0px)

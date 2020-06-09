@@ -30,7 +30,7 @@ export default class Review {
     
     if (this.review.value.length > this.koefReview - 1 &&
       this.name.value.length > this.koefName - 1 &&
-      this.starsWrapper.getAttribute('data-rate') > 0) {
+      +this.starsWrapper.getAttribute('data-rate') > 0) {
 
       this.reviewObj = {
         name: this.name.value,

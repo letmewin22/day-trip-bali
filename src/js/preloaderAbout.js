@@ -14,9 +14,9 @@ const AboutLoader = () => {
     let h1Splitter = [...document.querySelectorAll('h1 span')]
     let h2Splitter = [...document.querySelectorAll('h2 span')]
     let h1 = document.querySelector('h1')
-    let h1Desc = document.querySelector('.header__content__description')
+    let h1Desc = document.querySelector('.header__description')
     let video = document.querySelector('.header__video')
-    let infoBlock = document.querySelector('.info-block')
+    let infoBlock = document.querySelector('.about-info-block')
     for (let i = 0; i < h1Splitter.length; i++) {
       charming(h1Splitter[i])
     }

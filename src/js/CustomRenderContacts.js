@@ -6,18 +6,18 @@ class CustomRendererContacts extends Highway.Renderer {
     loader.classList.add('loaded')
     if (loader.classList.contains('loaded') === true) {
       let navI = document.querySelectorAll('.nav__item')
-      if (screen.width > 850) { 
+      if (screen.width > 1190) { 
         for (let i = 0; i < navI.length; i++) {
           navI[i].classList.add('inverse')
         }
       }
     }
 
-    window.onload = (e) => {
+    window.onload = () => {
       
       let load = () => {
         let navI = document.querySelectorAll('.nav__item')
-        if (screen.width > 850) { 
+        if (screen.width > 1190) { 
           for (let i = 0; i < navI.length; i++) {
             navI[i].classList.add('inverse')
           }

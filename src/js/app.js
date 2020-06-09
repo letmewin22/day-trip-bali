@@ -12,9 +12,13 @@ import CustomRendererContacts from './CustomRenderContacts'
 import CustomRendererAbout from './CustomRenderAbout'
 import './btn'
 import moveEl from './lib/moveEl'
+import Dropdown from './dropdown'
+import {onYouTubeIframeAPIReady} from './YTplayer.js'
 
 const adminBar = document.querySelector('#wpadminbar')
 const links = document.querySelectorAll('.nav__item a')
+
+onYouTubeIframeAPIReady()
 
 if (!adminBar) {
 
@@ -33,7 +37,7 @@ if (!adminBar) {
 
 
 
-  H.on('NAVIGATE_IN', ({ to, location }) => {
+  H.on('NAVIGATE_IN', ({location }) => {
     for (let i = 0; i < links.length; i++) {
       const link = links[i]
 
@@ -46,7 +50,7 @@ if (!adminBar) {
     moveEl()
   })
 
-  window.addEventListener('load', (e) => {
+  window.addEventListener('load', () => {
     for (let i = 0; i < links.length; i++) {
       const link = links[i]
 
@@ -57,6 +61,9 @@ if (!adminBar) {
       }
     }
     moveEl()
+
+    const dropdown = new Dropdown({btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown'})
+    dropdown.init()
   })
 
   window.addEventListener('DOMContentLoaded', () => {

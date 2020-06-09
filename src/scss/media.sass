@@ -94,6 +94,63 @@
 	.tour-img-wrapper
 		height: 19vw
 
+@media (max-width: 1190px)
+	.nav__items
+		pointer-events: none
+		position: fixed
+		top: 0
+		right: 0
+		width: 100%
+		height: 100%
+		z-index: 100
+		opacity: 0
+		transform: translateX(100%)
+		transition: transform .5s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+		&.show
+			pointer-events: auto
+			opacity: 1
+			transform: translateX(0px)
+	.nav__wrapper
+		height: auto
+		min-height: 100vh
+		width: 100%
+		flex-direction: column
+		justify-content: center
+		background: white
+		padding-top: 20px
+		padding-bottom: 20px
+		padding-left: 20px
+	.nav__wrap--wrapper
+		width: 100%
+		overflow-y: scroll
+		overflow-x: hidden
+	.nav
+		position: fixed
+		top: 3%
+		&__logo
+			z-index: 10011
+			&.invisible
+				opacity: 0
+				pointer-events: 0
+
+	.nav__item
+		margin-left: 0px
+		transform: translateX(100%)
+		transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1)
+		padding-bottom: 20px
+		width: fit-content
+		&.active
+			transform: translateX(0%)
+			@for $i from 1 to 5
+				&:nth-child(#{$i})
+					transition-delay: $i * 0.08s
+	.burger
+		display: block
+		background: $blue
+		border-radius: 50%
+		width: 40px
+		height: 40px
+
 @media (max-width: 1095px)
 	h1
 		font-size: 80px
@@ -165,64 +222,9 @@
 			margin-right: 20px
 		&__right
 			margin-left: 20px
-	.nav__items
-		pointer-events: none
-		position: fixed
-		top: 0
-		right: 0
-		width: 100%
-		height: 100%
-		z-index: 100
-		opacity: 0
-		transform: translateX(100%)
-		transition: transform .5s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
-		&__wrapper
-			height: auto
-			min-height: 100vh
-			width: 100%
-			flex-direction: column
-			justify-content: center
-			background: white
-			padding-top: 20px
-			padding-bottom: 20px
-			padding-left: 20px
-		&__wrap--wrapper
-			width: 100%
-			overflow-y: scroll
-			overflow-x: hidden
 
-		&.show
-			pointer-events: auto
-			opacity: 1
-			transform: translateX(0px)
-	.nav
-		position: fixed
-		top: 3%
-		&__logo
-			z-index: 10011
-			&.invisible
-				opacity: 0
-				pointer-events: 0
-
-	.nav__item
-		margin-left: 0px
-		transform: translateX(100%)
-		transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1)
-		padding-bottom: 20px
-		width: fit-content
-		&.active
-			transform: translateX(0%)
-			@for $i from 1 to 5
-				&:nth-child(#{$i})
-					transition-delay: $i * 0.08s
 	.strip-link
 		font-size: 18px
-	.burger
-		display: block
-		background: $blue
-		border-radius: 50%
-		width: 40px
-		height: 40px
 	.strip-after
 		width: 95%
 	.draggable 
@@ -233,29 +235,20 @@
 		overflow-x: scroll
 	.strip-nav
 		display: none
-	.dropbtn 
-		pointer-events: none
-		color: $accent-color
 	.dropdown-content
-		background: transparent
 		margin-top: 0px 
-		position: relative
+		// position: relative
 		display: flex
-		opacity: 1
-		pointer-events: auto
 		justify-content: center
 		flex-direction: column
 		padding-top: 30px
 		height: auto
 		padding-left: 10px
-		box-shadow: none
+		// box-shadow: none
 		a
 			padding: 0px 0px
 			padding-bottom: 20px
 	.social-media 
-		a
-			margin-left: 0px
-			margin-right: 20px
 		&__item
 			margin-left: 0px
 			margin-top: 24px

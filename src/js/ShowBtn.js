@@ -1,9 +1,11 @@
 export default class ShowBtn {
 
-  constructor() {
+  constructor(btn) {
 
-    this.items = document.querySelectorAll('.details-section__item')
-    this.btn = document.querySelector('.details-section__more-btn')
+    this.btn = btn
+    this.items = this.btn.parentNode.querySelectorAll('.details-section__item')
+    this.wrapper = this.btn.parentNode
+    
     this.toggle = false
 
     this.mql = window.matchMedia('(max-width: 970px)')
@@ -26,6 +28,7 @@ export default class ShowBtn {
     for (let i = 0; i < 7; i++) {
       this.items[i].classList.add('show')
     }
+    this.wrapper.style.height = this.height + 'px'
 
     this.toggle = false
   }
@@ -34,6 +37,7 @@ export default class ShowBtn {
 
     this.items.forEach(el => el.classList.add('show'))
     this.btn.innerHTML = 'hide'
+    this.wrapper.style.height = this.wrapper.scrollHeight + 'px'
     this.toggle = true
   }
 
@@ -45,9 +49,12 @@ export default class ShowBtn {
 
     if (this.mql.matches) {
       this.hide()
+      this.height = this.wrapper.scrollHeight
+      this.hide()
       this.btn.addEventListener('click', this.btnFunc)
     } else {
       this.show()
+      this.wrapper.style.height = 'auto'
       this.btn.removeEventListener('click', this.btnFunc)
     }
   }

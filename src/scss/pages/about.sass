@@ -28,3 +28,20 @@
 			margin-top: 60px
 .custom-width
 	width: 70%
+
+.about-info-block
+	position: absolute
+	bottom: 0
+	right: 0
+	padding: 50px 160px
+	+medium
+	background: $dark-color
+	display: flex
+	align-items: center
+	justify-content: center 
+	color: white
+	opacity: 0
+	transform: translateY(60px)
+	z-index: 0
+	@include media('<=1095px')
+		display: none
