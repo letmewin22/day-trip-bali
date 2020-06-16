@@ -36,6 +36,9 @@ export default class Dropdown {
   }
 
   open(el) {
+
+    this.close()
+
     el.target.parentNode.querySelector(this.btnSelector).classList.add('opened')
     el.target.parentNode.querySelector(this.itemsSelector).classList.add('opened')
     el.target.parentNode.style.zIndex = 1000

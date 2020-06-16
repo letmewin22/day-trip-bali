@@ -13,7 +13,7 @@ import CustomRendererAbout from './CustomRenderAbout'
 import './btn'
 import moveEl from './lib/moveEl'
 import Dropdown from './dropdown'
-import {onYouTubeIframeAPIReady} from './YTplayer.js'
+import { onYouTubeIframeAPIReady } from './YTplayer.js'
 
 const adminBar = document.querySelector('#wpadminbar')
 const links = document.querySelectorAll('.nav__item a')
@@ -35,9 +35,15 @@ if (!adminBar) {
     }
   })
 
+  const resizeHandler = () => {
 
 
-  H.on('NAVIGATE_IN', ({location }) => {
+
+    document.querySelector('#screen-width').querySelector('span').innerHTML = window.innerWidth.toString()
+    document.querySelector('#screen-resolution').querySelector('span').innerHTML = window.devicePixelRatio.toString()
+  }
+
+  H.on('NAVIGATE_IN', ({ location }) => {
     for (let i = 0; i < links.length; i++) {
       const link = links[i]
 
@@ -62,8 +68,11 @@ if (!adminBar) {
     }
     moveEl()
 
-    const dropdown = new Dropdown({btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown'})
+    const dropdown = new Dropdown({ btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown' })
     dropdown.init()
+    
+    resizeHandler()
+    window.addEventListener('resize', resizeHandler)
   })
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -73,6 +82,9 @@ if (!adminBar) {
 
   H.on('NAVIGATE_END', () => {
     lazyLoader()
+
+    const dropdown = new Dropdown({ btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown' })
+    dropdown.init()
   })
 
 

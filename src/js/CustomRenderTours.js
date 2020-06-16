@@ -33,8 +33,9 @@ class CustomRendererTours extends Highway.Renderer {
         }
       }
     })
-
-    document.querySelector('.gallery-section__view-more span').innerHTML = document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length.toString()
+    
+    if(document.querySelector('.gallery-section__view-more span'))
+      document.querySelector('.gallery-section__view-more span').innerHTML = document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length.toString()
 
     ripplyScott().init('white-block__btn', 0.75)
 

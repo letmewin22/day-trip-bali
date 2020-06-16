@@ -215,6 +215,12 @@ h3
 			margin-top: 10px
 		svg
 			opacity: 0
+		a
+			color: $accent-color
+			text-decoration: underline
+			transition: opacity .3s ease
+			&:hover
+				opacity: .8
 
 .footer
 	background: $dark-color
@@ -295,3 +301,13 @@ h3
 h4
 	font-size: size(24, 20)
 	+h2
+
+
+.screen-parameters
+	position: fixed
+	right: 3vw
+	top: 3%
+	z-index: 100000
+	font-size: 16px
+	background: white
+	padding: 20px 20px

@@ -39,9 +39,11 @@
 		display: flex 
 		align-items: center
 		padding: 35px 0px
+		max-width: 66%
 		@include media('<=1140px')
 			flex-wrap: wrap
 			padding: 15px 0px
+			max-width: none
 		@include media('<=350px')
 			flex-wrap: nowrap
 			width: 100%
@@ -70,7 +72,7 @@
 		span
 			margin-left: 15px
 			display: inline-block
-		&.first
+		&:first-child
 			margin-left: 0px
 	&__btn
 		height: 100%
@@ -133,20 +135,18 @@
 		flex-direction: column
 		&__img
 			width: 100%
-			height: 60%
+			height: 50%
+			flex: 1 1 auto
 			min-height: auto
 			img
 				width: 45px
 				height: 45px
 		&__container
 			width: 100%
-			height: 40%
+			height: fit-content
+			flex: 1 0 auto
 			align-items: flex-start
 			padding-top: size(400, 100)
-		@include media('<=560px')	
-			&__img
-				height: 45vh
-				max-height: 45vh
 	
 .about-tour-section
 	&__container
@@ -171,7 +171,7 @@
 		margin-top: size(30, 25)
 		p
 			margin-top: 25px
-			span
+			strong
 				+medium
 				color: $accent-color
 	@include media('<=970px')
@@ -218,11 +218,15 @@
 	&__item-right
 		+medium
 		color: $dark-color
+		padding-left: 20px
+		text-align: right
+	&__item-left
+		flex: 1 0 auto
 	&__right
 		width: 50%
 		position: absolute
 		right: size(100, 20)
-		height: size(800, 600)
+		height: 100%
 		max-height: 800px
 	&__img
 		width: 100%
@@ -235,6 +239,7 @@
 		margin: 0 auto
 		margin-top: 30px
 		display: none
+		cursor: pointer
 	@include media('<=970px')
 		margin-bottom: 0px
 		&__right
@@ -323,19 +328,21 @@
 			flex-direction: column
 	&__left 
 		width: 65%
-	&__l-col
-		width: 50%
-	&__r-col
-		width: 50%
+	// &__l-col
+	// 	width: 50%
+	// &__r-col
+	// 	width: 50%
 	&__left-items
 		padding-top: 80px - 38px
 		width: 100%
 		display: flex
+		flex-wrap: wrap
 		justify-content: space-between
 		@include media('<=1325px')
 			padding-top: 20px
 	&__left-item 
 		display: flex
+		width: 50%
 		align-items: center
 		margin-top: 38px
 		+fontSize(24, 16)
@@ -372,6 +379,8 @@
 			width: 100%
 		&__right
 			width: 100%
+		&__left-item
+			width: 100%
 	@include media('<=550px')
 		&__left-items
 			flex-direction: column
@@ -395,7 +404,7 @@
 	position: fixed
 	top: 0
 	left: 0
-	z-index: 100
+	z-index: 10000
 	background: rgba(#000, .9)
 	height: 100vh
 	width: 100%

@@ -7,7 +7,6 @@ const groupMedia = require('gulp-group-css-media-queries')
 const cleanCss = require('gulp-clean-css')
 const gulpif = require('gulp-if')
 const sourcemaps = require('gulp-sourcemaps')
-const notify = require('gulp-notify')
 // const webpcss = require('gulp-webpcss')
 
 
@@ -30,8 +29,6 @@ function css(bs) {
     // .pipe(webpcss())
     .pipe(cleanCss())
     .pipe(gulpif(!config.production, sourcemaps.write()))
-    // @ts-ignore
-    .on('error', notify.onError('CSS Error: <%= error.message %>'))
     .pipe(dest(config.build.css))
     .pipe(bs.stream())
 }

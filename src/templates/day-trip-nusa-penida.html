@@ -17,16 +17,16 @@
         </div>
         <div class="white-block__item">
           <img src="img/tour-icons/price.svg" alt="money-bag">
-          <span>99 USD PER PERSON</span>
+          <span>FROM $700 per boat (up to 9pax)</span>
         </div>
       </div>
     </div>
-    <button class="white-block__btn">
+    <a href="#" class="white-block__btn">
     Book now
     	<svg class="white-block__btn-riple">
         <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
       </svg>
-    </button>
+    </a>
   </div>
   <header class="tour-header">
     <div class="container tour-header__container full-size">
@@ -68,7 +68,7 @@
                 <div class="details-section__item show">
                   <div class="details-section__item-container">
                     <div class="details-section__item-left">6.30 am</div>
-                    <div class="details-section__item-right">pick up</div>
+                    <div class="details-section__item-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolore quisquam, alias ipsa harum, explicabo magnam vel dolor porro eum libero, nisi pariatur asperiores optio laboriosam culpa et. Soluta, dolore obcaecati praesentium alias nihil porro quod reprehenderit quibusdam similique error.</div>
                   </div>
                   <div class="details-section__item-line"></div>
                 </div>
@@ -135,22 +135,12 @@
         <div class="list-section__left">
           <h2>Package includes</h2>
           <div class="list-section__left-items">
-            <div class="list-section__l-col">
               {% for i in range(0, 4) -%}
                 <div class="list-section__left-item">
                   <div class="list-section__item-icon">{% include "partials/_check.svg" %}</div>
                   <div class="list-section__item-text">Pick up and drop off</div>
                 </div>
               {% endfor %}
-            </div>
-            <div class="list-section__r-col">
-              {% for i in range(0, 4) -%}
-                <div class="list-section__left-item">
-                  <div class="list-section__item-icon">{% include "partials/_check.svg" %}</div>
-                  <div class="list-section__item-text">Pick up and drop off</div>
-                </div>
-              {% endfor %}
-            </div>
           </div>
 
         </div>
