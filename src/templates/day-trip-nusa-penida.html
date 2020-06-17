@@ -135,12 +135,12 @@
         <div class="list-section__left">
           <h2>Package includes</h2>
           <div class="list-section__left-items">
-              {% for i in range(0, 4) -%}
-                <div class="list-section__left-item">
-                  <div class="list-section__item-icon">{% include "partials/_check.svg" %}</div>
-                  <div class="list-section__item-text">Pick up and drop off</div>
-                </div>
-              {% endfor %}
+            {% for i in range(0, 4) -%}
+              <div class="list-section__left-item">
+                <div class="list-section__item-icon">{% include "partials/_check.svg" %}</div>
+                <div class="list-section__item-text">Pick up and drop off</div>
+              </div>
+            {% endfor %}
           </div>
 
         </div>
@@ -248,5 +248,12 @@
       </div>
     </section>
   </main>
+  <div class="video-pop-up">
+    <div class="video-pop-up__content">
+      <div class="video-pop-up__video" id="pop-up-video">
+        <iframe data-src="https://www.youtube.com/embed/UZ4iHDhTPYs" id="ytv" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
   {% include "partials/_footer.html" %}
 {% endblock %}

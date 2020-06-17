@@ -13,12 +13,12 @@ import CustomRendererAbout from './CustomRenderAbout'
 import './btn'
 import moveEl from './lib/moveEl'
 import Dropdown from './dropdown'
-import { onYouTubeIframeAPIReady } from './YTplayer.js'
+// import { onYouTubeIframeAPIReady } from './YTplayer.js'
 
 const adminBar = document.querySelector('#wpadminbar')
 const links = document.querySelectorAll('.nav__item a')
 
-onYouTubeIframeAPIReady()
+// onYouTubeIframeAPIReady()
 
 if (!adminBar) {
 
@@ -34,14 +34,6 @@ if (!adminBar) {
       default: Fade
     }
   })
-
-  const resizeHandler = () => {
-
-
-
-    document.querySelector('#screen-width').querySelector('span').innerHTML = window.innerWidth.toString()
-    document.querySelector('#screen-resolution').querySelector('span').innerHTML = window.devicePixelRatio.toString()
-  }
 
   H.on('NAVIGATE_IN', ({ location }) => {
     for (let i = 0; i < links.length; i++) {
@@ -71,8 +63,6 @@ if (!adminBar) {
     const dropdown = new Dropdown({ btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown' })
     dropdown.init()
     
-    resizeHandler()
-    window.addEventListener('resize', resizeHandler)
   })
 
   window.addEventListener('DOMContentLoaded', () => {

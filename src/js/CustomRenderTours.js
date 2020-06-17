@@ -5,6 +5,7 @@ import Swiper from 'swiper'
 import ripplyScott from './btn.js'
 import ShowBtn from './ShowBtn'
 import popUp from './popup.js'
+import YTplayer from './YTplayer.js'
 
 
 class CustomRendererTours extends Highway.Renderer {
@@ -13,6 +14,8 @@ class CustomRendererTours extends Highway.Renderer {
     const showBtn = new ShowBtn(document.querySelector('.details-section__more-btn'))
 
     showBtn.init()
+
+    YTplayer.startVideo()
     popUp()
 
     new Swiper('.swiper-container', {
@@ -33,8 +36,8 @@ class CustomRendererTours extends Highway.Renderer {
         }
       }
     })
-    
-    if(document.querySelector('.gallery-section__view-more span'))
+
+    if (document.querySelector('.gallery-section__view-more span'))
       document.querySelector('.gallery-section__view-more span').innerHTML = document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length.toString()
 
     ripplyScott().init('white-block__btn', 0.75)
@@ -43,14 +46,14 @@ class CustomRendererTours extends Highway.Renderer {
     const height = window.innerHeight - it.getBoundingClientRect().height
 
     const cb = () => {
-
-      if(it.getBoundingClientRect().y <= 0 && document.documentElement.scrollTop >= height)
+      const st = document.body.scrollTop || document.documentElement.scrollTop
+      if (screen.width > 1140)
+        if (it.getBoundingClientRect().y <= 0 && st >= height)
+          it.classList.add('fixed')
+        else
+          it.classList.remove('fixed')
+      else
         it.classList.add('fixed')
-      else if(screen.width < 1140)
-        it.classList.add('fixed')
-      else 
-        it.classList.remove('fixed')
-
       this.raf = requestAnimationFrame(cb)
     }
 
@@ -61,7 +64,7 @@ class CustomRendererTours extends Highway.Renderer {
 
     if (loader.classList.contains('loaded') === true) {
       let navI = document.querySelectorAll('.nav__item')
-      if (screen.width > 1190) { 
+      if (screen.width > 1190) {
         for (let i = 0; i < navI.length; i++) {
           navI[i].classList.add('inverse')
         }
@@ -79,7 +82,7 @@ class CustomRendererTours extends Highway.Renderer {
 
         })
         let navI = document.querySelectorAll('.nav__item')
-        if (screen.width > 1190) { 
+        if (screen.width > 1190) {
           for (let i = 0; i < navI.length; i++) {
             navI[i].classList.add('inverse')
           }

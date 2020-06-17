@@ -26,7 +26,7 @@ const TourLoader = () => {
     let tl2 = new TimelineMax()
     tl2
       .to(img, 0.5, { opacity: 1, ease: Power2.easeInOut }, 0)
-      .to(whiteBlock, 1, { y: 0, opacity: 1, ease: Power2.easeInOut }, 0.4)
+      .to(whiteBlock, 1, { bottom: 0, ease: Power2.easeInOut }, 0.4)
   }
   imagesLoaded(img, { background: true }, function() {
     loader()

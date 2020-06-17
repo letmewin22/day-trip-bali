@@ -49,7 +49,7 @@ function clean() {
 
 
 const build = gulp.series(clean, wpBuild, gulp.parallel(js, css, html, images, fonts, video))
-const tophp = gulp.series(clean, wpBuild, gulp.parallel(js, css, images, fonts, video))
+const tophp = gulp.series(clean, wpBuild, gulp.parallel(js, css))
 const dev = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, video))
 const watch = gulp.series(wpDev, gulp.parallel(dev, watchFiles, server))
 
