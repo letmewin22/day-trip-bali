@@ -7,6 +7,7 @@ const groupMedia = require('gulp-group-css-media-queries')
 const cleanCss = require('gulp-clean-css')
 const gulpif = require('gulp-if')
 const sourcemaps = require('gulp-sourcemaps')
+const rename = require('gulp-rename')
 // const webpcss = require('gulp-webpcss')
 
 
@@ -29,6 +30,7 @@ function css(bs) {
     // .pipe(webpcss())
     .pipe(cleanCss())
     .pipe(gulpif(!config.production, sourcemaps.write()))
+    .pipe(rename('app.' + config.hash + '.css'))
     .pipe(dest(config.build.css))
     .pipe(bs.stream())
 }

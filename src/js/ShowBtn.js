@@ -5,7 +5,7 @@ export default class ShowBtn {
     this.btn = btn
     this.items = this.btn.parentNode.querySelectorAll('.details-section__item')
     this.wrapper = this.btn.parentNode
-    
+
     this.toggle = false
 
     this.mql = window.matchMedia('(max-width: 970px)')
@@ -21,16 +21,23 @@ export default class ShowBtn {
   }
 
   hide() {
+    console.log(this.items.length)
+    
+    if (this.items.length >= 6) {
 
-    this.items.forEach(el => el.classList.remove('show'))
-    this.btn.innerHTML = 'show more'
+      this.items.forEach(el => el.classList.remove('show'))
+      this.btn.innerHTML = 'show more'
 
-    for (let i = 0; i < 7; i++) {
-      this.items[i].classList.add('show')
+      for (let i = 0; i < 7; i++) {
+        this.items[i].classList.add('show')
+      }
+      this.wrapper.style.height = this.height + 'px'
+
+      this.toggle = false
+    } else {
+      this.btn.style.display = 'none'
     }
-    this.wrapper.style.height = this.height + 'px'
 
-    this.toggle = false
   }
 
   show() {

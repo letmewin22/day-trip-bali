@@ -3,6 +3,7 @@ const nunjucksRender = require('gulp-nunjucks-render')
 const prettify = require('gulp-prettify')
 const frontMatter = require('gulp-front-matter')
 const { src, dest } = require('gulp')
+const inject = require('gulp-inject-string')
 // const webphtml = require('gulp-webp-html')
 
 function html(bs) {
@@ -22,6 +23,8 @@ function html(bs) {
       PRODUCTION: config.production,
       path: [config.src.templates]
     }))
+    .pipe(inject.replace('app.js', 'app.' + config.hash + '.js'))
+    .pipe(inject.replace('app.css', 'app.' + config.hash + '.css'))
     // .pipe(webphtml())
     .pipe(prettify({
       indentSize: 2,

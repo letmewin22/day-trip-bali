@@ -45,7 +45,6 @@ if (!adminBar) {
         link.classList.add('is-current')
       }
     }
-    moveEl()
   })
 
   window.addEventListener('load', () => {
@@ -72,7 +71,7 @@ if (!adminBar) {
 
   H.on('NAVIGATE_END', () => {
     lazyLoader()
-
+    moveEl()
     const dropdown = new Dropdown({ btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown' })
     dropdown.init()
   })

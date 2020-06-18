@@ -37,7 +37,7 @@
 		display: flex 
 		align-items: center
 		padding: 35px 0px
-		max-width: 66%
+		max-width: 75%
 		@include media('<=1140px')
 			flex-wrap: wrap
 			padding: 15px 0px
@@ -49,6 +49,7 @@
 			padding: 10px 0
 	&__item
 		margin-right: 50px
+		opacity: 0
 		display: flex
 		align-items: center
 		text-transform: uppercase
@@ -70,15 +71,23 @@
 			display: inline-block
 		&:first-child
 			margin-left: 0px
-	&__btn
-		height: 100%
-		background: $accent-color
-		padding: 35px 170px
-		color: white
+	&__btns
+		display: flex
 		position: absolute
 		right: 0
 		top: 0
-		+fontSize(25, 18)
+		width: 34%
+		height: 100%
+		@include media('<=1140px')
+			width: 100%
+	&__btn
+		width: 50%
+		height: 100%
+		background: $accent-color
+		padding: 35px 15px
+		color: white
+		position: relative
+		+fontSize(23, 16)
 		cursor: pointer
 		overflow: hidden
 		line-height: 1em
@@ -87,18 +96,8 @@
 		align-items: center
 		@include media('<=1140px')
 			padding: 0
-			width: 100%
-	&__btn-riple
-		height: 100% 
-		pointer-events: none 
-		position: absolute 
-		top: 0 
-		left: 0 
-		z-index: 0 
-		width: 100% 
-		fill: darken($accent-color, 25%) 
-		use
-			opacity: 0
+		&--green
+			background: $green 
 	@include media('<=1140px')
 		height: size(90, 50)
 	
@@ -389,7 +388,13 @@
 
 .tour-list
 	&__img-wrapper
-		height: 14.5vw
+		height: 16.5vw
+		@include media('<=1730px') 
+			height: 17vw 
+		@include media('<=1305px') 
+			height: 17vw 
+		@include media('<=1025px')
+			height: 23vw 
 	&__content
 		max-width: 506px
 	&--bg

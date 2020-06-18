@@ -2,10 +2,10 @@ import { TimelineMax, Linear } from 'gsap'
 
 const ripplyScott = function() {
 
-  const ripple = document.querySelectorAll('.js-ripple')
 
   function rippleAnimation(event, timing) {
     const tl = new TimelineMax(),
+      ripple = event.target.querySelector('.js-ripple'),
       x = event.offsetX,
       y = event.offsetY,
       w = event.target.offsetWidth,
@@ -34,11 +34,11 @@ const ripplyScott = function() {
 
   return {
     init: function(target, timing) {
-      const button = document.querySelector('.'+target)
+      const button = document.querySelectorAll('.'+target)
 
-      button.addEventListener('mouseenter', function(event) {
+      button.forEach(el => el.addEventListener('mouseenter', function(event) {
         rippleAnimation.call(this, event, timing)
-      })
+      }))
     }
   }
 }

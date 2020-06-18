@@ -8,25 +8,33 @@
     <div data-move="tour-header__tour-content,1,1140" class="container white-block__container full-size">
       <div class="white-block__items">
         <div class="white-block__item first">
-          <img src="img/tour-icons/days.svg" alt="calendar">
+          <img src="img/tour-icons/calendar-icon.svg" alt="calendar">
           <span>DAY TRIP</span>
         </div>
         <div class="white-block__item">
-          <img src="img/tour-icons/time.svg" alt="clock">
+          <img src="img/tour-icons/clock-icon.svg" alt="clock">
           <span>6.30 AM — 5.00 PM</span>
         </div>
         <div class="white-block__item">
-          <img src="img/tour-icons/price.svg" alt="money-bag">
+          <img src="img/tour-icons/price-icon.svg" alt="money-bag">
           <span>FROM $700 per boat (up to 9pax)</span>
         </div>
       </div>
     </div>
-    <a href="#" class="white-block__btn">
-    Book now
-    	<svg class="white-block__btn-riple">
-        <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
-      </svg>
-    </a>
+    <div class="white-block__btns">
+      <a href="#" class="white-block__btn ripple-btn">
+        Book now
+    	<svg class="ripple-btn__ripple">
+          <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+        </svg>
+      </a>
+      <a href="#" class="white-block__btn white-block__btn--green ripple-btn">
+        WhatsApp
+    	<svg class="ripple-btn__ripple ripple-btn__ripple--green">
+          <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+        </svg>
+      </a>
+    </div>
   </div>
   <header class="tour-header">
     <div class="container tour-header__container full-size">
@@ -64,7 +72,7 @@
         <div class="details-section__bottom">
           <div class="details-section__left">
             <div class="details-section__items">
-              {% for i in range(0, 5) -%}
+              {% for i in range(0, 1) -%}
                 <div class="details-section__item show">
                   <div class="details-section__item-container">
                     <div class="details-section__item-left">6.30 am</div>

@@ -11,8 +11,10 @@ const config = {
   env: 'development',
   production: production,
   templates: sourceFolder + '/templates',
+  hash: 'e' + Date.now(),
   build: {
     html: projectFolder + '/',
+    php: projectFolder + '/',
     css: projectFolder + '/css/',
     js: projectFolder + '/js/',
     img: projectFolder + '/img/',
@@ -22,6 +24,7 @@ const config = {
   src: {
     templates: 'src/templates',
     html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html', '!' + sourceFolder + '/data'],
+    php: projectFolder + '/**/*.php',
     css: sourceFolder + '/scss/app.sass',
     js: sourceFolder + '/js/app.js',
     img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
@@ -36,6 +39,8 @@ const config = {
     video: sourceFolder + '/video/*.mp4'
   },
   clean: './' + projectFolder + '/',
+  cleanJS: projectFolder + '/js/app.*',
+  cleanCSS: projectFolder + '/css',
 
   setEnv: function(env) {
     if (typeof env !== 'string') return

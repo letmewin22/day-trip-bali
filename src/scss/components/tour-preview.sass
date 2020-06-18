@@ -51,8 +51,14 @@
 		background: rgba(black, 0.3)
 		opacity: 0
 		transition: opacity 0.3s ease
+	@include media('<=1500px')
+		height: 16vw
+	@include media('<=1305px')
+		height: 17vw
+	@include media('<=1025px')
+		height: 23vw
 	@include media('<=850px')
-		height: 40vh
+		height: 35vh
 
 .tour-preview-h3
 	font-size: 20px

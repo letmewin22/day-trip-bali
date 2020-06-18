@@ -6,6 +6,7 @@ const config = require('././gulp/config')
 
 const server = require('./gulp/tasks/server').bind(null, browsersync)
 const html = require('./gulp/tasks/html').bind(null, browsersync)
+const php = require('./gulp/tasks/php').bind(null)
 const css = require('./gulp/tasks/css').bind(null, browsersync)
 const js = require('./gulp/tasks/js').bind(null, browsersync)
 const images = require('./gulp/tasks/images').bind(null, browsersync)
@@ -44,12 +45,16 @@ function watchFiles() {
 }
 
 function clean() {
-  return del(config.clean)
+  return del(config.clean, {force: true})
+}
+
+function cleanPHP() {
+  return del([config.cleanJS, config.cleanCSS], {force: true})
 }
 
 
 const build = gulp.series(clean, wpBuild, gulp.parallel(js, css, html, images, fonts, video))
-const tophp = gulp.series(clean, wpBuild, gulp.parallel(js, css))
+const tophp = gulp.series(cleanPHP, wpBuild, gulp.parallel(php, js, css))
 const dev = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, video))
 const watch = gulp.series(wpDev, gulp.parallel(dev, watchFiles, server))
 

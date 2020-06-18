@@ -10,6 +10,7 @@ const TourLoader = () => {
   let h1Splitter = [...document.querySelectorAll('h1 span')]
   // const p = document.querySelector('.tour-header__tour-content p');
   const whiteBlock = document.querySelector('.white-block')
+  const whiteBlockItems = document.querySelectorAll('.white-block__item')
   const img = document.querySelector('.tour-header__img')
   for (let i = 0; i < h1Splitter.length; i++) {
     charming(h1Splitter[i])
@@ -26,7 +27,9 @@ const TourLoader = () => {
     let tl2 = new TimelineMax()
     tl2
       .to(img, 0.5, { opacity: 1, ease: Power2.easeInOut }, 0)
+      .to(img, 0.5, { opacity: 1, ease: Power2.easeInOut }, 0)
       .to(whiteBlock, 1, { bottom: 0, ease: Power2.easeInOut }, 0.4)
+      .staggerTo(whiteBlockItems, 1, { opacity: 1, ease: Power2.easeInOut }, 0.1, 0.4)
   }
   imagesLoaded(img, { background: true }, function() {
     loader()
