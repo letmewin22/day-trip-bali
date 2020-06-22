@@ -16,7 +16,6 @@ function sectionInView() {
           .to(elements[i].querySelectorAll('h3'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.3)
           .to(elements[i].querySelectorAll('.tours-preview-wrapper'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.3)
           .staggerTo(elements[i].querySelectorAll('svg'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.08, 0.5)
-          .staggerTo(elements[i].querySelectorAll('img'), 0.8, { y: 0, opacity: 1, ease: Power1.easeOut }, 0.15, 0.5)
           .staggerTo(elements[i].querySelectorAll('p'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.08, 0.5)
           .staggerTo(elements[i].querySelectorAll('.choose-items__item svg'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.08, 0.5)
         for (let j = 0; j < elements[i].querySelectorAll('h2 span').length; j++) {

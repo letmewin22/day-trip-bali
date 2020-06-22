@@ -3,20 +3,38 @@ import imagesLoaded from 'imagesloaded'
 import TourLoader from './tourLoader.js'
 import Swiper from 'swiper'
 import ripplyScott from './btn.js'
-import ShowBtn from './ShowBtn'
 import popUp from './popup.js'
 import YTplayer from './YTplayer.js'
+import Details from './Details.js'
 
 
 class CustomRendererTours extends Highway.Renderer {
   onEnterCompleted() {
 
-    const showBtn = new ShowBtn(document.querySelector('.details-section__more-btn'))
+    // const showBtn = new ShowBtn(document.querySelector('.details-section__more-btn'))
 
-    showBtn.init()
+    // showBtn.init()
 
     YTplayer.startVideo()
-    popUp()
+    popUp({
+      btn: document.querySelector('.tour-header__video-btn'),
+      window: document.querySelector('.video-pop-up'),
+      untouchable: 'video-pop-up__video',
+      cb: {
+        open: () => YTplayer.startVideo(),
+        close: () => YTplayer.stopVideo()
+      }
+    })
+
+    popUp({
+      btn: document.querySelector('.details-section__more-btn'),
+      window: document.querySelector('.details-pop-up'),
+      untouchable: 'details-pop-up',
+      cb: {
+        open: () => Details.open(),
+        close: () => Details.close()
+      }
+    })
 
     new Swiper('.swiper-container', {
       slidesPerView: 'auto',
@@ -46,8 +64,9 @@ class CustomRendererTours extends Highway.Renderer {
     const height = window.innerHeight - it.getBoundingClientRect().height
 
     const cb = () => {
+ 
       const st = document.body.scrollTop || document.documentElement.scrollTop
-      if (screen.width > 1140)
+      if (document.body.getBoundingClientRect().width > 1140)
         if (it.getBoundingClientRect().y <= 0 && st >= height)
           it.classList.add('fixed')
         else

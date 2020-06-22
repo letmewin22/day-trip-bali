@@ -54,6 +54,7 @@ const lazyLoader = () => {
             const img = entry.target
             const src = img.getAttribute('data-bglazy')
             img.style.backgroundImage = `url(${src})`
+            img.classList.add('img-loaded')
 
             observer.disconnect()
           }

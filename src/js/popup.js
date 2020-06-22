@@ -1,12 +1,13 @@
-import YTplayer from './YTplayer'
+const popUp = (opts) => {
 
-const popUp = () => {
-
-  const btn = document.querySelector('.tour-header__video-btn')
-  const popUpWindow = document.querySelector('.video-pop-up')
+  const btn = opts.btn 
+  const popUpWindow = opts.window
 
   const btnHandler = () => {
-    YTplayer.startVideo()
+
+    if(typeof opts.cb === 'object')
+      opts.cb.open()
+
     const padding = window.innerWidth - document.body.getBoundingClientRect().width
     popUpWindow.classList.add('open')
     document.body.classList.add('fixed')
@@ -17,10 +18,12 @@ const popUp = () => {
   }
 
   const documentHandler = (e) => {
-    if(!e.target.classList.contains('.video-pop-up__video')) {
+    if(!e.target.classList.contains(opts.untouchable)) {
       popUpWindow.classList.remove('open')
       
-      YTplayer.stopVideo()
+      if(typeof opts.cb === 'object')
+        opts.cb.close()
+
       setTimeout(() => {
         document.body.classList.remove('fixed')
         document.body.style.removeProperty('--padding')
