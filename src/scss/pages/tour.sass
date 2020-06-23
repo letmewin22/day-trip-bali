@@ -104,8 +104,8 @@
 			background: $green 
 	@include media('<=1140px')
 		height: size(90, 50)
-	@media screen and ( min-height: 812px )
-		height: 75px
+	@media screen and ( min-height: 700px ) and (max-width: 460px)
+		height: 90px
 		
 	
 .tour-header
@@ -244,6 +244,8 @@
 		width: 50%
 		height: auto
 		max-height: 800px
+		position: sticky
+		top: 0
 	&__img
 		width: 100%
 		height: 100%
@@ -300,7 +302,7 @@
 		.details-section__item-left
 			background-image: url('../img/details-icons/' + ($i - 1) + '.svg')
 
-.details-section__item:first-child, .details-section__item:last-child
+.details-section__item:first-child, .details-section__item.last
 		.details-section__item-left
 			background-image: url(../img/details-icons/0.svg) !important
 
@@ -316,8 +318,6 @@
 	padding-top: size(100, 40)
 	visibility: hidden
 	&.open
-	.details-section__container
-		pointer-events: none
 	.details-section__bottom
 		padding-bottom: size(60, 40)
 	&__close

@@ -18,7 +18,9 @@ const popUp = (opts) => {
   }
 
   const documentHandler = (e) => {
-    if(!e.target.classList.contains(opts.untouchable)) {
+    console.log(e.path)
+    
+    if(!e.path.includes(opts.untouchable)) {
       popUpWindow.classList.remove('open')
       
       if(typeof opts.cb === 'object')
