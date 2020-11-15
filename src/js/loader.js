@@ -5,6 +5,6 @@
     loader.classList.add('loaded')
 
     loader.style.opacity = 0
-    loader.style.pointerEvents = 'none'
+    loader.style.visibility = 'hidden'
   }
 })()

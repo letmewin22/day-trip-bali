@@ -1,15 +1,15 @@
----
-title: about page
-route: about
----
+{% set title = 'about page' %}
+{% set 'route' = 'about' %}
+
+
 {% extends "layouts/_layout.html" %}
 {% block content %}
 <header class="header">
   <div class="header__content">
     <h1>ABOUT</h1>
-    <p class="header__content__description">We create the unique adventures in Bali</p>
-    <div class="info-block">
-      <span class="info-block__text">We create a positive emotions!</span>
+    <p class="header__description">We create the unique adventures in Bali</p>
+    <div class="about-info-block">
+      <span class="about-info-block__text">We create a positive emotions!</span>
     </div>
   </div>
   <div class="header__video" style="min-height: 60vh">
@@ -26,8 +26,8 @@ route: about
           We made huge job to perfectly organize and balance our itineraries including visit to most interesting destinations around Bali and Nusa Penida islands. Sit back, relax and enjoy your adventure, our crew will take care of the rest.</p>
       </div>
       <div class="bottom-content welcome">
-        <img src="img/about-1.jpg" alt="beach">
-        <img src="img/about-2.jpg" alt="beach">
+        <img src="img/thumbnails/hor.jpg" data-lazy="img/about-1.jpg" alt="beach">
+        <img src="img/thumbnails/ver.jpg" data-lazy="img/about-2.jpg" alt="beach">
       </div>
       <div class="waves-wrapper">
         {% include "partials/_waves.html" %}
@@ -38,7 +38,7 @@ route: about
     <div class="container section__container">
       <div class="history-wrapper">
         <div class="history-wrapper__left">
-          <img src="img/about-3.jpg" alt="underwater">
+          <img src="img/thumbnails/about-3.jpg" data-lazy="img/about-3.jpg" alt="underwater">
         </div>
         <div class="history-wrapper__right">
           <h2>The beginning<br>of Day Trip Bali</h2>
@@ -51,63 +51,39 @@ route: about
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container section__container last">
-      <div class="price__wrapper">
-        <h2 class="custom-width">Touch the nature and authentic traditions of Indonesia</h2>
-        <div class="price__items">
-          <div class="price__item">
-            <img src="img/about-icons/1.svg" alt="">
-            <p>Ride a private boat around Bali and Nusa Penida</p>
+    <section class="section">
+      <div class="container section__container last">
+        <h2>Why do tourists<br>choose&nbsp;us?</h2>
+        <div class="choose-items">
+          <div class="choose-items__item">
+            {% include "partials/_choose-icon-1.html" %}
+            <h3>Create your best day</h3>
+            <p>All our comments are telling one thing — we are making people happier while creating the best day for them on the island. You can check it here — <span>
+                <a href="reviews.html" data-router-disabled>reviews</a></span></p>
           </div>
-          <div class="price__item">
-            <img src="img/about-icons/2.svg" alt="">
-            <p>Free photo and video report</p>
+          <div class="choose-items__item">
+            {% include "partials/_choose-icon-2.html" %}
+            <h3>Positive team</h3>
+            <p>You won't feel any language problems. All teams including guides and captains of the boats can speak English, and it is rare for Bali.</p>
           </div>
-          <div class="price__item">
-            <img src="img/about-icons/3.svg" alt="">
-            <p>Swim with giant oceanic Manta Rays</p>
+          <div class="choose-items__item">
+            {% include "partials/_choose-icon-3.html" %}
+            <h3>Tours are full of adventures</h3>
+            <p>Just in one day, you will get maximum good emotions! We will show you maximum thanks to the well-organized logic of the tour. </p>
           </div>
-          <div class="price__item">
-            <img src="img/about-icons/4.svg" alt="">
-            <p>Snorkeling in 3 different spots</p>
+          <div class="choose-items__item">
+            {% include "partials/_choose-icon-4.html" %}
+            <h3>New private boats</h3>
+            <p>In sea tours you will travel all day on a new private boat — without a crowd, in a small group of tourists, with an experienced team and guide.</p>
           </div>
-          <div class="price__item">
-            <img src="img/about-icons/5.svg" alt="">
-            <p>Lunch in nice restaurant with infinity pool and volcano view</p>
-          </div>
-          <div class="price__item">
-            <img src="img/about-icons/6.svg" alt="">
-            <p>Visit Kelingking cliff during car tour</p>
+          <div class="choose-items__item">
+            {% include "partials/_choose-icon-5.html" %}
+            <h3>Collecting your memories</h3>
+            <p>At the end of each tour you get a free photo and video report. We shoot all day with the help of the drone and GoPro — these memories will remain with you!</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 </main>
-<footer class="footer tour-footer">
-  <div class="container section__container footer__container">
-    <div class="main-footer__content">
-      <div class="main-footer__content__left-content">
-        <h2>Contacts</h2>
-        <p>Our customers say that the day with us was the best in all there Bali vacation</p>
-        <p>Choose how you want to spend your best day with us!</p>
-      </div>
-      <div class="main-footer__content__right-content">
-        <div class="main-footer__content__left-content__contacts-items float-right">
-          <a href="#">+62 821 4595 7604 (WhatsApp)</a>
-          <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
-          <div class="social-media">
-            <a href="#"><img src="img/insta.svg" alt=""></a>
-            <a href="#"><img src="img/fb.svg" alt=""></a>
-          </div>
-          <div class="button footer-btn">
-            <span class="form-button">Book now</span>
-            <div class="button__bg"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+{% include "partials/_footer.html" %}
 {% endblock %}

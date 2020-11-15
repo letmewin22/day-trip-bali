@@ -1,0 +1,104 @@
+.review-header
+	width: 100%
+	position: relative
+	&__content
+		// height: 68vh
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding-left: $hor-dist
+		padding-right: $hor-dist
+		position: relative
+		padding-top: 160px
+
+.reviews-content-wrapper
+	opacity: 0
+	display: flex
+	justify-content: space-between
+	position: relative
+	&__left
+		width: 40%
+		.TA_cdswritereviewnew
+			margin-top: 58px
+		.sec-p
+			margin-top: 60px
+		.TA_cdsratingsonlynarrow
+			margin-top: 110px
+		h2
+			margin-top: 38px
+	&__right
+		width: 40%
+
+.reviews-item
+	padding-top: 40px
+	padding-bottom: 60px
+	border-bottom: 1px rgba(black, 0.1) solid
+
+.reviews-interface
+	width: 100%
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	line-height: 1em
+
+.reviews-name
+	+medium
+	font-size: 18px
+	color: rgba(black, 0.7)
+
+.reviews-date
+	font-size: 14px
+	color: rbga(#54555C, 0.7)
+
+.reviews-rate
+	display: flex
+	margin-top: 12px
+	width: fit-content
+	&.assessment
+		margin-top: 0px
+		margin-left: 65px
+		svg
+			display: block
+			margin-right: 8px
+			width: 18px
+			height: 18px
+			fill: #54555C
+	svg
+		display: block
+		margin-right: 8px
+		width: 12px
+		fill: #54555C
+		transition: fill .2s ease
+		&.active
+			fill: $accent-color
+		&.disabled
+			pointer-events: none
+.reviews-review
+	margin-top: 20px
+.reviews-rating
+	display: flex
+	align-items: baseline
+	margin-top: 60px
+	position: relative
+	+h3
+	font-size: 16px
+	.review-label
+		opacity: 0.7
+		line-height: 1em
+.reviews-items
+	display: flex
+	flex-direction: column-reverse 
+
+.review-header-desc
+	font-size: 24px
+	margin-top: 20px
+	opacity: 0
+	transform: translateX(40px)
+
+.button
+	&.review
+		margin-top: 25px
+		// display: none
+
+.mob
+	display: none

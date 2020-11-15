@@ -1,0 +1,47 @@
+.header__photo
+	height: 100vh
+	width: 100%
+	background-size: cover
+	background-repeat: no-repeat
+
+.bigger
+	width: 41%
+
+.history-wrapper
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 100%
+	&__left
+		width: 50%
+		height: 35vw
+		img
+			max-width: 100%
+			display: block
+			height: 100%
+			width: 100%
+			object-fit: cover
+	&__right
+		width: 50%
+		margin-left: 70px
+		p
+			margin-top: 60px
+.custom-width
+	width: 70%
+
+.about-info-block
+	position: absolute
+	bottom: 0
+	right: 0
+	padding: 50px 160px
+	+medium
+	background: $dark-color
+	display: flex
+	align-items: center
+	justify-content: center 
+	color: white
+	opacity: 0
+	transform: translateY(60px)
+	z-index: 0
+	@include media('<=1095px')
+		display: none

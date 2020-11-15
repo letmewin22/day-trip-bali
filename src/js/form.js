@@ -19,6 +19,7 @@ export default function FormInputs() {
   const thankYouScreenBg2 = document.querySelector('.thank-you-bg-white')
   const thankYouScreenContent = document.querySelector('.thank-you-content')
   const thislabel = document.querySelectorAll('label')[1]
+  const mailPHP = form.getAttribute('data-mail')
   let emailRegular = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 
@@ -92,7 +93,7 @@ export default function FormInputs() {
         validateText.style.opacity = '0'
 
         let request = new XMLHttpRequest()
-        request.open('POST', './mail.php', true)
+        request.open('POST', mailPHP, true)
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
 
         let data = serialize(form)
@@ -100,25 +101,14 @@ export default function FormInputs() {
         request.onload = function() {
           if (this.status >= 200 && this.status < 400) {
             setTimeout(function() {
-              let tl = new TimelineMax()
-              tl
-                .to(thankYouScreen, 0.01, { display: 'flex', ease: Power1.easeInOut })
-                .to(thankYouScreenBg2, 1, { opacity: 0.8, ease: Power1.easeInOut })
-                .fromTo(thankYouScreenBg, 1.5, { y: '100%' }, { y: '0%', ease: Power1.easeInOut }, 0.2)
-                .to(thankYouScreenContent, 1, { opacity: 1, ease: Power1.easeInOut }, 0.8)
-
+              alert('Your application has been successfully submitted')
               form.reset()
-              dataLayer.push({ 'event': 'otpravka_form' })
+              dataLayer.push({'event': 'form'})
               document.body.classList.remove('form-focused')
               for (let i = 0; i < input.length; i++) {
                 input[i].classList.remove('focus')
               }
 
-              if (formPopUp) {
-
-                formPopUp.style.opacity = '0'
-                formPopUp.style.pointerEvents = 'none'
-              }
 
             }, 1000)
           }

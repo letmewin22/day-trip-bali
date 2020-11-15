@@ -1,133 +1,143 @@
----
-title: Main page
-route: main
----
+{% set title = 'Main page' %}
+{% set 'route' = 'main' %}
+
 {% extends "layouts/_layout.html" %}
 {% block content %}
-
-<header class="header">
-  <div class="header__content">
-    <h1>DAY TRIP<br>BALI</h1>
-    <p class="header__content__description">We will create your best day on the island!</p>
-    <div class="info-block">
-      <span class="info-block__text">Perfectly organized and balanced tours</span>
-    </div>
-  </div>
-  <div data-video-src="video/video.mp4" data-poster-pc="img/main-poster-pc.jpg" data-poster-mob="img/main-poster.jpg" data-mob-btn="video/video-button.svg" class="header__video" style="min-height: 60vh">
-  </div>
-</header>
-<main>
-  <section class="section">
-    <div class="container section__container">
-      <div class="top-content">
-        <h2>Facts<br> about us</h2>
-        <p>We are №1 in Airbnb Bali Experience list, partner of TripAdvisor, Airbnb, Peek Pro. For 2&nbsp;years in business we have 5000 satisfied customers with 1 000+ reviews. Our core is team of certified guides.</p>
-      </div>
-      <div class="bottom-content welcome">
-        <img src="img/1-beach.jpg" alt="beach">
-        <img src="img/2-beach.jpg" alt="beach">
-      </div>
-      <div class="waves-wrapper">
-        {% include "partials/_waves.html" %}
+{% include "partials/_svg-sprite.html" %}
+  <header class="header">
+    <div class="header__content">
+      <h1>DAY TRIP<br>BALI</h1>
+      <p class="header__description">We will create your best day on the island!</p>
+      <div class="header__info-block info-block">
+        <span class="info-block__text">Ready for adventure?</span>
+        <a href="#" class="info-block__btn">
+          <span>Check calendar</span>
+          <svg class="info-block__btn-riple">
+            <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+          </svg>
+        </a>
       </div>
     </div>
-  </section>
-  <section class="section">
-    <div class="container section__container choose">
-      <div class="top-content__choose">
-        <h2>Choose your <br>tour</h2>
-      </div>
-      <div class="bottom-content bottom-content__marign">
-        {% include "partials/_slider.html" %}
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container section__container last">
-      <h2>Why do tourists<br>choose&nbsp;us?</h2>
-      <div class="choose-items">
-        <div class="choose-items__item">
-          {% include "partials/_choose-icon-1.html" %}
-          <h3>Create your best day</h3>
-          <p>All our comments are telling one thing — we are making people happier while creating the best day for them on the island. You can check it here — <span><a href="reviews.html" data-router-disabled>reviews</a></span></p>
+    <div data-video-src="video/video.mp4" data-poster-pc="img/main-poster-pc.jpg" data-poster-mob="img/main-poster.jpg" data-mob-btn="video/video-button.svg" class="header__video" style="min-height: 60vh"></div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="container section__container">
+        <div class="top-content">
+          <h2>Facts<br> about us</h2>
+          <p>We are №1 in Airbnb Bali Experience list, partner of TripAdvisor, Airbnb, Peek Pro. For 2&nbsp;years in business we have 5000 satisfied customers with 1 000+ reviews. Our core is team of certified guides.</p>
         </div>
-        <div class="choose-items__item">
-          {% include "partials/_choose-icon-2.html" %}
-          <h3>Positive team</h3>
-          <p>You won't feel any language problems. All teams including guides and captains of the boats can speak English, and it is rare for Bali.</p>
+        <div class="bottom-content welcome">
+          <img src="img/thumbnails/hor.jpg" data-lazy="img/1-beach.jpg" alt="beach">
+          <img src="img/thumbnails/ver.jpg" data-lazy="img/2-beach.jpg" alt="beach">
         </div>
-        <div class="choose-items__item">
-          {% include "partials/_choose-icon-3.html" %}
-          <h3>Tours are full of adventures</h3>
-          <p>Just in one day, you will get maximum good emotions! We will show you maximum thanks to the well-organized logic of the tour. </p>
-        </div>
-        <div class="choose-items__item">
-          {% include "partials/_choose-icon-4.html" %}
-          <h3>New private boats</h3>
-          <p>In sea tours you will travel all day on a new private boat — without a crowd, in a small group of tourists, with an experienced team and guide.</p>
-        </div>
-        <div class="choose-items__item">
-          {% include "partials/_choose-icon-5.html" %}
-          <h3>Collecting your memories</h3>
-          <p>At the end of each tour you get a free photo and video report. We shoot all day with the help of the drone and GoPro — these memories will remain with you!</p>
+        <div class="waves-wrapper">
+          {% include "partials/_waves.html" %}
         </div>
       </div>
-    </div>
-  </section>
-</main>
-<footer class="footer">
-  <div class="container section__container footer__container">
-    <div class="main-footer__content">
-      <div class="main-footer__content__left-content">
-        <h2>Contacts</h2>
-        <p>You can book a tour for any date, with free cancellation.</p>
-        <div class="main-footer__content__left-content__contacts-items with-margin">
-          <a href="#">+62 821 4595 7604 (WhatsApp)</a>
-          <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
-          <div class="social-media">
-            <a class="dif-soc" href="#"><img src="img/insta.svg" alt=""></a>
-            <a class="dif-soc" href="#"><img src="img/fb.svg" alt=""></a>
+    </section>
+    <section class="section">
+      <div class="container section__container choose">
+        <div class="top-content__choose">
+          <h2>Tours</h2>
+        </div>
+        <div class="bottom-content bottom-content__marign">
+          <div class="tours-preview-wrapper" style="opacity: 0">
+            <a href="day-trip-nusa-penida.html" class="tour-preview">
+              <div class="tour-img-wrapper" data-bglazy="img/tours-slider/slide-1.jpg">
+                <div class="tour-triger">-20%</div>
+              </div>
+              <div class="tour-info">
+                <div class="tour-top-info">
+                  <div class="tour-top-info-left">
+                    <p>From <span>$999</span> trip/boat</p>
+                  </div>
+                </div>
+                <h3 class="tour-preview-h3">One day group tour on a boat</h3>
+                <p class="tour-desc">Come with us on this amazing one of a kind day trip to Nusa Penida...</p>
+              </div>
+            </a>
+            <a href="day-trip-nusa-penida.html" class="tour-preview">
+              <div class="tour-img-wrapper" data-bglazy="img/tours-slider/slide-1.jpg"></div>
+              <div class="tour-info">
+                <div class="tour-top-info">
+                  <div class="tour-top-info-left">
+                    <p>From <span>$999</span> trip/boat</p>
+                  </div>
+                </div>
+                <h3 class="tour-preview-h3">One day group tour on a boat</h3>
+                <p class="tour-desc">Come with us on this amazing one of a kind day trip to Nusa Penida...</p>
+              </div>
+            </a>
+            <a href="day-trip-nusa-penida.html" class="tour-preview">
+              <div class="tour-img-wrapper" data-bglazy="img/tours-slider/slide-1.jpg">
+                <div class="tour-triger">Most popular</div>
+              </div>
+              <div class="tour-info">
+                <div class="tour-top-info">
+                  <div class="tour-top-info-left">
+                    <p>From <span>$999</span> trip/boat</p>
+                  </div>
+                </div>
+                <h3 class="tour-preview-h3">One day group tour on a boat</h3>
+                <p class="tour-desc">Come with us on this amazing one of a kind day trip to Nusa Penida...</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-      <div class="main-footer__content__right-content">
-        <form class="form" name="form">
-          <!-- Hidden Required Fields -->
-          <input type="hidden" name="project_name" value="DayTripBali site">
-          <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
-          <input type="hidden" name="form_subject" value="Заявка с главной">
-          <!-- END Hidden Required Fields -->
-          <div class="input-wrapper first">
-            <input type="text" class="text-field" maxlength="256" name="name" id="name" autocomplete="off">
-            <label for="name" class="label">
-              <span class="label-content">Name</span>
-            </label>
+    </section>
+    <section class="section">
+      <div class="container section__container choose last">
+        <div class="top-content__choose">
+          <h2>Boats</h2>
+        </div>
+        <div class="bottom-content bottom-content__marign">
+          <div class="tours-preview-wrapper" style="opacity: 0">
+            <a href="day-trip-nusa-penida.html" class="tour-preview">
+              <div class="tour-img-wrapper" data-bglazy="img/tours-slider/slide-1.jpg">
+                <div class="tour-triger">-20%</div>
+              </div>
+              <div class="tour-info">
+                <div class="tour-top-info">
+                  <div class="tour-top-info-left">
+                    <p>From <span>$999</span> trip/boat</p>
+                  </div>
+                </div>
+                <h3 class="tour-preview-h3">One day group tour on a boat</h3>
+                <p class="tour-desc">Come with us on this amazing one of a kind day trip to Nusa Penida...</p>
+              </div>
+            </a>
+            <a href="day-trip-nusa-penida.html" class="tour-preview">
+              <div class="tour-img-wrapper" data-bglazy="img/tours-slider/slide-1.jpg"></div>
+              <div class="tour-info">
+                <div class="tour-top-info">
+                  <div class="tour-top-info-left">
+                    <p>From <span>$999</span> trip/boat</p>
+                  </div>
+                </div>
+                <h3 class="tour-preview-h3">One day group tour on a boat</h3>
+                <p class="tour-desc">Come with us on this amazing one of a kind day trip to Nusa Penida...</p>
+              </div>
+            </a>
+            <a href="day-trip-nusa-penida.html" class="tour-preview">
+              <div class="tour-img-wrapper" data-bglazy="img/tours-slider/slide-1.jpg">
+                <div class="tour-triger">Most popular</div>
+              </div>
+              <div class="tour-info">
+                <div class="tour-top-info">
+                  <div class="tour-top-info-left">
+                    <p>From <span>$999</span> trip/boat</p>
+                  </div>
+                </div>
+                <h3 class="tour-preview-h3">One day group tour on a boat</h3>
+                <p class="tour-desc">Come with us on this amazing one of a kind day trip to Nusa Penida...</p>
+              </div>
+            </a>
           </div>
-          <div class="input-wrapper">
-            <input type="text" class="text-field" maxlength="256" name="e-mail" id="e-mail" autocomplete="off">
-            <label for="e-mail" class="label">
-              <span class="label-content">E-mail *</span>
-            </label>
-            <span class="form-validate-text"></span>
-          </div>
-          <div class="input-wrapper">
-            <input type="text" class="text-field" maxlength="256" name="questions" id="questions" autocomplete="off">
-            <label for="questions" class="label">
-              <span class="label-content">Your questions</span>
-            </label>
-          </div>
-          <!--         <input class="input-checkbox" id="input-checkbox" type="checkbox" style="display: none;" checked="checked" />
-        <label class="checkbox" for="input-checkbox"><span>
-            <svg width="12px" height="10px" viewbox="0 0 12 10">
-              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-            </svg></span><span>Я даю згоду на обробку моїх персональних данних</span></label> -->
-          <div class="button">
-            <input type="submit" value="Send" class="form-button">
-            <div class="button__bg"></div>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
+    </section>
+  </main>
+  {% include "partials/_footer.html" %}
 {% endblock %}

@@ -1,0 +1,70 @@
+<?php
+/*
+Template Name: Reviews
+*/
+get_header();
+?>
+<div class="site-wrapper" data-router-wrapper>
+   <div data-router-view="reviews">
+<header class="review-header">
+  <div class="review-header__content">
+    <h2 style="opacity: 0">Reviews</h2>
+    <p class="review-header-desc">We are looking forward to your feedback.</p>
+    <a id="href-btn" href="#anchor" class="button dark review mob">
+      <span class="form-button">Write a review</span>
+      <div class="button__bg"></div>
+    </a>
+    <div class="reviews-content-wrapper">
+      <div class="reviews-content-wrapper__left" id="anchor">
+        <h2 class="mob">Write your review</h2>
+        <div class="reviews-rating">
+          <span class="review-label">Your assessment:</span>
+          <div data-rate="0" class="reviews-rate assessment">
+              <?php
+                for ($i = 1; $i <= 5; $i++) {
+                    include get_theme_file_path( '/components/star.php' );  
+                }
+              ?>
+          </div>
+          <span class="form-validate-text rate">rating must be at least one</span>
+        </div>
+        <form class="form" name="form" id="form">
+          <div class="input-wrapper">
+            <input type="text" class="text-field" maxlength="256" name="Name" id="name" autocomplete="off">
+            <label for="name" class="label">
+              <span class="label-content">Your name</span>
+            </label>
+            <span class="form-validate-text name">name must be at least 3 characters</span>
+          </div>
+          <div class="input-wrapper">
+            <textarea type="text" class="text-field" maxlength="3000" name="Review" id="review" autocomplete="off"></textarea>
+            <label for="review" class="label">
+              <span class="label-content dada">Write your review</span>
+            </label>
+            <span class="form-validate-text review">review must be at least 12 characters</span>
+          </div>
+          <div class="button dark">
+            <input type="submit" value="Send" class="form-button">
+            <div class="button__bg"></div>
+          </div>
+        </form>
+        <div id="TA_cdsratingsonlynarrow805" class="TA_cdsratingsonlynarrow">
+          <ul id="F4TiRa3x" class="TA_links vD8ZKhL">
+            <li id="dEvOs1c1" class="G6fNrw0Vi6"><a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor" /></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="reviews-content-wrapper__right">
+        <div class="reviews-items">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<script async src="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&amp;uniq=805&amp;locationId=17820260&amp;lang=en_US&amp;border=true&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+
+<?php get_footer(); ?>
+
+
+
+

@@ -6,7 +6,7 @@ let navBar = document.querySelector('.nav')
 burger.addEventListener('click', () => {
   burger.classList.toggle('clicked')
   nav.classList.toggle('show')
-  document.querySelector('.nav__logo').classList.remove('invisible')
+  document.querySelector('.nav__logo').classList.add('invisible')
   document.body.classList.toggle('fixed')
   for (let i = 0; i < navItem.length; i++) {
     navItem[i].classList.toggle('active')
@@ -34,9 +34,9 @@ function logo() {
   let winScroll = document.documentElement.scrollTop
   let winHeight = window.innerHeight
   let percent = winScroll / winHeight * 100
-  if (percent > 10 && !burger.classList.contains('clicked')) {
+  if (percent > 10 || burger.classList.contains('clicked') === true) {
     document.querySelector('.nav__logo').classList.add('invisible')
-  } else {
+  } else if (percent < 10 && !burger.classList.contains('clicked')) {
     document.querySelector('.nav__logo').classList.remove('invisible')
   }
   window.requestAnimationFrame(logo)

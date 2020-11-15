@@ -1,11 +1,11 @@
-import { TimelineMax } from 'gsap'
+import { TimelineMax, Power1, Expo } from 'gsap'
 
 
 function sectionInView() {
 
   let elements = document.querySelectorAll('section')
   for (let i = 0; i !== elements.length; i++) {
-    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.75 && elements[i].getBoundingClientRect().top > 0) {
+    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.8 && elements[i].getBoundingClientRect().top > 0) {
 
       if (!elements[i].classList.contains('activated')) {
         elements[i].classList.add('activated')
@@ -14,9 +14,8 @@ function sectionInView() {
         tl
           // .to(elements[i].querySelectorAll('h2'), 0.8, { x: 0, opacity: 1, ease: Power1.easeOut }, 0.3)
           .to(elements[i].querySelectorAll('h3'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.3)
-          .to(elements[i].querySelectorAll('.strip-outer'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.3)
+          .to(elements[i].querySelectorAll('.tours-preview-wrapper'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.3)
           .staggerTo(elements[i].querySelectorAll('svg'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.08, 0.5)
-          .staggerTo(elements[i].querySelectorAll('img'), 0.8, { y: 0, opacity: 1, ease: Power1.easeOut }, 0.15, 0.5)
           .staggerTo(elements[i].querySelectorAll('p'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.08, 0.5)
           .staggerTo(elements[i].querySelectorAll('.choose-items__item svg'), 0.8, { opacity: 1, ease: Power1.easeOut }, 0.08, 0.5)
         for (let j = 0; j < elements[i].querySelectorAll('h2 span').length; j++) {
@@ -38,7 +37,7 @@ function footer() {
   let elements = document.querySelectorAll('footer')
   for (let i = 0; i !== elements.length; i++) {
 
-    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.5 && elements[i].getBoundingClientRect().top > 0) {
+    if (elements[i].getBoundingClientRect().top <= window.innerHeight * 0.8 && elements[i].getBoundingClientRect().top > 0) {
       if (!elements[i].classList.contains('activated')) {
         elements[i].classList.add('activated')
         let tl = new TimelineMax()
@@ -61,7 +60,12 @@ function footer() {
 };
 
 
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    sectionInView()
+    footer()
+  }, 500)
+
+})
 
 
-window.requestAnimationFrame(sectionInView)
-window.requestAnimationFrame(footer)

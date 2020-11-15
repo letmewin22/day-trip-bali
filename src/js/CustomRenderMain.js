@@ -1,25 +1,19 @@
 import Highway from '@dogstudio/highway'
 import MainLoader from './preloader.js'
-import Slider from './slider.js'
+import ripplyScott from './btn.js'
 
 class CustomRendererMain extends Highway.Renderer {
   onEnterCompleted() {
-    MainLoader()
-    Slider()
-    const links = document.querySelectorAll('.nav__item a')
+    const loader = document.querySelector('.loader')
+    window.addEventListener('load', MainLoader)
+    ripplyScott().init('info-block__btn', 0.75)
+    if (loader.classList.contains('loaded') === true) {
+      MainLoader()
+    }
 
     let navI = document.querySelectorAll('.nav__item')
     for (let i = 0; i < navI.length; i++) {
       navI[i].classList.remove('inverse')
-    }
-    for (let i = 0; i < links.length; i++) {
-      const link = links[i]
-
-      link.classList.remove('is-current')
-
-      if (link.href === location.href) {
-        link.classList.add('is-current')
-      }
     }
 
   }

@@ -1,7 +1,6 @@
----
-title: contacts page
-route: contacts
----
+{% set title = 'contacts page' %}
+{% set 'route' = 'contacts' %}
+
 {% extends "layouts/_layout.html" %}
 {% block content %}
 <div class="page-contacts">
@@ -14,7 +13,7 @@ route: contacts
       <h2>Contacts</h2>
       <p>You can book a tour for any date with the possibility of free cancellation.</p>
       </div>
-      <div class="main-footer__content__left-content__contacts-items with-margin">
+      <div class="page-contacts__contacts-items with-margin">
         <a href="#">+62 821 4595 7604 (WhatsApp)</a>
         <a href="mailto:baliboatrental@gmail.com">baliboatrental@gmail.com</a>
         <div class="social-media">
