@@ -46,11 +46,6 @@ function createConfig(env) {
         {
           test: /\.glsl$/,
           loader: 'webpack-glsl-loader'
-        },
-        {
-          test: /\.ts?$/,
-          loader: 'babel-loader',
-          exclude: /node_modules/
         }
       ]
     },

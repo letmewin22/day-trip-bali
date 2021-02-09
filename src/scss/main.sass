@@ -5,6 +5,10 @@
 html
 	scroll-behavior: smooth
 
+[data-router-view='main']	
+	@include media('<=1140px')
+		padding-bottom: 60px
+
 body
 	+main
 	+fontSize(18, 16)
@@ -151,6 +155,24 @@ h1
 		fill: darken($accent-color, 25%) 
 		use
 			opacity: 0
+		
+.header__info-block
+	+media('<=1094px')
+		display: block
+		width: 100%
+		height: 60px
+		position: fixed
+		bottom: 0
+		left: 0
+		z-index: 100
+		.info-block__text
+			display: none
+		.info-block__btn
+			width: 100%
+			padding: 0
+			span
+				&::after
+					display: none
 
 .burger
 	display: none
@@ -318,3 +340,9 @@ h4
 	font-size: 16px
 	background: white
 	padding: 20px 20px
+
+._orientationRight_4de1.wrap_2e7f
+	bottom: 50px
+
+.tour-reviews-section__h2
+	margin-bottom: 20px

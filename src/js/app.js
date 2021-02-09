@@ -1,4 +1,5 @@
 import Highway from '@dogstudio/highway'
+import Form from '@emotionagency/form'
 import Fade from './Fade'
 // import sayHello from './lib/sayHello.js'
 import './menu.js'
@@ -13,6 +14,7 @@ import CustomRendererAbout from './CustomRenderAbout'
 import './btn'
 import moveEl from './lib/moveEl'
 import Dropdown from './dropdown'
+import { PopUpForm } from './popupForm'
 // import { onYouTubeIframeAPIReady } from './YTplayer.js'
 
 const adminBar = document.querySelector('#wpadminbar')
@@ -21,18 +23,17 @@ const links = document.querySelectorAll('.nav__item a')
 // onYouTubeIframeAPIReady()
 
 if (!adminBar) {
-
   const H = new Highway.Core({
     renderers: {
       main: CustomRendererMain,
       reviews: CustomRendererReviews,
       tour: CustomRendererTours,
       contacts: CustomRendererContacts,
-      about: CustomRendererAbout
+      about: CustomRendererAbout,
     },
     transitions: {
-      default: Fade
-    }
+      default: Fade,
+    },
   })
 
   H.on('NAVIGATE_IN', ({ location }) => {
@@ -48,6 +49,12 @@ if (!adminBar) {
   })
 
   window.addEventListener('load', () => {
+    window.popUpF = new PopUpForm()
+    new Form('#form', {
+      URL: '/wp-content/themes/day-trip-bali/api/mail/mail.php',
+      onSuccess: () => window.popUpF && window.popUpF.close(),
+    })
+
     for (let i = 0; i < links.length; i++) {
       const link = links[i]
 
@@ -59,9 +66,12 @@ if (!adminBar) {
     }
     moveEl()
 
-    const dropdown = new Dropdown({ btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown' })
+    const dropdown = new Dropdown({
+      btn: '.dropbtn',
+      items: '.dropdown-content',
+      parent: '.dropdown',
+    })
     dropdown.init()
-    
   })
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -72,13 +82,21 @@ if (!adminBar) {
   H.on('NAVIGATE_END', () => {
     lazyLoader()
     moveEl()
-    const dropdown = new Dropdown({ btn: '.dropbtn', items: '.dropdown-content', parent: '.dropdown' })
+    const dropdown = new Dropdown({
+      btn: '.dropbtn',
+      items: '.dropdown-content',
+      parent: '.dropdown',
+    })
     dropdown.init()
+    window.popUpF = null
+    window.popUpF = new PopUpForm()
   })
-
-
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  lazyLoader()
-}, false)
+window.addEventListener(
+  'DOMContentLoaded',
+  () => {
+    lazyLoader()
+  },
+  false,
+)

@@ -11,10 +11,13 @@
   </div>
   <!-- loader -->
   {% include "partials/_navbar.html" %}
+  {% include "partials/_form-pop-up.html" %}
   <div class="site-wrapper" data-router-wrapper>
     <div data-router-view="{% if route %}{{ route }}{% else %}Template{% endif %}">
       <!-- BEGIN content -->
-      {% block content %}{% endblock %}
+      {% block content %}
+      <script src="./app.js"></script>
+      {% endblock %}
       <!-- END content -->
     </div>
   </div>

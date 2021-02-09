@@ -18,9 +18,8 @@ const popUp = (opts) => {
   }
 
   const documentHandler = (e) => {
-    console.log(e.path)
-    
-    if(!e.path.includes(opts.untouchable)) {
+
+    if(e.target.classList.contains(opts.close)) {
       popUpWindow.classList.remove('open')
       
       if(typeof opts.cb === 'object')
@@ -29,7 +28,7 @@ const popUp = (opts) => {
       setTimeout(() => {
         document.body.classList.remove('fixed')
         document.body.style.removeProperty('--padding')
-      }, 500)
+      }, 1000)
 
 
       popUpWindow.removeEventListener('click', documentHandler)

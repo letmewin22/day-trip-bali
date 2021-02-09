@@ -19,7 +19,8 @@ class CustomRendererTours extends Highway.Renderer {
     popUp({
       btn: document.querySelector('.tour-header__video-btn'),
       window: document.querySelector('.video-pop-up'),
-      untouchable: document.querySelector('.video-pop-up__video'),
+      untouchable: 'video-pop-up__video',
+      close: 'pclose',
       cb: {
         open: () => YTplayer.startVideo(),
         close: () => YTplayer.stopVideo()
@@ -29,7 +30,7 @@ class CustomRendererTours extends Highway.Renderer {
     popUp({
       btn: document.querySelector('.details-section__more-btn'),
       window: document.querySelector('.details-pop-up'),
-      untouchable: document.querySelector('.details-pop-up .details-section__container'),
+      close: 'details-pop-up__close',
       cb: {
         open: () => Details.open(),
         close: () => Details.close()

@@ -1,0 +1,46 @@
+<div class="form-pop-up">
+  <div data-pp-close class="form-pop-up__overlay"></div>
+  <div data-pp-close class="form-pop-up__close">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="#292B33" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M37.5 37.5L2.5 2.5M2.5 37.5L37.5 2.5L2.5 37.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="form-pop-up__content">
+    <div class="form-pop-up__h">Please leave your contact details and we will contact you soon</div>
+    <form id="form" class="emotion-form" novalidate>
+      <div class="input-container emotion-form__input-container">
+        <input 
+          data-input 
+          type="text" class="input emotion-form__input" 
+          name="Name"
+          id="name"
+      >
+        <label class="label emotion-form__label" for="name">Name</label>
+      </div>
+      <div class="input-container emotion-form__input-container">
+        <input 
+          data-input 
+          data-validation="email" 
+          type="email" 
+          class="input emotion-form__input" 
+          name="Email" 
+          id="email"
+      >
+        <label class="label emotion-form__label" for="email">Email</label>
+        <div class="input-validate emotion-form__input-validate">Incorrect Email</div>
+      </div>
+      <div data-error class="emotion-form__error-message">
+        <div class="emotion-form__error-message-text">Sorry, an error occurred</div>
+      </div>
+      <button class="btn emotion-form__btn">
+        <span class="emotion-form__btn-text">Submit</span>
+        <span class="btn__overlay emotion-form__btn-overlay"></span>
+        <span class="emotion-form__btn-loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="green" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+          </svg>
+        </span>
+      </button>
+    </form>
+  </div>
+</div>
