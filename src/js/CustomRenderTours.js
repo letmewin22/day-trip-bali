@@ -5,12 +5,10 @@ import Swiper from 'swiper'
 import ripplyScott from './btn.js'
 import popUp from './popup.js'
 import YTplayer from './YTplayer.js'
-import Details from './Details.js'
-
+import Accordeon from './Accordeon'
 
 class CustomRendererTours extends Highway.Renderer {
   onEnterCompleted() {
-
     // const showBtn = new ShowBtn(document.querySelector('.details-section__more-btn'))
 
     // showBtn.init()
@@ -23,23 +21,17 @@ class CustomRendererTours extends Highway.Renderer {
       close: 'pclose',
       cb: {
         open: () => YTplayer.startVideo(),
-        close: () => YTplayer.stopVideo()
-      }
+        close: () => YTplayer.stopVideo(),
+      },
     })
 
-    popUp({
-      btn: document.querySelector('.details-section__more-btn'),
-      window: document.querySelector('.details-pop-up'),
-      close: 'details-pop-up__close',
-      cb: {
-        open: () => Details.open(),
-        close: () => Details.close()
-      }
+    const a = new Accordeon({
+      elem: '.accordeon__item',
+      child: '.accordeon__content',
+      multi: true,
     })
 
-    const items = document.querySelectorAll('.details-pop-up .details-section__item')
-    items[items.length - 1].classList.add('last')
-   
+    a.render(document.querySelectorAll('.accordeon__item')[0])
 
     new Swiper('.swiper-container', {
       slidesPerView: 'auto',
@@ -51,17 +43,21 @@ class CustomRendererTours extends Highway.Renderer {
       freeMode: true,
       navigation: {
         nextEl: '.gallery-section__nav-item--right',
-        prevEl: '.gallery-section__nav-item--left'
+        prevEl: '.gallery-section__nav-item--left',
       },
       breakpoints: {
         550: {
-          spaceBetween: 66
-        }
-      }
+          spaceBetween: 66,
+        },
+      },
     })
 
     if (document.querySelector('.gallery-section__view-more span'))
-      document.querySelector('.gallery-section__view-more span').innerHTML = document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length.toString()
+      document.querySelector(
+        '.gallery-section__view-more span',
+      ).innerHTML = document
+        .querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)')
+        .length.toString()
 
     ripplyScott().init('white-block__btn', 0.75)
 
@@ -69,15 +65,12 @@ class CustomRendererTours extends Highway.Renderer {
     const height = window.innerHeight - it.getBoundingClientRect().height
 
     const cb = () => {
- 
       const st = document.body.scrollTop || document.documentElement.scrollTop
       if (document.body.getBoundingClientRect().width > 1140)
         if (it.getBoundingClientRect().y <= 0 && st >= height)
           it.classList.add('fixed')
-        else
-          it.classList.remove('fixed')
-      else
-        it.classList.add('fixed')
+        else it.classList.remove('fixed')
+      else it.classList.add('fixed')
       this.raf = requestAnimationFrame(cb)
     }
 
@@ -103,7 +96,6 @@ class CustomRendererTours extends Highway.Renderer {
           loader.style.opacity = 0
           loader.style.pointerEvents = 'none'
           TourLoader()
-
         })
         let navI = document.querySelectorAll('.nav__item')
         if (screen.width > 1190) {
@@ -115,13 +107,11 @@ class CustomRendererTours extends Highway.Renderer {
     }
 
     document.querySelector('.burger').classList.add('tour')
-
   }
 
   onLeave() {
     cancelAnimationFrame(this.raf)
   }
-
 }
 // Don`t forget to export your renderer
 export default CustomRendererTours

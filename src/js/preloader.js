@@ -15,11 +15,11 @@ const MainLoader = () => {
   let videoMob = `<video poster="${posterMob}" preload="metadata" muted="" loop="" style="margin: 0 auto; opacity:1; display:block; max-width: 100%" webkit-playsinline playsinline>
       <source src="${videoSrc}" type="video/mp4"></video> <div class="video-btn"><img src="${mobBtn}" alt="play button"></div>`
 
-
-  screen.width > 960 ? videoWrap.innerHTML = video : videoWrap.innerHTML = videoMob
+  screen.width > 960
+    ? (videoWrap.innerHTML = video)
+    : (videoWrap.innerHTML = videoMob)
 
   let videoHTML, videoBtn
-
 
   videoHTML = videoWrap.querySelector('video')
   videoBtn = document.querySelector('.video-btn')
@@ -32,18 +32,14 @@ const MainLoader = () => {
         videoHTML.pause()
         videoBtn.style.opacity = 10
       }
-
-
     }
   }
 
-
   const loading = () => {
-
     const target = document.querySelector('h1')
-    const results = Splitting({ target: target, by: 'words' })
+    Splitting({ target: target, by: 'words' })
     const target2 = document.querySelectorAll('h2')
-    const results2 = Splitting({ target: target2, by: 'words' })
+    Splitting({ target: target2, by: 'words' })
 
     let h1Splitter = [...document.querySelectorAll('h1 span')]
     let h2Splitter = [...document.querySelectorAll('h2 span')]
@@ -63,9 +59,13 @@ const MainLoader = () => {
       for (let i = 0; i < h1Splitter.length; i++) {
         h1.style.opacity = '1'
         let splitterSpan = h1Splitter[i].querySelectorAll('span')
-        let tl = new TimelineMax
-        tl
-          .staggerTo(splitterSpan, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07)
+        let tl = new TimelineMax()
+        tl.staggerTo(
+          splitterSpan,
+          1.5,
+          { opacity: 1, x: 0, ease: Expo.easeOut },
+          0.07,
+        )
       }
       let tl2 = new TimelineMax()
       tl2
@@ -73,10 +73,8 @@ const MainLoader = () => {
         .to(video, 1.2, { opacity: 1, ease: Power2.easeOut }, 0.2)
         .to(infoBlock, 1.2, { opacity: 1, y: 0, ease: Power2.easeOut }, 0.7)
     }, 500)
-
   }
   loading()
-
 }
 
 export default MainLoader

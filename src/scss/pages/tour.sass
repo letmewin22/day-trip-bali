@@ -151,197 +151,6 @@
 			align-items: flex-start
 			padding-top: size(400, 100)
 	
-.about-tour-section
-	&__container
-		display: flex
-		justify-content: space-between
-		width: 100%
-		height: 100%
-		align-items: center
-	&__img
-		+cover
-		height: 100%
-		width: 100%
-	&__left
-		height: 100%
-		width: 50%
-		padding-right: 11vw
-	&__right
-		height: size(650, 450)
-		max-height: 650px
-		width: 50%
-	&__text
-		margin-top: size(30, 25)
-		p
-			margin-top: 25px
-			strong
-				+medium
-				color: $accent-color
-	@include media('<=970px')
-		&__container
-			flex-direction: column
-		&__left
-			width: 100%
-			padding-right: 0px
-		&__right
-			width: 100%
-			display: none
-	ul li
-		&::before
-			content: "\2022" 
-			color: $accent-color 
-			font-weight: bold 
-			display: inline-block 
-			width: 1em 
-			// margin-left: -1em 
-
-.details-section
-	background: white
-	&__container
-		padding-bottom: 118px 
-		position: relative 
-		z-index: 1
-	&__top
-		padding-top: 40px 
-	&__bottom
-		display: flex
-		margin-top: 60px
-		justify-content: space-between
-	&__left
-		width: 35% 
-	&__items
-		transition: height .3s ease
-	&__item
-		margin-top: 40px
-		display: none
-		&:first-child
-			margin-top: 0
-		&.show
-			display: block
-	&__item-container
-		display: flex
-		align-items: flex-start
-	&__item-line
-		background: #DADADA
-		height: 1px
-		width: 100%
-		margin-top: 11px
-	&__item-right
-		padding-left: 20px
-		width: calc(100% - 50px)
-		h3
-			+fontSize(24, 20)
-			color: $accent-color
-			font-style: normal
-			font-weight: normal
-		p
-			margin-top: 10px
-			+fontSize(18, 16)
-			color: $gray
-		+media("<=460px")
-			width: calc(100% - 35px)
-	&__item-left
-		background-image: url(../img/details-icons/0.svg)
-		background-repeat: no-repeat
-		background-position: center left	
-		height: size(50, 35)	
-		width: size(50, 35)
-		background-size: contain
-	&__right
-		width: 50%
-		height: auto
-		max-height: 800px
-		position: sticky
-		top: 0
-	&__img
-		width: 100%
-		height: 100%
-		+cover
-	&__more-btn
-		color: $accent-color
-		text-decoration: underline
-		text-align: center
-		margin-top: size(60, 30)
-		margin-left: size(70, 55)
-		position: relative
-		+medium
-		text-decoration: none
-		// display: none
-		cursor: pointer
-		width: fit-content
-		&::after
-			content: ''
-			display: block
-			position: absolute
-			bottom: 0
-			left: 0
-			width: 100%
-			height: 1px
-			transition: width .3s ease
-			background: $accent-color
-		&:hover
-			&::after
-				width: 0
-				right: 0
-				left: auto
-	@include media('<=970px')
-		margin-bottom: 0px
-		&__right
-			position: static
-			// height: size(800, 350)
-		&__bottom
-			flex-direction: column
-		&__left
-			width: 100%
-		&__right
-			width: 100%
-			margin-top: 30px
-		&__container
-			padding-bottom: 30px
-		&__more-btn
-			display: block
-	@include media('<=550px')
-		&__right
-			height: 361px
-
-@for $i from 1 through 20
-	.details-section__item:nth-child(#{$i})
-		.details-section__item-left
-			background-image: url('../img/details-icons/' + ($i - 1) + '.svg')
-
-.details-section__item:first-child, .details-section__item.last
-		.details-section__item-left
-			background-image: url(../img/details-icons/0.svg) !important
-
-.details-pop-up
-	position: fixed
-	top: 0
-	left: 0
-	z-index: 10000
-	width: 100%
-	height: 100vh
-	visibility: hidden
-	&.open
-	.details-section__bottom
-		padding-bottom: size(60, 40)
-	&__container
-		overflow-y: auto
-		overflow-x: hidden
-		padding-top: size(100, 40)
-	&__close
-		position: absolute
-		top: 3%
-		z-index: 100
-		right: size(100, 20)
-		cursor: pointer
-		svg
-			width: size(35, 25)
-			height: size(35, 25)
-			transition: stroke .3s ease
-			pointer-events: none
-		&:hover
-			svg
-				stroke: $accent-color
 
 .gallery-section
 	&__top 
@@ -548,3 +357,79 @@
 	height: 100%
 	z-index: 1
 	background: rgba(#000, .9)
+
+
+.sections-list__container
+	margin-bottom: 40px
+	
+.sections-list__container-left
+	width: 58%
+
+.accordeon__item
+  position: relative
+  padding-bottom: size(24, 16)
+  cursor: pointer
+  z-index: 1
+  overflow: hidden
+  + .accordeon__item
+    margin-top: size(100, 80)
+  &:hover
+    .accordeon__overlay
+      height: 100%
+
+  .accordeon__line
+    position: absolute
+    bottom: 0
+
+  &.opened
+    .accordeon__content
+      height: calc( var(--h, 1vh) * 100)
+      margin-top: size(32, 24)
+      margin-bottom: 8px
+      opacity: 1
+    .accordeon__icon
+      transform: rotate(-90deg) 
+      .plus-svg-2 
+        opacity: 0 
+
+    .accordeon__overlay
+      height: 0px
+
+.accordeon__menu
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.accordeon__icon
+  transform-origin: center
+  transition: transform .45s $easing
+  width: 22px
+  svg
+    width: 100%
+    height: 100%
+  .plus-svg-2
+    transition: opacity .45s $easing	
+
+
+.accordeon__line
+  width: 100%
+  height: 1px
+  background: $accent-color
+
+.accordeon__overlay
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  pointer-events: none
+  z-index: 0
+  height: 0%
+  transition: height 0.8s $easing
+  background-color: rgba($accent-color, 0.2)
+
+.accordeon__content
+  height: 0px
+  opacity: 0
+  transition: height .45s $easing, margin .45s $easing, opacity .45s $easing
+  p + p
+    margin-top: size(36, 16)

@@ -1,0 +1,72 @@
+.accordeon-section__item
+  position: relative
+  cursor: pointer
+  z-index: 1
+  overflow: hidden
+  // justify-content: space-between;
+  // flex-direction: column;
+  // display: flex;
+  &:hover
+    .accordeon-section__overlay
+      height: 100%
+
+  .accordeon-section__line
+    position: absolute
+    bottom: 0
+
+  &.opened
+    .accordeon-section__text
+      height: calc( var(--h, 1vh) * 100)
+      margin-top: size(48, 24)
+      margin-bottom: size(48, 24)
+
+    .accordeon-section__arrow
+      transform: rotate(-90deg)
+
+    .accordeon-section__overlay
+      height: 0px
+
+.accordeon-section__cols
+  padding-top: size(30, 20)
+  padding-bottom: size(30, 20)
+  align-items: center
+
+.accordeon-section__r-col
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.accordeon-section__arrow
+  transform: rotate(90deg)
+  transform-origin: center
+  transition: transform .45s $easing
+  width: size(36, 16)
+  svg
+    width: 100%
+    height: 100%
+
+.accordeon-section__num
+  @include media('<=#{$br1}') {
+    display: none
+
+.accordeon-section__line
+  width: 100%
+  height: 1px
+  background: $accent
+
+.accordeon-section__overlay
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  pointer-events: none
+  z-index: 0
+  height: 0%
+  transition: height 0.8s $easing
+  background-color: rgba($accent-color, 0.2)
+
+.accordeon-section__text
+  height: 0px
+  transition: height .45s $easing, margin .45s $easing
+  p + p
+    margin-top: size(36, 16)
