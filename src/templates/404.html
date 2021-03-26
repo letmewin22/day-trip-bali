@@ -1,0 +1,14 @@
+{% set title = '404 | Error' %}
+{% set 'route' = 'errorPage' %}
+
+
+{% extends "layouts/_layout.html" %}
+{% block content %}
+  <header class="header error-header">
+    <div class="header__content error-header__content">
+      <h1 class="error-header__h" style="opacity: 1">404 <br> Page not found</h1>
+      <p class="error-header__p">We recommend returning to the home page</p>
+      <a href="/" class="error-header__btn">Back home</a>
+    </div>
+  </header>
+{% endblock %}

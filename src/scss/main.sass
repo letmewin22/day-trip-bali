@@ -1,7 +1,7 @@
 *
-  &::selection
-    background: $accent-color
-    color: white
+	&::selection
+		background: $accent-color
+		color: white
 html
 	scroll-behavior: smooth
 
@@ -267,67 +267,67 @@ h3
 		padding-bottom: 160px
 
 .loader
-  position: fixed
-  width: 100%
-  height: 100vh
-  top: 0
-  left: 0
-  display: flex
-  justify-content: center
-  align-items: center 
-  background: $dark-color
-  color: white
-  z-index: 10010 
-  transition: opacity 1s ease
+	position: fixed
+	width: 100%
+	height: 100vh
+	top: 0
+	left: 0
+	display: flex
+	justify-content: center
+	align-items: center 
+	background: $dark-color
+	color: white
+	z-index: 10010 
+	transition: opacity 1s ease
 
 .line-loader
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  width: 100px
-  height: 1px
-  transition: opacity .3s ease
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 100px
+	height: 1px
+	transition: opacity .3s ease
 
 .loader-back-line
-  width: 100%
-  height: 100%
-  background: rgba(white, 0.2)
-  mix-blend-mode: difference
-  overflow: hidden
-  position: relative
-  .loader-front-line
-    width: 100%
-    height: 100%
-    background: white
-    mix-blend-mode: difference
-    position: absolute
-    top: 0
-    left: 0
-    animation: line-anim 2s ease-in-out infinite
+	width: 100%
+	height: 100%
+	background: rgba(white, 0.2)
+	mix-blend-mode: difference
+	overflow: hidden
+	position: relative
+	.loader-front-line
+		width: 100%
+		height: 100%
+		background: white
+		mix-blend-mode: difference
+		position: absolute
+		top: 0
+		left: 0
+		animation: line-anim 2s ease-in-out infinite
 
 .loading-wrapper
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  opacity: 0
-  transition: opacity .3s ease
-  text-align: center
-  p
-    opacity: 0.7
-    font-size: 20px
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	opacity: 0
+	transition: opacity .3s ease
+	text-align: center
+	p
+		opacity: 0.7
+		font-size: 20px
 
 .loading 
-  font-size: 36px
-  width: 250px
-  margin-top: 5px
+	font-size: 36px
+	width: 250px
+	margin-top: 5px
 
 @keyframes line-anim
-  from
-    transform: translateX(-100%)
-  to
-    transform: translateX(100%)
+	from
+		transform: translateX(-100%)
+	to
+		transform: translateX(100%)
 
 h4
 	font-size: size(24, 20)
@@ -352,3 +352,29 @@ h4
 .sticky-wrapper
 	position: relative 
 	width: 32% 
+
+
+.error-header__content
+	height: 100vh !important
+
+.error-header__p
+	margin-top: 24px
+
+.error-header__h
+	max-width: 50%
+
+.error-header__btn
+	background: $accent-color
+	padding: 24px 80px
+	display: block
+	color: white
+	position: relative
+	+fontSize(20, 16)
+	cursor: pointer
+	overflow: hidden
+	line-height: 1em
+	display: flex
+	justify-content: center
+	align-items: center
+	width: fit-content
+	margin-top: size(52, 32)

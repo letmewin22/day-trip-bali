@@ -123,8 +123,8 @@
     cursor: pointer 
     transition: opacity .3s ease
     img
-      width: 70px
-      height: 70px
+      width: 90px
+      height: 90px
       display: block
     &:hover
       opacity: .8
@@ -292,14 +292,21 @@
   margin-bottom: 40px
   display: flex
   justify-content: space-between
+  @include media('<=#{$br1}')
+    flex-direction: column
   p
     opacity: 1 !important
   
 .sections-list__container-left
   width: 58%
+  @include media('<=#{$br1}')
+    width: 100%
 
 .sections-list__container-right
   width: 36%
+  @include media('<=#{$br1}')
+    width: 100%
+    margin-top: 35px
 
 .accordeon__item
   position: relative
@@ -381,11 +388,16 @@
     background-color: white
 .itinerary-table__item-time 
   width: 13%
+  flex: 1
   display: block
   font-size: size(20, 16)
+  @include media('<=phone')
+    width: 10%
 .itinerary-table__item-description
   width: 80%
   font-size: size(20, 16)
+  @include media('<=phone')
+    width: 82%
 
 .package-includes__item
   display: flex
@@ -403,8 +415,13 @@
   display: flex
   + .additional-services__item
     margin-top: size(24, 16)
+  @include media('<=phone')
+    justify-content: space-between
 
 .additional-services__item-bold 
   +medium
   color: $dark-color 
   margin-left: 25px
+
+// #_pbf_2 .ember-view.ui-element-loader-shell.last-sub-item.enabled-element.visible-element
+//   display: none !important
