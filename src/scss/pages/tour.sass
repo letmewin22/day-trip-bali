@@ -80,7 +80,7 @@
     position: absolute
     right: 0
     top: 0
-    width: 34%
+    width: 37.5%
     height: 100%
     @include media('<=1140px')
       width: 100%
@@ -298,12 +298,12 @@
     opacity: 1 !important
   
 .sections-list__container-left
-  width: 58%
+  width: 51%
   @include media('<=#{$br1}')
     width: 100%
 
 .sections-list__container-right
-  width: 36%
+  width: 42%
   @include media('<=#{$br1}')
     width: 100%
     margin-top: 35px
@@ -399,10 +399,21 @@
   @include media('<=phone')
     width: 82%
 
-.package-includes__item
-  display: flex
-  + .package-includes__item
-    margin-top: size(24, 16)
+.package-includes
+  li
+    display: flex
+    align-items: center
+    &::before
+      content: ''
+      display: block
+      width: size(24, 16)
+      height: size(24, 16)
+      margin-right: 25px
+      background-image: url('https://daytripbali.cc/wp-content/themes/day-trip-bali/img/check.svg')
+      background-size: contain
+      background-repeat: no-repeat
+    + li
+      margin-top: size(24, 16)
 
 .package-includes__item-icon
   margin-right: 25px

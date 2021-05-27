@@ -1,6 +1,5 @@
-(function() {
-
-  window.onload = (e) => {
+;(function() {
+  window.onload = () => {
     let loader = document.querySelector('.loader')
     loader.classList.add('loaded')
 

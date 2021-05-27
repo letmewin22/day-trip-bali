@@ -12,18 +12,19 @@ class CustomRendererTours extends Highway.Renderer {
     // const showBtn = new ShowBtn(document.querySelector('.details-section__more-btn'))
 
     // showBtn.init()
-
-    YTplayer.startVideo()
-    popUp({
-      btn: document.querySelector('.tour-header__video-btn'),
-      window: document.querySelector('.video-pop-up'),
-      untouchable: 'video-pop-up__video',
-      close: 'pclose',
-      cb: {
-        open: () => YTplayer.startVideo(),
-        close: () => YTplayer.stopVideo(),
-      },
-    })
+    if (document.querySelector('.video-pop-up')) {
+      YTplayer.startVideo()
+      popUp({
+        btn: document.querySelector('.tour-header__video-btn'),
+        window: document.querySelector('.video-pop-up'),
+        untouchable: 'video-pop-up__video',
+        close: 'pclose',
+        cb: {
+          open: () => YTplayer.startVideo(),
+          close: () => YTplayer.stopVideo(),
+        },
+      })
+    }
 
     const a = new Accordeon({
       elem: '.accordeon__item',
@@ -53,11 +54,10 @@ class CustomRendererTours extends Highway.Renderer {
     })
 
     if (document.querySelector('.gallery-section__view-more span'))
-      document.querySelector(
-        '.gallery-section__view-more span',
-      ).innerHTML = document
-        .querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)')
-        .length.toString()
+      document.querySelector('.gallery-section__view-more span').innerHTML =
+        document
+          .querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)')
+          .length.toString()
 
     ripplyScott().init('white-block__btn', 0.75)
 
