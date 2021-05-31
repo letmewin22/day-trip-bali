@@ -83,7 +83,7 @@ class CustomRendererTours extends Highway.Renderer {
       let navI = document.querySelectorAll('.nav__item')
       if (screen.width > 1190) {
         for (let i = 0; i < navI.length; i++) {
-          navI[i].classList.add('inverse')
+          navI[i].classList.remove('inverse')
         }
       }
       TourLoader()
@@ -100,7 +100,7 @@ class CustomRendererTours extends Highway.Renderer {
         let navI = document.querySelectorAll('.nav__item')
         if (screen.width > 1190) {
           for (let i = 0; i < navI.length; i++) {
-            navI[i].classList.add('inverse')
+            navI[i].classList.remove('inverse')
           }
         }
       }
